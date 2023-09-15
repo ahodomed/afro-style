@@ -21,9 +21,9 @@ class AuthController extends AbstractController {
         if(isset($_POST["form-name"]) && $_POST["form-name"] === "registerForm"){
             // vérifier que le formulaire a été soumis
             
-            var_dump($_POST["username"]);
+/*            var_dump($_POST["username"]);
             var_dump($_POST["password"]);
-            var_dump($_POST["email"]);
+            var_dump($_POST["email"]);*/
 
             $error =[];
              if(empty($_POST["username"])) {
@@ -81,94 +81,60 @@ class AuthController extends AbstractController {
     
     } 
     /* Pour la connexion */  
- public function login(): void 
-{
-    $errors = [];
-
-    if (isset($_POST["formName"]) && $_POST["formName"] === "loginForm") 
+    public function login():void
     {
-        $email = $this->clean($_POST["email"]);
-        $password = $_POST["password"];
-        
-        // Validation de l'e-mail (vous pouvez utiliser filter_var pour une validation plus poussée)
-        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            $errors[] = "Format d'e-mail incorrect";
-        } else {
-            $user = $this->manager->getUserByEmail($email);
+        $this->render("connexion/login", []); // redirection sur la page avec le formulaire de connexion  
 
-            if ($user !== null) 
+    }
+    public function checkLogin(): void
+    {
+    $error = [];
+
+        if (isset($_POST["formName"])) 
+        {
+            $email = $this->clean($_POST['email']); // Récupérer les contenus des champs du formulaire
+            $password = $this->clean($_POST['password']);
+
+        if (empty($_POST["email"])) 
+        {
+            $error[] = "Veuillez saisir votre adresse mail";
+        }
+
+        if (empty($_POST["password"])) 
+        {
+            $error[] = "Veuillez saisir votre mot de passe";
+        }
+
+        if (empty($error)) 
+        {
+            $user = $this->um->getUserByEmail($email);
+
+            if ($user)
             {
-                if (password_verify($password, $user->getPassword())) 
+                if (password_verify($password, $user->getPassword()))
                 {
-                    $_SESSION["user"] = $user->getId();
-                    $roleName = $this->manager->getUserRoleName($user->getRoleId());
-                    $_SESSION["role"] = $roleName['name'];
-                    
-                    if ($_SESSION["role"] === "Admin")
+                    $_SESSION["user"] = $user->getUsername();
+                    $_SESSION["role"] = $user->getRole();
+
+                    if ($_SESSION["role"] === "admin")
                     {
-                        header("location:/admin/admin-user");
-                    } else {
-                        // Rediriger vers la page d'accueil ou afficher un message de confirmation
-                        header("location:/homepage"); // Vous devrez ajuster l'URL en fonction de votre structure de site.
-                    }
-                } 
-                else 
-                {
-                    $errors[] = "Mot de passe incorrect";
-                }
-            } 
-            else 
-            {
-                $errors[] = "Aucun compte avec cet email";
+                        $this->render("admin/admin-user", [ "errors" => $error]);
+
+                    } else 
+                        {
+                        $this->render("index",["errors"=>$error]); // Rediriger l'utilisateur vers la page d'accueil après la connexion réussie
+                        }
+                } /*else {
+                    $error[] = "Mot de passe incorrect";
+                }*/
             }
         }
-    } 
+    }
 
-    // Si vous avez des erreurs, vous pouvez les retourner à la vue pour affichage.
-    $this->render("connexion/login", [
-        "errors" => $errors
-    ]);
+
 }
 
 
-    // public function checkLogin($_post) : void  
-    // {  
-    //   if(isset($_post["formName"])
-       
-    //   &&isset($_post["email"])&& !empty($_post["email"])
-    //   &&isset($_post["password"])&& !empty($_post["password"])
-    //   ){ // vérifier que le formulaire a été soumis  
-    //         $email = $this->clean($_post['email']);   // récupérer les champs du formulaire  
-    //         $password = $this->clean($_post['password']);
-    //         $user = $this->um->getUserByEmail($email); // si il existe, vérifier son mot de passe    
-
-    //         if ($user)
-    //         {
-    //             if(password_verify($password, $user->getPassword())){
-    //                 $_SESSION["user"] = $user->getUsername();  // utiliser le manager pour vérifier si un utilisateur avec cet email existe    
-    //                 $_SESSION["role"] = $user->getRole();
-                    
-    //                 if($_SESSION["role"] === "admin"){
-    //                      header('Location:/admin/admin-utilisateurs'); // si il est bon, connecter l'admin  
-    //                 }
-    //                 else{
-    //                      header('Location:/admin/admin-utilisateurs'); // reparé, apres la depose du site 
-    //                 }
-    //             }
-    //             else{
-    //                  header('Location:/admin/admin-utilisateurs'); // si il n'est pas bon renvoyer sur la page de connexion 
-    //             }    
-    //         }
-    //         else{
-    //              header('Location:/admin/admin-utilisateurs '); // si il n'existe pas renvoyer vers la page de connexion
-    //         }
-            
-                    
-                      
-                  
-                
-    //   }
-    // }
     
     public function logout(){
 

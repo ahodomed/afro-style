@@ -11,6 +11,12 @@ class UserController extends AbstractController{
         $this->um = new UserManager();
 
     }
+    
+    
+    
+    
+    
+    
             /* Pour la route /produits */  
    public function renderAllUsers(){
          
@@ -19,6 +25,10 @@ class UserController extends AbstractController{
             "users" => $users 
         ]);  
    }
+   
+   
+   
+   
    public function deleteUser($id){
          
        $delete= $this->um->deleteUserById($id);

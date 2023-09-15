@@ -11,18 +11,18 @@ class UserManager extends AbstractManager {
         'email' => $email
     ];
     $query->execute($parameters);
-    $log = $query->fetch(PDO::FETCH_ASSOC);
-    if ($log === false) {
+    $connect = $query->fetch(PDO::FETCH_ASSOC);
+    if ($connect === false) {
         return null;
     } else {
+
         $user = new User(
-            $log["id"],
-            $log["username"],
-            $log["email"],
-            $log["password"],
-            $log["role"]
-        );
-        $user->setId($log["id"]);
+            $connect["username"],
+            $connect["email"],
+            $connect["password"],
+            $role_id=1
+       );
+        $user->setId($connect["id"]);
 
         return $user;
     }

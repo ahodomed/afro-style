@@ -31,31 +31,45 @@ class ProductController extends AbstractController {
         ]);  
     }
 
-    public function createProduct() : void
+
+
+/*
+public function create() : void
 {   
-    $produit = $this->pm->createProduct(); 
+    $product = new Product('Nom du produit', 'image.jpg', 'Description du produit', 19.99, 10); 
+
+    $produit = $this->pm->createProduct($product); 
     $categories = $this->cm->getAllCategories();
 
     $this->renderAdmin("produit/create-product", [
-        "products" => $produit, 
+        "products" => $product, 
         "categories" => $categories
     ]);
-}
+}*/
 
 
-
-
-
-
+ public function createProduct() : void
+    {   
+       $categories = $this->cm->getAllCategories();
+        $this->renderAdmin("create-product", [$categories
+            ]);
+    }
     
     public function checkCreateProduct(array $post) : void
     {   
-        // Process form data and create a new product
-        // ...
-
+       
+        $uploader = new Uploader();
+        $media = $uploader->upload($_FILES, "image");
+        $post["media"]= $media->getUrl();
+        var_dump($post);
+        $tab = [];
+        $product = new Product($this->clean($post["name"]),$this->slugify($post["name"]),$this->clean($post["description"]), intval($this->clean($post["price"])), $post["media"], $post["categories"]);
+        $newprod = $this->pm->createProduct($product);
+        
         header('Location: creer-produit');
         exit;
     }
+    
     
     public function editProduct(string $productSlug) : void
     {
