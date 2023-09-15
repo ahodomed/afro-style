@@ -1,0 +1,26 @@
+<!DOCTYPE html>  
+<html lang="fr">  
+    <head>  
+        <meta charset="utf-8">  
+               <title>Style africaine</title>  
+
+    </head>  
+    <body id="body">
+        
+        <?php
+        if(isset($_SESSION)&&isset($_SESSION["user"])&& !empty($_SESSION["user"])){
+            
+            require "connexion/header-connected.phtml";
+        }
+        else{
+            require "header/header.phtml";
+        }
+        ?>
+        
+                <?php require "{$page}.phtml"; ?>
+        <?php
+                        require "footer/footer.phtml";
+        ?>
+        
+    </body>
+</html>

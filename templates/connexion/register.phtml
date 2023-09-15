@@ -1,0 +1,32 @@
+
+<?php
+
+ if(isset($data['errors']))
+
+echo "<p class='errors-message'>". $data["errors"][0]. "</p>";
+
+?>
+ <h2 class="">Créer un compte</h2>  
+    <form method="post" action="?route=register" class="c-create" id="user-form">  
+        <fieldset id="fieldreg">  
+            <label for="username">  
+                Nom d'utilisateur  
+            </label>  
+            <input type="text" name="username" id="username" class="registre" required>
+            <label for="email">  
+                Email  
+            </label>  
+            <input type="email" name="email" id="email" class="registre" required>
+            <label for="password">  
+                Mot de passe 
+            </label>  
+            <input type="password" name="password" id="password" class="registre" required>
+            
+            <label for="confirm-password">  
+                Confirmez le mot de passe 
+            </label>  
+            <input type="password" name="confirm-password" id="confirm-password" class="registre">
+        </fieldset>  
+        <button type="submit" class="btnregister">Créer un compte</button>
+        <input type="hidden" name="form-name" id="form-name" value="registerForm" class="register">   
+    </form>

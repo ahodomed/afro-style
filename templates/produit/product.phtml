@@ -1,0 +1,17 @@
+<main id="main-article-list"> 
+    <h2 class="sr-only">Liste Des Produits</h2>
+        <?php
+        foreach($data['products'] as $product)
+        { ?>
+        <article>
+            <header>
+                <h3 class=""><?= $product->getName(); ?></h3>  
+            </header>
+            <figure>
+                <img src=""<?= $product->getMedia(); ?>" alt="l'image en présentation">
+            </figure>
+            </article>
+        </a>
+     <?php } ?>
+     
+</main>  
