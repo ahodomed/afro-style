@@ -1,6 +1,8 @@
 <?php
 
 class Router {  
+    
+    private AdminController $ac;
     private ProductController $pc;
     private CategoryController $cc;
     private AuthController $auth; 
@@ -8,9 +10,11 @@ class Router {
     private RoleController $rc;
     private MediaController $mc;
     private HomeController $hc;
+    private ProductManager $pm;
     
     public function __construct()  
     {  
+        $this->ac =new AdminController();
         $this->pc = new ProductController();
         $this->cc = new CategoryController();
         $this->auth = new AuthController(); 
@@ -18,6 +22,7 @@ class Router {
         $this->rc = new RoleController();
         $this->mc = new MediaController();
         $this->hc = new HomeController();
+        $this->pm = new ProductManager();
     }
 
     public function checkRoute()
@@ -43,6 +48,31 @@ class Router {
             elseif ($_GET['route'] === "login") {
                 $this->auth->login();
             }
+            
+            elseif ($_GET['route'] === "admin-produits") {
+                $this->pc->productsList();
+            }
+            
+            // else if (isset($_SESSION["role"]) && $_SESSION["role"] === 2)
+            // {
+                else if ($_GET['route'] === "admin-user") {
+                    $this->uc->AllUsers();
+                } else if ($_GET['route'] === 'admin-product')
+                {
+                    $this->ac->manageProduct();
+                } else if ($_GET['route'] === "create-product")
+                {
+                    $this->pc->createProduct();
+                } else if ($_GET['route'] === "edit-product" && $_GET['id'])
+                {
+                    $this->pc->editProduct($_GET['id']);
+                } else if ($_GET['route'] === "delete-product" && $_GET['id'])
+                {
+                    $this->pc->deleteProduct($_GET['id']);
+                }
+            // }
+            
+            
             
             elseif ($_GET['route'] === "apropos") {
                 $this->hc->aPropos();
@@ -94,3 +124,4 @@ class Router {
         }
     }
 }*/
+?>

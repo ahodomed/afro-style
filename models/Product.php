@@ -3,21 +3,19 @@
 class Product {
     private ?int $id;
     private string $name;
-    private string $picture;
     private string $description;
     private float $price;
-    private int $quantity;
+    private ?int $media_id;
     private ?int $category_id;
 
-    public function __construct(string $name, string $picture, string $description, float $price, int $quantity)
+    public function __construct(string $name, string $description, float $price, ?int $media_id, ?int $category_id)
     {
         $this->id = null;
         $this->name = $name;
-        $this->picture = $picture;
         $this->description = $description;
         $this->price = $price;
-        $this->quantity = $quantity;
-        $this->category_id = null;
+        $this->media_id = $media_id;
+        $this->category_id = $category_id;
     }
 
     public function getId(): ?int
@@ -38,13 +36,13 @@ class Product {
         $this->name = $name;
     }
 
-    public function getPicture(): string
+    public function getMediaId(): ? int
     {
-        return $this->picture;
+        return $this->media_id;
     }
-    public function setPicture(string $picture): void
+    public function setMediaId(string $media_id): void
     {
-        $this->picture = $picture;
+        $this->media_id = $media_id;
     }
 
     public function getDescription(): string
@@ -64,16 +62,6 @@ class Product {
     {
         $this->price = $price;
     }
-
-    public function getQuantity(): int
-    {
-        return $this->quantity;
-    }
-    public function setQuantity(int $quantity): void
-    {
-        $this->quantity = $quantity;
-    }
-
 
     public function getCategoryId(): ? int
     {

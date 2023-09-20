@@ -1,7 +1,13 @@
 <main id="connect">  
-    <h2>Connexion</h2>  
+    <h2>Connexion</h2> 
+    
+    <?php
+        if(isset($data['error']))
+
+        echo "<p class='errors-message'>". $data["error"][0]. "</p>";
+    ?>
     <form method="post" action="?route=login" class="connect">  
-        <input type="hidden" name="formName" id="formName" value="loginForm" class="connex">  
+        <input type="hidden" name="loginForm" value="login" class="loginForm">  
         <fieldset id="fieldco">  
             <label for="email-log">  
                 Email  
@@ -15,5 +21,4 @@
         <button type="submit" class="btnlog">Se Connecter
         </button>  
     </form>
-   
-    </main>
+</main>

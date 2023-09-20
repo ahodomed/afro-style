@@ -14,12 +14,10 @@ class ProductManager extends AbstractManager {
             $productsTab = [];
             foreach($products as $product)
             {
-                $productInstance = new Product($product["name"], $product["picture"], $product["description"], $product["price"], $product["quantity"]);
+                $productInstance = new Product($product["name"], $product["description"], $product["price"], $product["media_id"], $product["category_id"]);
                 $productInstance->setId($product["id"]);
-                $productInstance->setCategoryId($product["category_id"]);
                 $productTab[] = $productInstance;
-                var_dump($productTab);
-                // array_push($productsTab, $productInstance);
+                array_push($productsTab, $productInstance);
             }
             return $productTab;
         }
@@ -28,60 +26,67 @@ class ProductManager extends AbstractManager {
             return null;
         }     
     }
-
+    
+    public function getProductById($productId)
+    {
+        $query = $this->db->prepare("SELECT * FROM products WHERE id = :productId");
+        $parameters = [
+                "productId" => $productId
+            ];
+            
+        $query->execute($parameters);
+        $productData = $query->fetch(PDO::FETCH_ASSOC);
+        $product = new Product($productData['name'], $productData['description'], $productData['price'], $productData['media_id'], $productData['category_id']);
+        $product->setId($productData['id']);
+        return $product;
+    }
 
     // Create a product and send it in the database
     public function createProduct(Product $product) : Product
     {
-        $query=$this->db->prepare("INSERT INTO products (product_name, picture, description, price, quantity)
-                  VALUES (:name, :picture, :description, :price, :quantity)");
+        $query = $this->db->prepare("INSERT INTO products (name, description, price, media_id, category_id)
+                                VALUES (:name, :description, :price, :media_id, :category_id)");
+    
         $parameters = [
             'name' => $product->getName(),
-            'picture' => $product->getPicture(),
             'description' => $product->getDescription(),
             'price' => $product->getPrice(),
-            'quantity' => $product->getQuantity()
+            'media_id' => $product->getMediaId(),
+            'category_id' => $product->getCategoryId()
         ];
 
         $query->execute($parameters);
-        $id = $query->fetch(PDO::FETCH_ASSOC);
+
+        // Vous pouvez maintenant attribuer l'ID à partir de la base de données
         $product->setId($this->db->lastInsertId());
 
         return $product;
     }
 
+
+
+
+
     // If we want to edit a product
-    public function editProduct(Product $product) : void
+    public function edit(Product $product) : void
     {
-        $query=$this->db->prepare("UPDATE products SET product_name = :name, pictures = :picture, description = :description, price = :price, quantity = :quantity");
+        $query=$this->db->prepare("UPDATE products SET name = :name, description = :description, price = :price, media_id = :media_id, category_id = :category_id WHERE id = :id");
         $parameters = [
             'name' => $product->getName(),
-            'picture' => $product->getPicture(),
             'description' => $product->getDescription(),
             'price' => $product->getPrice(),
-            'quantity' => $product->getQuantity()
+            'media_id' => $product->getMediaId(),
+            'category_id' => $product->getCategoryId(),
+            'id' => $product->getId()
         ];
         $query->execute($parameters);
     }
 
-    // To find the Product by its id
-    public function getProductById(int $id) : Product
-    {
-        $query=$this->db->prepare("SELECT * FROM products WHERE products.id = :id");
-        $parameters=['id' => $id];
-        $query->execute($parameters);
-        $product = $query->fetch(PDO::FETCH_ASSOC);
-
-        $newProd = new Product($product['product_name'], $product['pictures'], $product['description'], $product['price'], $product['quantity']);
-
-        return $newProd;
-    }
-
     // To delete a Product
-    public function deleteProduct(int $id) : void
+    public function delete(int $productId) : void
     {
-        $query=$this->db->prepare("DELETE FROM products WHERE products.id = :id");
-        $parameters=['id' => $id];
+        $query= $this->db->prepare("DELETE FROM products WHERE id = :id");
+        $parameters=['id' => $productId];
         $query->execute($parameters);
     }
 

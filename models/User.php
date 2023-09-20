@@ -72,7 +72,7 @@ class User {
 
  //Les accesseurs de l'attribut role_id
 
-     public function getRole(): ?int
+    public function getRole(): ?int
     {
         return $this->role_id;
     }

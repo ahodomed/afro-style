@@ -18,10 +18,10 @@ class UserController extends AbstractController{
     
     
             /* Pour la route /produits */  
-   public function renderAllUsers(){
+   public function AllUsers(){
          
        $users = $this->um->getAllUsers();
-         $this->renderAdmin("templates/damin/admin-utilisateurs", [  
+         $this->renderAdmin("templates/admin/admin-user", [  
             "users" => $users 
         ]);  
    }
@@ -34,7 +34,7 @@ class UserController extends AbstractController{
        $delete= $this->um->deleteUserById($id);
        
        
-          header('Location: /afro-expo/templates/admin/admin-utilisateurs'); 
+          header('Location: /afrostyle/templates/admin/admin-user'); 
    }
     
 }

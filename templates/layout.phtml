@@ -2,6 +2,8 @@
 <html lang="fr">  
     <head>  
         <meta charset="utf-8">  
+        <link rel="stylesheet" href="./assets/styles/css/style.css" />
+
                <title>Style africaine</title>  
 
     </head>  
@@ -15,12 +17,13 @@
         else{
             require "header/header.phtml";
         }
+        
         ?>
         
-                <?php require "{$page}.phtml"; ?>
-        <?php
-                        require "footer/footer.phtml";
-        ?>
-        
+                <?php require "{$page}.phtml";
+                 require "footer/footer.phtml";
+
+                ?>
+       
     </body>
 </html>

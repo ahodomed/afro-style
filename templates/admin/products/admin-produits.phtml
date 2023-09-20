@@ -1,0 +1,35 @@
+<h3>Gestion des Produits</h3>
+    <?php if(isset($_SESSION["message"])) {
+            echo "<p class='admin-message'>" .$_SESSION["message"]. "</p>";
+            unset ($_SESSION["message"]);
+            }?>
+<table>
+        <thead>
+            <tr>
+               <th>Id</th>
+               <th>Nom </th>
+               <th>Description</th>
+               <th>Prix</th>
+               <th>Media</th>
+               <th>Category</th>
+            </tr>
+        </thead>
+        <tbody> 
+            <?php  foreach($data["products"] as $key => $product) : ?>
+              
+                <tr>
+                    <td><?= $product->getId(); ?></td>
+                    <td><?= $product->getName(); ?></td> 
+                    <td><?= $product->getDescription(); ?></td> 
+                    <td><?= $product->getPrice(); ?></td> 
+                    <td><?= $data["medias"][$key]["name"] ?></td>
+                    <td><?= $data["categoriesNames"][$key]["name"]?></td>
+                    <td> <a href=' /afrostyle/index.php?route=edit-product&id=<?= $product->getId() ?>'>Modifier</a></td>
+                    <td> <a href=' /afrostyle/index.php?route=delete-product&id=<?= $product->getId() ?>'>Supprimer</a></td>
+                </tr>
+            <?php endforeach;?>
+        </tbody>
+</table>
+<div>
+    <a href="index.php?route=create-product">Ajouter un produit</a>
+</div>

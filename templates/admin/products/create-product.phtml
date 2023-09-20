@@ -1,0 +1,31 @@
+<section>
+    <h2>Ajouter un Produit</h2>
+    <form action="?route=create-product" method="post">
+        <label for="name">Nom du produit :</label>
+        <input type="text" name="name" id="name" required>
+        
+        <label for="description">Description :</label>
+        <textarea name="description" id="description"></textarea>
+        
+        <label for="price">Prix :</label>
+        <input type="text" name="price" id="price" required>
+        
+        <label for="product-category">Choississez la categorie :</label>
+        <select name="product-category">
+            <option value="1">Accessoire</option>
+            <option value="2">Vêtement</option>
+            <option value="3">category3</option>
+        </select>
+        
+        <h3> Ajouter un média</h3>
+
+        <label for="media-name">Name :</label>
+        <input type="text" name="media-name"/>
+        <label for="media-url">Url :</label>
+        <input type="text" name="media-url">
+        <input type="hidden" name="createProduct" value="submit">
+        <fieldset>
+            <button type="submit">Créer l'article</button>
+        </fieldset>
+    </form>
+</section>

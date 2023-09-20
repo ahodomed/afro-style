@@ -4,7 +4,6 @@
         <meta charset="utf-8" />  
         <meta name="viewport" content="width=device-width, initial-scale=1" />  
         <title>Afrostyle</title>  
-        <meta name="keywords" content="Ordinateur, tech, commerce, gaming, site-web">
         <meta name="description" content="Site e-commerce tech">
         <meta name="og:title" content="E-Tech-Max">
         <meta property="og:image" content="https://ih1.redbubble.net/image.1424702995.4421/fposter,small,wall_texture,product,750x1000.jpg">
@@ -14,18 +13,18 @@
         <link rel="stylesheet" href="assets/styles/css/style.css">
         <script type="module" src="assets/styles/js/index.js"></script>
     </head>  
-    <body id="body-yep"> 
+    <body id="body"> 
         <header>
         <nav>
               <ul>
-                <li><a href="admin-utilisateurs">Utilisateurs</a></li>
-                <li><a href="admin-produits">Produits</a></li>
-                <li><a href="admin-categories">Categories</a></li>
+                <li><a href="index.php?route=admin-user">Utilisateurs</a></li>
+                <li><a href="index.php?route=admin-produits">Produits</a></li>
+                <li><a href="index.php?route=admin-categories">Categories</a></li>
                 <li><a href="">Retour au site</a></li>
               </ul>
             </nav>
         </header>
-        <?php require "templates/admin/{$page}.phtml"; ?>  
+        <?php require "{$page}.phtml"; ?>  
         <footer id="">  
             <ul>
               <li><a href="mentions-legales.html">Mentions légales</a></li>

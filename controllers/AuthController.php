@@ -80,27 +80,21 @@ class AuthController extends AbstractController {
     
     
     } 
-    /* Pour la connexion */  
-    public function login():void
-    {
-        $this->render("connexion/login", []); // redirection sur la page avec le formulaire de connexion  
-
-    }
-    public function checkLogin(): void
+    public function login(): void
     {
     $error = [];
 
-        if (isset($_POST["formName"])) 
-        {
+    if (isset($_POST["loginForm"]) && $_POST["loginForm"] === "login") 
+    {
             $email = $this->clean($_POST['email']); // Récupérer les contenus des champs du formulaire
             $password = $this->clean($_POST['password']);
-
-        if (empty($_POST["email"])) 
+        
+        if (empty($email)) 
         {
             $error[] = "Veuillez saisir votre adresse mail";
         }
 
-        if (empty($_POST["password"])) 
+        if (empty($password))
         {
             $error[] = "Veuillez saisir votre mot de passe";
         }
@@ -115,24 +109,23 @@ class AuthController extends AbstractController {
                 {
                     $_SESSION["user"] = $user->getUsername();
                     $_SESSION["role"] = $user->getRole();
-
-                    if ($_SESSION["role"] === "admin")
+                    // 2 = Admin // 1 = User
+                    if ($_SESSION["role"] === "2")
                     {
-                        $this->render("admin/admin-user", [ "errors" => $error]);
+                        $this->render("admin/admin-user", [ "error" => $error]);
 
-                    } else 
-                        {
-                        $this->render("index",["errors"=>$error]); // Rediriger l'utilisateur vers la page d'accueil après la connexion réussie
-                        }
-                } /*else {
+                    } else {
+                        $this->render("homepage",["message" => ['Vous êtes bien connecté !']]); // Rediriger l'utilisateur vers la page d'accueil après la connexion réussie
+                    }
+                } else {
                     $error[] = "Mot de passe incorrect";
-                }*/
+                }
             }
         }
+    } else {
+        $this->render("connexion/login", []);
     }
-
-
-}
+    }
 
 
     

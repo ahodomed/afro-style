@@ -69,8 +69,8 @@ public function createUser(User $user) : User
  
         foreach($users as $user){
 
-            $new = new User(null, $user["username"], $user["email"], $user["password"], $user["role"]);
-        $new->setId($user["id"]);
+            $new = new User($user["username"], $user["email"], $user["password"], $user["role"]);
+            $new->setId($user["id"]);
 
         array_push($tab, $new);
 

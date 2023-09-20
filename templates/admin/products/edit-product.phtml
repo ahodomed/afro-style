@@ -1,0 +1,65 @@
+<section> 
+    <h3>Modifier un produit</h3>
+    <?php $product = $data['product']; 
+        $medias = $data['medias'];
+        
+    ?>
+    <?= var_dump($product);?>
+    <p class="message">
+        <?php
+            if(isset($_SESSION['message'])) {
+                echo $_SESSION['message'];
+                unset($_SESSION['message']); 
+            }
+        ?>
+    </p>
+    <form action="?route=edit-product&id=<?= $_GET['id'] ?>" method="post">
+        <fieldset>
+            <label for="product-name"> Nom du produit</label>
+            <input type="text" name="product-name" id="product-name" value="<?= $product->getName() ?>"/>
+        </fieldset>
+        <fieldset>
+            <label for="product-description"> Description </label>
+            <textarea name="product-description" id="product-description"><?= $product->getDescription() ?></textarea>
+        </fieldset>
+        <fieldset>
+            <label for="product-price"> Prix </label>
+            <input type="number" name="product-price" id="product-price" value="<?= $product->getPrice() ?>"/>
+        </fieldset>
+        <fieldset>
+            <label for="product-categoryId"> Choisir la catégorie </label>
+            <select name="product-categoryId" id="product-categoryId">
+                <?php foreach($data['categories'] as $category) : ?>
+                <option value="<?=$category->getId()?>"> <?= $category->getName(); ?> </option>
+                <?php endforeach; ?>
+            </select>
+        </fieldset>
+
+        <h3>Modifier Media</h3>
+        <?php if (!empty($medias)) : ?>
+        <fieldset>
+            <label for="media_url"> Url : </label>
+            <input type="text" name="media_url" id="media_url" value="<?= $medias->getUrl() ?>">
+        </fieldset>
+        <fieldset>
+            <label for="media_name">Nom du Média : </label>
+            <input type="text" name="media_name" id="media_name" placeholder="Texte alternatif" value="<?= $medias->getUrl() ?>"/>
+            <input type="hidden" name="productMediaId" value="<?= $medias->getId() ?>">
+        </fieldset>
+        <?php else : ?>
+        <fieldset>
+            <label for="media_url"> Url : </label>
+            <input type="text" name="media_url" >
+        </fieldset>
+        <fieldset>
+            <label for="media_name">Nom du média : </label>
+            <input type="text" name="media_name" id="media_name" placeholder="Texte alternatif"/>
+            <input type="hidden" name="productMediaId" value="">
+        </fieldset>
+        <?php endif ; ?>
+        <fieldset>
+            <button type="submit"> Modifier le produit </button>
+        </fieldset>
+         <input type="hidden" name="editProduct" value="submit"/>
+    </form>
+</main>

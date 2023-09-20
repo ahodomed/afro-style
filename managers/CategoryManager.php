@@ -20,6 +20,18 @@ class CategoryManager extends AbstractManager {
         return $list;  
     }  
     
+    public function getCategoryProductName($categoryId)
+    {
+        $query = $this->db->prepare('SELECT name FROM categories WHERE id = :categoryId');
+        $parameters = [
+                'categoryId' => $categoryId
+            ];
+        $query->execute($parameters);
+        $categoryName = $query->fetch(PDO::FETCH_ASSOC);
+        
+        return $categoryName;
+    }
+    
     public function createCategory(Category $category): Category
     {
         $query = $this->db->prepare('INSERT INTO categories VALUES (null, :name, :description)');

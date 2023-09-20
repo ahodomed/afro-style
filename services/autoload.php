@@ -24,6 +24,7 @@ require './controllers/AuthController.php';
 require './controllers/MediaControlles.php';
 require './controllers/RoleController.php';
 require './controllers/HomeController.php';
+require './controllers/AdminController.php';
 
 
 
