@@ -1,0 +1,33 @@
+<h3>Gestion des utilisateurs</h3>
+
+<?php if(isset($_SESSION["message"])) {
+    echo "<p class='admin-message'>" . $_SESSION["message"] . "</p>";
+    unset($_SESSION["message"]);
+} ?>
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th> <!-- Ajoutez l'en-tête ID -->
+            <th>Nom</th>
+            <th>Email</th>
+            <th>Actions</th> <!-- Ajoutez l'en-tête Actions -->
+        </tr>
+    </thead>
+    <tbody>
+        <?php foreach ($data["users"] as $key => $user) : ?>
+           <tr>
+                <td><?= $user->getId(); ?></td>
+                <td><?= $user->getUsername(); ?></td>
+                <td><?= $user->getEmail(); ?></td>
+                <td>
+                    <a href='/afrostyle/index.php?route=edit-user&id=<?= $user->getId() ?>'>Modifier</a>
+                    <a href='/afrostyle/index.php?route=delete-user&id=<?= $user->getId() ?>'>Supprimer</a>
+                </td>
+            </tr>
+        <?php endforeach; ?>
+    </tbody>
+</table>
+<div>
+    <a href="index.php?route=create-user">Ajouter un utilisateur</a>
+</div>

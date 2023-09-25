@@ -18,9 +18,9 @@
                            <td><?php echo $category->getName() ?></td> 
                            <td><?php echo $category->getSlug() ?></td> 
                            <td><?php echo $category->getDescription() ?></td> 
-                           <td> <a href='/Res03ProjetFinalV2/admin-categories'><?php echo $category->getSlug(); ?></a></td>
-                          <td> <a href='/Res03ProjetFinalV2/modifier-categorie/<?php  echo $category->getSlug(); ?>'>Modifier</a></td>
-                          <td> <a href='/Res03ProjetFinalV2/supprimer-categorie/<?php echo $category->getSlug(); ?>'>Supprimer</a></td>
+                           <td> <a href='/admin-categories'><?php echo $category->getSlug(); ?></a></td>
+                          <td> <a href='/modifier-categorie/<?php  echo $category->getSlug(); ?>'>Modifier</a></td>
+                          <td> <a href='/supprimer-categorie/<?php echo $category->getSlug(); ?>'>Supprimer</a></td>
                      </tr>
 
             <?php    } ?>

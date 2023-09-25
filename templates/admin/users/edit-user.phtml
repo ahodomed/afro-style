@@ -1,0 +1,36 @@
+<?php
+
+ if(isset($data['errors']))
+
+echo "<p class='errors-message'>". $data["errors"][0]. "</p>";
+
+?>
+ <h2 class="">Mis à jour d'un utilisateur</h2>  
+ 
+    <h2 class="">Mis à jour d'un utilisateur</h2>
+<form method="post" action="?route=edit-user&id=<?= $user->getId() ?>" class="modif" id="user-form">
+    <fieldset id="fieldreg">
+        <label for="username">
+            Nom d'utilisateur
+        </label>
+        <input type="text" name="username" id="username" class="utilisateur" value="<?= $user->getUsername() ?>" required>
+        <label for="email">
+            Email
+        </label>
+        <input type="email" name="email" id="email" class="registre" value="<?= $user->getEmail() ?>" required>
+        <label for="password">
+            Mot de passe
+        </label>
+        <input type="password" name="password" id="password" class="registre">
+        
+        <label for="confirm-password">
+            Confirmez le mot de passe
+        </label>
+        <input type="password" name="confirm-password" id="confirm-password" class="registre">
+    </fieldset>
+    <input type="hidden" name="editUser" value="submit" />
+    <input type="hidden" name="form-name" id="form-name" value="editUserForm" class="modif">
+    <input type="hidden" name="user_id" value="<?= $user->getId() ?>" />
+
+    <button type="submit">Mettre à jour l'utilisateur</button>
+</form>

@@ -13,21 +13,29 @@ class ProductController extends AbstractController {
         $this->mm = new MediaManager();
     }
     
+    
+    
+    
+    
     public function productsList() : void  
     {  
         $products = $this->pm->getAllProducts();  
       
-        $this->renderAdmin("admin/admin-produits", [  
+        $this->render("produit/products", [  
             "products" => $products  
         ]);  
     }
+    
+    
+    
+    
     
     public function productDetails(int $productId) : void  
     {  
         $product = $this->pm->getProductById($productId); 
         $categories = $this->cm->getCategoriesByProduct($productId);
 
-        $this->render("product", [
+        $this->render("produit/product", [
             "product" => $product, 
             "categories" => $categories
         ]);  
@@ -35,19 +43,7 @@ class ProductController extends AbstractController {
 
 
 
-/*
-public function create() : void
-{   
-    $product = new Product('Nom du produit', 'image.jpg', 'Description du produit', 19.99, 10); 
 
-    $produit = $this->pm->createProduct($product); 
-    $categories = $this->cm->getAllCategories();
-
-    $this->renderAdmin("produit/create-product", [
-        "products" => $product, 
-        "categories" => $categories
-    ]);
-}*/
 
 
     public function createProduct() : void
@@ -75,6 +71,11 @@ public function create() : void
         $categories = $this->cm->getAllCategories();
         $this->render("admin/products/create-product", []);
     }
+    
+    
+    
+    
+    
 
 public function checkCreateProduct(array $post) : void
 {
@@ -92,6 +93,10 @@ public function checkCreateProduct(array $post) : void
     }
 }
 
+
+
+
+/*
 private function uploadFile(array $file) : Media
 {
     $uploader = new Uploader();
@@ -108,7 +113,11 @@ private function createProductObject(array $post) : Product
         $post["categories"]
     );
 }
-
+*/
+    
+    
+    
+    
     
     public function editProduct($productId) : void
     {
@@ -161,6 +170,9 @@ private function createProductObject(array $post) : Product
     }
     
     
+    
+    
+    
     public function deleteProduct() : void
     {
         if(isset($_GET['id']))
@@ -173,12 +185,10 @@ private function createProductObject(array $post) : Product
         }
     }
     
-    public function productsListAdmin() : void  
-    {  
-        $products = $this->pm->getAllProducts();
-      
-        $this->renderAdmin("admin-produits", [  
-            "products" => $products  
-        ]);  
-    }
+    
+    
+    
+    
+    
+
 }

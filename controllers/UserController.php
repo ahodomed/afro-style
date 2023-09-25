@@ -17,7 +17,6 @@ class UserController extends AbstractController{
     
     
     
-            /* Pour la route /produits */  
    public function AllUsers(){
          
        $users = $this->um->getAllUsers();
@@ -26,7 +25,28 @@ class UserController extends AbstractController{
         ]);  
    }
    
-   
+
+    
+    public function editUser($userId) {
+    if (isset($_POST["editUser"])) {
+        $username = $this->clean($_POST["username"]);
+        $email = $this->clean($_POST["email"]);
+        $password = $_POST["password"];
+        $confirmPassword = $_POST["confirm-password"];
+        $userId = $_POST["user_id"]; // Utilisez le champ user_id pour identifier l'utilisateur à mettre à jour
+
+        // ... Rest of your validation and user update logic ...
+
+        // Redirect to the manage user
+        $_SESSION['message'] = "L'utilisateur a bien été modifié";
+        header("Location: /admin/users/admin-user");
+    } else {
+        $user = $this->um->getUserById($userId);
+        $this->render("admin/users/edit-user", ["user" => $user]);
+    }
+}
+
+
    
    
    public function deleteUser($id){
@@ -34,7 +54,7 @@ class UserController extends AbstractController{
        $delete= $this->um->deleteUserById($id);
        
        
-          header('Location: /afrostyle/templates/admin/admin-user'); 
+            header("location: /afrostyle/index.php?route=admin-user");
    }
     
 }

@@ -1,4 +1,4 @@
-<main id="main-article-list"> 
+<main id="detail"> 
     <h2 class="sr-only">Liste Des Produits</h2>
         <?php
         foreach($data['products'] as $product)
@@ -8,10 +8,10 @@
                 <h3 class=""><?= $product->getName(); ?></h3>  
             </header>
             <figure>
-                <img src=""<?= $product->getMedia(); ?>" alt="l'image en présentation">
+                <img src=""<?= $product->getMediaId(); ?> alt="l'image en présentation">
             </figure>
-            </article>
-        </a>
+         </article>
+        
      <?php } ?>
      
 </main>  

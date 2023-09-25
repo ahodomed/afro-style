@@ -1,15 +1,15 @@
-<main id="main-article-list"> 
+<main id="article-list"> 
     <h2 class="sr-only">Liste Des Produits</h2>
         <?php
         foreach($data['products'] as $product)
         { ?>
-        <a href="/Res03ProjetFinalV2/produits/<?= $product->getSlug(); ?>" >
+        <a href=" ?route=productId <?= $product->getName(); ?>" >
         <article>
             <header>
                 <h3 class=""><?= $product->getName(); ?></h3>  
             </header>
             <figure>
-                <img src="/Res03ProjetFinalV2/<?= $product->getMedia(); ?>" alt="photo de l'image en présentation">
+                <img src="afrostyle/templates/produits/<?= $product->getMediaId(); ?>" alt="photo de l'image en présentation">
             </figure>
             </article>
         </a>

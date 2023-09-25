@@ -54,29 +54,59 @@ public function createUser(User $user) : User
 }
 
 
-
-
-    public function getAllUsers():array{
-
-          $query = $this->db->prepare('SELECT * FROM users');
+    
+    public function getUserById($userId)
+{
+    $query = $this->db->prepare("SELECT * FROM users WHERE id = :userId");
     $parameters = [
-
+        "userId" => $userId
     ];
+    
+    $query->execute($parameters);
+    $Data = $query->fetch(PDO::FETCH_ASSOC);
+    $user = new User($Data['username'], $Data['email'],  $Data['password'],  $Data['role']);
+    $user->setId($Data['id']);
+    return $user;
+}
+
+    
+   public function edit(User $user) : void
+{
+    $query = $this->db->prepare("UPDATE users SET name = :name, email = :email, password = :password, role = :role WHERE users.id = :id");
+    $parameters = [
+        "id" => $user->getId(),
+        "username" => $user->getUsername(),
+        "email" => $user->getEmail(),
+        "password" => $user->getPassword(),
+        "role" => $user->getRoleId(),
+    ];
+    $query->execute($parameters);
+}
+
+   
+
+ public function getAllUsers(): array
+    {
+        $query = $this->db->prepare("SELECT * FROM users");
+        $parameters = [];
         $query->execute($parameters);
         $users = $query->fetchAll(PDO::FETCH_ASSOC);
-        // var_dump($users);
-         $tab= [];
- 
-        foreach($users as $user){
 
-            $new = new User($user["username"], $user["email"], $user["password"], $user["role"]);
+        $tab = [];
+        foreach ($users as $user) {
+            $new = new User(
+                $user["username"],
+                $user["email"],
+                $user["password"],
+                $user["role"]
+            );
             $new->setId($user["id"]);
 
-        array_push($tab, $new);
-
+            array_push($tab, $new);
         }
         return $tab;
     }
+
     
     
     

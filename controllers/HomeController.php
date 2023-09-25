@@ -12,7 +12,7 @@
  public function index()
     {
         
-        $this->render('templates/index', []);
+        $this->render('templates/homepage', []);
 
 
     }
