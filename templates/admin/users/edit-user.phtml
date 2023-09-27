@@ -1,36 +1,46 @@
-<?php
-
- if(isset($data['errors']))
-
-echo "<p class='errors-message'>". $data["errors"][0]. "</p>";
-
-?>
- <h2 class="">Mis à jour d'un utilisateur</h2>  
- 
-    <h2 class="">Mis à jour d'un utilisateur</h2>
-<form method="post" action="?route=edit-user&id=<?= $user->getId() ?>" class="modif" id="user-form">
-    <fieldset id="fieldreg">
-        <label for="username">
-            Nom d'utilisateur
-        </label>
-        <input type="text" name="username" id="username" class="utilisateur" value="<?= $user->getUsername() ?>" required>
-        <label for="email">
-            Email
-        </label>
-        <input type="email" name="email" id="email" class="registre" value="<?= $user->getEmail() ?>" required>
-        <label for="password">
-            Mot de passe
-        </label>
-        <input type="password" name="password" id="password" class="registre">
-        
-        <label for="confirm-password">
-            Confirmez le mot de passe
-        </label>
-        <input type="password" name="confirm-password" id="confirm-password" class="registre">
-    </fieldset>
-    <input type="hidden" name="editUser" value="submit" />
-    <input type="hidden" name="form-name" id="form-name" value="editUserForm" class="modif">
-    <input type="hidden" name="user_id" value="<?= $user->getId() ?>" />
-
-    <button type="submit">Mettre à jour l'utilisateur</button>
-</form>
+<main id="edit-user" class="admin-form"> 
+    <h3>Modifier un utilisateur</h3>
+    <p class="form-errors">
+    <?php
+        if(isset($data['errors']))
+            echo $data["errors"][0];
+    ?>
+    </p>
+    <?php $user = $data['user'];?>
+    <form action="?route=edit-user&id=<?= $_GET['id'] ?>" method="post">
+        <fieldset>
+            <label for="edit-username"> Nom d'utilisateur </label>
+            <input type="text" name="edit-username" id="edit-username" value="<?= $user->getUsername() ?>"/>
+        </fieldset>
+        <fieldset>
+            <label for="edit-email"> Email </label>
+            <input type="email" name="edit-email" id="edit-email" value="<?= $user->getEmail() ?>"/>
+        </fieldset>
+        <fieldset>
+            <label for="edit-password"> Mot de passe </label>
+            <input type="password" name="edit-password" id="edit-password" />
+        </fieldset>
+        <fieldset>
+            <label for="edit-confirm-password"> Confirmer le mot de passe </label>
+            <input type="password" name="edit-confirm-password" id="edit-confirm-password"/>
+        </fieldset>
+        <fieldset>
+            <label for="edit-roleId"> Modifier le rôle </label>
+            <?php if($user->getRole() == "1") : ?>
+                <select name="edit-roleId" id="edit-roleId">
+                    <option value="1">User</option>
+                    <option value="2">Admin</option>
+                </select>
+            <?php else : ?>
+                <select name="edit-roleId" id="edit-roleId">
+                    <option value="2">Admin</option>
+                    <option value="1">User</option>
+                </select>
+            <?php endif; ?>
+        </fieldset>
+        <fieldset>
+            <button type="submit"> Modifier le compte </button>
+        </fieldset>
+         <input type="hidden" name="edit-form" value="edit"/>
+    </form>
+</main>

@@ -1,0 +1,38 @@
+
+// _header.scss
+
+/* Styles pour l'en-tête */
+.header {
+    background-color: $firstcol; /* Utilisation de la variable de couleur de fond */
+    color: #fff; /* Couleur du texte en blanc */
+    padding: 20px; /* Espacement intérieur de l'en-tête */
+
+    /* Styles pour le titre */
+    h1 {
+        font-size: 36px; /* Taille de la police du titre */
+        margin: 0; /* Supprime les marges par défaut */
+    }
+
+    /* Styles pour la navigation */
+    nav {
+        ul {
+            list-style: none; /* Supprime les puces de la liste */
+            padding: 0; /* Supprime le remplissage de la liste */
+            display: flex; /* Utilise un affichage en ligne pour les éléments de liste */
+            
+            li {
+                margin-right: 20px; /* Marge à droite entre les éléments de la liste */
+                
+                &:last-child {
+                    margin-right: 0; /* Supprime la marge à droite du dernier élément de la liste */
+                }
+
+                a {
+                    text-decoration: none; /* Supprime la décoration du texte des liens */
+                    color: #fff; /* Couleur du texte en blanc */
+                    font-weight: bold; /* Texte en gras pour les liens */
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,25 @@
+<main class="main-detail-product">
+    <?php if(isset($_SESSION["message"])) {
+    echo "<p class='message'>" . $_SESSION["message"] . "</p>";
+    unset($_SESSION["message"]);
+    } ?>
+    <?php
+        $category = $data['category'] ;
+        $products = $data['productsWithMedias'];
+    ?>
+    <h2>Produits de la catégorie <?= $category->getName() ?></h2>
+    
+    <ul>
+        <?php foreach ($products as $key => $product) : ?>
+            <li>
+                <?php foreach($product->getMedia() as $media): ?>
+                <img src="<?= $media->getUrl()?>" alt="<?= $media->getName()?>"></img>
+                <?php endforeach; ?>
+                <h2><?= $product->getName() ?></h2>
+                <p>Description : <?= $product->getDescription() ?></p>
+                <p>Prix : <?= $product->getPrice() ?></p>
+                <!-- Autres détails du produit ici -->
+            </li>
+        <?php endforeach; ?>
+    </ul>
+</main>

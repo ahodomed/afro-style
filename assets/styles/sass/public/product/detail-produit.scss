@@ -1,0 +1,42 @@
+.main-detail-product {
+  padding: 20px;
+
+  h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  li {
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    img {
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-size: 20px;
+      margin-bottom: 5px;
+    }
+
+    p {
+      font-size: 16px;
+      margin: 0;
+    }
+
+    // Ajoutez d'autres styles au besoin
+  }
+
+  // Ajoutez d'autres styles au besoin
+}

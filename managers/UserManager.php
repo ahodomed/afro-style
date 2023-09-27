@@ -20,7 +20,7 @@ class UserManager extends AbstractManager {
             $connect["username"],
             $connect["email"],
             $connect["password"],
-            $role_id=1
+            $connect["role"]
        );
         $user->setId($connect["id"]);
 
@@ -72,13 +72,13 @@ public function createUser(User $user) : User
     
    public function edit(User $user) : void
 {
-    $query = $this->db->prepare("UPDATE users SET name = :name, email = :email, password = :password, role = :role WHERE users.id = :id");
+    $query = $this->db->prepare("UPDATE users SET username = :username, email = :email, password = :password, role = :role WHERE users.id = :id");
     $parameters = [
         "id" => $user->getId(),
         "username" => $user->getUsername(),
         "email" => $user->getEmail(),
         "password" => $user->getPassword(),
-        "role" => $user->getRoleId(),
+        "role" => $user->getRole(),
     ];
     $query->execute($parameters);
 }
@@ -105,18 +105,12 @@ public function createUser(User $user) : User
             array_push($tab, $new);
         }
         return $tab;
+        var_dump($tab);
     }
-
-    
-    
-    
-
-
-    
     
     public function deleteUserById(string $id): void{
 
-         $query= $this->db->prepare("DELETE FROM users WHERE id=:value");
+        $query= $this->db->prepare("DELETE FROM users WHERE id=:value");
         $parameters = [
         'value' => $id,
         ];

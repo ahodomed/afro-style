@@ -28,8 +28,17 @@ class Router {
     public function checkRoute()
     {
         if (isset($_GET['route']))
-        {
-            if ($_GET['route'] === "boutique") 
+        {   
+            if ($_GET['route'] === "home") {
+                 $this->hc->index();
+            }
+            elseif ($_GET['route'] === "apropos") {
+                $this->hc->aPropos();
+            }
+            elseif ($_GET['route'] === "detail-category" && $_GET['id']) {
+                $this->pc->listProductsByCategory($_GET['id']);
+            }
+            elseif ($_GET['route'] === "boutique") 
             {
                  $this->pc->productsList();
             }
@@ -37,10 +46,9 @@ class Router {
             {
                 $this->pc->createProduct();
             }            
-             elseif ($_GET['route'] === "détail-product")
+             elseif ($_GET['route'] === "detail-product" && $_GET['id'])
             {
-                $productId = $_GET['productId']; 
-                $this->pc->productDetails($productId);
+                $this->pc->productDetails($_GET['id']);
             }
             
             elseif ($_GET['route'] === "register")
@@ -52,17 +60,24 @@ class Router {
             {
                 $this->auth->login();
             }
-            
-            elseif ($_GET['route'] === "admin-produits")
+            elseif ($_GET['route'] === "deconnexion")
             {
-                $this->pc->productsList();
+                $this->auth->deconnexion();
             }
             
-            // else if (isset($_SESSION["role"]) && $_SESSION["role"] === 2)
-            // {
-                else if ($_GET['route'] === "admin-user")
+            else if (isset($_SESSION["role"]) && $_SESSION["role"] === 2)
+            {
+                if ($_GET['route'] === "admin-user")
                 {
                     $this->ac->manageUser();
+                }
+                else if ($_GET['route'] === "edit-user" && $_GET["id"])
+                {
+                    $this->ac->editUser($_GET["id"]);
+                }
+                else if($_GET['route'] === "delete-user" && $_GET["id"])
+                {
+                    $this->ac->deleteUser($_GET["id"]);
                 }
                 else if ($_GET['route'] === 'admin-product')
                 {
@@ -76,30 +91,18 @@ class Router {
                 {
                     $this->pc->editProduct($_GET['id']);
                 }
-                
                 else if ($_GET['route'] === "delete-product" && $_GET['id'])
                 {
                     $this->pc->deleteProduct($_GET['id']);
-                }
+                } 
                 
-            
-                  else if ($_GET['route'] === 'admin-user')
-                {
-                    $this->ac->manageuser();
-                }
-                
-                else if ($_GET['route'] === "edit-user" && $_GET['id'])
-                {
-                    $this->uc->editUser($_GET['id']); 
-                }
-            // }
-            
-            
-            
-            elseif ($_GET['route'] === "apropos") {
-                $this->hc->aPropos();
+            }
+            elseif ($_GET['route'] === "contact") {
+                $this->hc->contact();
             }
             
+            
+         
             elseif ($_GET['route'] === "category") {
                 $this->cc->categoriesList();
             }

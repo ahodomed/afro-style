@@ -9,15 +9,7 @@ abstract class AbstractController
   
         require "templates/layout.phtml";  
     } 
-    
-    
-    protected function renderAdmin(string $template, array $values)  
-    {  
-        $data = $values;  
-        $page = $template;  
-  
-        require "templates/admin/admin-layout.phtml";  
-     }
+
     protected function clean(string $unsafe) : string
     {
           $safe = htmlspecialchars($unsafe);
@@ -30,7 +22,7 @@ abstract class AbstractController
     }
     
     
-    protected function slugify($text, string $divider = '-')
+   /* protected function slugify($text, string $divider = '-')
     {
       // replace non letter or digits by divider
       $text = preg_replace('~[^\pL\d]+~u', $divider, $text);
@@ -55,5 +47,5 @@ abstract class AbstractController
       }
     
       return $text;
-    }
+    }*/
 }

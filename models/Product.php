@@ -7,6 +7,7 @@ class Product {
     private float $price;
     private ?int $media_id;
     private ?int $category_id;
+    private array $media = [];
 
     public function __construct(string $name, string $description, float $price, ?int $media_id, ?int $category_id)
     {
@@ -70,6 +71,14 @@ class Product {
     public function setCategoryId(int $category_id): void
     {
         $this->category_id = $category_id;
+    }
+    public function getMedia(): array
+    {
+        return $this->media;
+    }
+    public function setMedia(array $media): void
+    {
+        $this->media = $media;
     }
 }
 

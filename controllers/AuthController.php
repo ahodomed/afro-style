@@ -61,7 +61,7 @@ class AuthController extends AbstractController {
             
             $this->um->createUser($user);
             
-                        var_dump($user);
+                        // var_dump($user);
 
                 $this->render("connexion/login", [
 
@@ -102,7 +102,7 @@ class AuthController extends AbstractController {
         if (empty($error)) 
         {
             $user = $this->um->getUserByEmail($email);
-
+            // var_dump($user);
             if ($user)
             {
                 if (password_verify($password, $user->getPassword()))
@@ -110,9 +110,9 @@ class AuthController extends AbstractController {
                     $_SESSION["user"] = $user->getUsername();
                     $_SESSION["role"] = $user->getRole();
                     // 2 = Admin // 1 = User
-                    if ($_SESSION["role"] === "2")
+                    if ($_SESSION["role"] === 2)
                     {
-                        $this->render("admin/admin-user", [ "error" => $error]);
+                        header("location: ?route=admin-user");
 
                     } else {
                         $this->render("homepage",["message" => ['Vous êtes bien connecté !']]); // Rediriger l'utilisateur vers la page d'accueil après la connexion réussie
@@ -129,12 +129,10 @@ class AuthController extends AbstractController {
 
 
     
-    public function logout(){
-
+    public function deconnexion()
+    {
         session_destroy();
-
-
-           header('Location:index.php?route=');
+        header('Location:index.php?route=home');
     }
 }
 

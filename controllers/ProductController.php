@@ -13,31 +13,84 @@ class ProductController extends AbstractController {
         $this->mm = new MediaManager();
     }
     
+    public function listProductsByCategory($categoryId)
+    {
+        // Récupérer la catégorie par son ID
+        $category = $this->cm->getCategoryById($categoryId);
+
+        if (!$category) {
+                $SESSION['message'] = "Aucune catégory n'est associé à ce produit en base de données.";
+                header("location:  /afrostyle/index.php?route=home");
+                return;
+            return;
+        }
+
+        // Récupérer les produits de la catégorie
+        $products = $this->cm->getProductsByCategory($categoryId);
+        foreach($products as $product) {
+            
+            $productWithMedia = $this->getProductWithMedia($product->getId());
+            if($productWithMedia === null)
+            {
+                $SESSION['message'] = "Aucun média n'est associé à ce produit en base de données.";
+                header("location:  /afrostyle/index.php?route=boutique");
+                return;
+            } else {
+                $productsWithMedias[] =$productWithMedia;
+            }
+        }
+        // Afficher la liste des produits dans une vue (template)
+        $this->render('produit/manage_product', [
+            'category' => $category,
+            'productsWithMedias' => $productsWithMedias,
+        ]);
+    }
     
+    public function getProductWithMedia($productId)
+    {
+        $product = $this->pm->getProductById($productId);
+        $mediaId = $product->getMediaId();
+        if($product)
+        {
+            $media = $this->mm->getAllMediaInProduct($mediaId);
+            if($media === null)
+            {
+                $product->setMedia([]);
+            } else {
+                $product->setMedia($media);
+            }
+        }
+        return $product;
+    }
     
     
     
     public function productsList() : void  
     {  
         $products = $this->pm->getAllProducts();  
-      
+        foreach($products as $product)
+        {
+            $productWithMedia = $this->getProductWithMedia($product->getId());
+            if($productWithMedia === null)
+            {
+                $SESSION['message'] = "Aucun média n'est associé à ce produit en base de données.";
+                header("location:  /afrostyle/index.php?route=boutique");
+                return;
+            } else {
+                $productsWithMedias[] =$productWithMedia;
+            }
+        }
         $this->render("produit/products", [  
-            "products" => $products  
+            "productsWithMedias" => $productsWithMedias  
         ]);  
     }
     
-    
-    
-    
-    
     public function productDetails(int $productId) : void  
     {  
-        $product = $this->pm->getProductById($productId); 
-        $categories = $this->cm->getCategoriesByProduct($productId);
+        $product = $this->getProductWithMedia($productId); 
 
         $this->render("produit/product", [
-            "product" => $product, 
-            "categories" => $categories
+            "product" => $product
         ]);  
     }
 
@@ -65,7 +118,7 @@ class ProductController extends AbstractController {
             $this->pm->createProduct($newProduct);
             
             $_SESSION['message'] = "Le produit ". $name ." créé avec succès.";
-            header("location: /afrostyle/index.php?route=admin-products");
+            header("location: /afrostyle/index.php?route=admin-product");
         }
         
         $categories = $this->cm->getAllCategories();
@@ -92,29 +145,6 @@ public function checkCreateProduct(array $post) : void
         echo "Une erreur s'est produite : " . $e->getMessage();
     }
 }
-
-
-
-
-/*
-private function uploadFile(array $file) : Media
-{
-    $uploader = new Uploader();
-    return $uploader->upload($file, "image");
-}
-
-private function createProductObject(array $post) : Product
-{
-    return new Product(
-        $this->clean($post["name"]),
-        $this->clean($post["description"]),
-        intval($this->clean($post["price"])),
-        $post["media"],
-        $post["categories"]
-    );
-}
-*/
-    
     
     
     

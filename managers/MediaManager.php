@@ -51,7 +51,24 @@ class MediaManager extends AbstractManager
         $media->setId($mediaData['id']);
         return $media;
     }
-    // Autres méthodes pour récupérer, mettre à jour et supprimer des médias...
+    
+    public function getAllMediaInProduct($mediaId)
+    {
+        $query = $this->db->prepare("SELECT * FROM media WHERE media.id = :product_id");
+        $parameters = [
+                "product_id" => $mediaId
+            ];
+        $query->execute($parameters);
+        $mediaArray = [];
+
+        while ($mediaData = $query->fetch(PDO::FETCH_ASSOC)) {
+            $media = new Media($mediaData['name'], $mediaData['url']);
+            $media->setId($mediaData['id']);
+            $mediaArray[] = $media;
+        }
+        return $mediaArray;
+    }
+    
 }
 
 

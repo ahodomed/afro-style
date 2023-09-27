@@ -1,0 +1,38 @@
+/* Styles pour le footer */
+#foot {
+    background-color: #161D31; /* Couleur de fond */
+    color: #fff; /* Couleur du texte en blanc */
+    padding: 20px; /* Espacement intérieur du footer */
+    text-align: center; /* Alignement du texte au centre */
+}
+
+/* Conteneur flex pour la liste dans le footer */
+#foot {
+    display: flex;
+    flex-wrap: wrap; /* Permet à la liste de passer à la ligne si l'espace est insuffisant */
+    justify-content: center; /* Centre les éléments horizontalement */
+}
+
+#foot ul {
+    list-style: none; /* Supprime les puces de la liste */
+    padding: 0; /* Supprime le remplissage de la liste */
+}
+
+#foot ul li {
+    margin-bottom: 10px; /* Marge en bas entre les éléments de la liste */
+    margin-right: 20px; /* Marge à droite entre les éléments de la liste */
+}
+
+#foot ul li:last-child {
+    margin-right: 0; /* Supprime la marge à droite du dernier élément de la liste */
+}
+
+#foot ul li a {
+    text-decoration: none; /* Supprime la décoration du texte des liens */
+    color: #fff; /* Couleur du texte en blanc */
+    font-weight: bold; /* Texte en gras pour les liens */
+}
+
+#foot ul li a:hover {
+    text-decoration: underline; /* Souligne les liens au survol */
+}

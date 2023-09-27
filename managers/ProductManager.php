@@ -41,6 +41,9 @@ class ProductManager extends AbstractManager {
         return $product;
     }
 
+
+
+
     // Create a product and send it in the database
     public function createProduct(Product $product) : Product
     {
