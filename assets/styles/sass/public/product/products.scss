@@ -1,0 +1,37 @@
+main#article-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+main#article-list article {
+  flex-basis: calc(33.33% - 20px); /* 3 images par ligne sur ordinateur */
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+main#article-list article h3 {
+  font-size: 18px;
+  margin: 10px 0;
+  color: #161D31;
+}
+
+main#article-list article img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media screen and (max-width: 991px) {
+  main#article-list article {
+    flex-basis: calc(50% - 20px); /* 2 images par ligne sur tablette */
+  }
+}
+
+@media screen and (max-width: 767px) {
+  main#article-list article {
+    flex-basis: calc(100% - 20px); /* 1 image par ligne sur mobile */
+  }
+}

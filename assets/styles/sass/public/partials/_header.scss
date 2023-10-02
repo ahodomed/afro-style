@@ -1,38 +1,76 @@
 
-// _header.scss
-
+/* Styles pour l'en-tête */
 /* Styles pour l'en-tête */
 .header {
-    background-color: $firstcol; /* Utilisation de la variable de couleur de fond */
-    color: #fff; /* Couleur du texte en blanc */
-    padding: 20px; /* Espacement intérieur de l'en-tête */
+  position: sticky; /* Rendre le header fixe */
+  top: 0; /* Fixer le header en haut de la page */
+  width: 100%; /* Définir la largeur à 100% pour qu'il s'étende sur toute la largeur */
+  background-color: $firstcol;
+  color: #fff;
+  padding: 1.5rem; /* 20px en rem */
 
-    /* Styles pour le titre */
-    h1 {
-        font-size: 36px; /* Taille de la police du titre */
-        margin: 0; /* Supprime les marges par défaut */
-    }
+  h1 {
+    font-size: 2.25rem; /* 36px en rem */
+    margin: 0;
+  }
 
-    /* Styles pour la navigation */
-    nav {
-        ul {
-            list-style: none; /* Supprime les puces de la liste */
-            padding: 0; /* Supprime le remplissage de la liste */
-            display: flex; /* Utilise un affichage en ligne pour les éléments de liste */
-            
-            li {
-                margin-right: 20px; /* Marge à droite entre les éléments de la liste */
-                
-                &:last-child {
-                    margin-right: 0; /* Supprime la marge à droite du dernier élément de la liste */
-                }
+  nav {
+    ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
 
-                a {
-                    text-decoration: none; /* Supprime la décoration du texte des liens */
-                    color: #fff; /* Couleur du texte en blanc */
-                    font-weight: bold; /* Texte en gras pour les liens */
-                }
-            }
+      li {
+        margin-right: 1rem; /* 16px en rem (plus d'espace) */
+        a {
+          text-decoration: none;
+          color: $white;
+          font-weight: bold;
         }
+      }
+
+      /* Pour éviter la marge à droite sur le dernier élément li */
+      li:last-child {
+        margin-right: 0;
+      }
     }
+  }
+
+  /* Masquer l'image par défaut sur les écrans non mobiles */
+  img {
+    display: none;
+  }
+}
+
+/* Media Query pour les appareils mobiles (max-width: 767px) */
+@media screen and (max-width: 396px) {
+  .header {
+    position: fixed; /* Rendre le header fixe */
+    top: 4rem; /* Fixer le header en haut de la page */
+    background-color: $firstcol;
+    padding: 0.5rem; /* 10px en rem */
+
+    h1 {
+      font-size: 1.5rem; /* 24px en rem */
+    }
+
+    nav ul li {
+      margin-bottom: 1rem; /* 16px en rem */
+      padding: 1rem; /* 16px en rem */
+    }
+
+    /* Ajustez la largeur de la liste ul pour occuper toute la largeur de l'écran */
+    nav ul {
+      width: 100%;
+    }
+  }
+
+  /* Afficher l'image uniquement sur les écrans mobiles */
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
 }

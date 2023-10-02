@@ -1,0 +1,67 @@
+/* Styles pour le formulaire d'ajout de produit */
+section {
+  background-color: $white; /* Utilisation de la variable de couleur de fond du formulaire */
+  padding: 20px; /* Espacement intérieur du formulaire */
+  border-radius: 10px; /* Coins arrondis pour le formulaire */
+  box-shadow: 0 0 10px rgba($black, 0.1); /* Ombre légère pour le formulaire */
+
+  h2 {
+    font-size: 24px; /* Taille de police pour le titre */
+    margin-bottom: 20px; /* Marge en bas du titre */
+  }
+
+  form {
+    label {
+      display: block; /* Afficher les labels en bloc (un en dessous de l'autre) */
+      font-weight: bold; /* Texte en gras pour les labels */
+      margin-bottom: 5px; /* Marge en bas des labels */
+    }
+
+    input[type="text"],
+    textarea,
+    select {
+      width: 100%; /* Largeur de 100% pour les champs de texte, les zones de texte et les listes déroulantes */
+      padding: 10px; /* Espacement intérieur des champs de texte, zones de texte et listes déroulantes */
+      margin-bottom: 15px; /* Marge en bas entre les champs */
+      border: 1px solid #ccc; /* Bordure légère pour les champs */
+      border-radius: 5px; /* Coins arrondis pour les champs */
+    }
+
+    button[type="submit"] {
+      background-color: $primaryBlue; /* Utilisation de la variable de couleur pour le fond du bouton */
+      color: $white; /* Utilisation de la variable de couleur pour le texte du bouton */
+      border: none; /* Supprimer la bordure du bouton */
+      padding: 10px 20px; /* Espacement intérieur du bouton */
+      font-weight: bold; /* Texte en gras pour le bouton */
+      border-radius: 5px; /* Coins arrondis pour le bouton */
+      cursor: pointer; /* Curseur pointeur au survol du bouton */
+    }
+  }
+}
+
+/* Media Query pour les écrans mobiles */
+@media screen and (max-width: 768px) {
+  section {
+    padding: 10px; /* Réduire l'espacement intérieur pour les écrans mobiles */
+    
+    h2 {
+      font-size: 20px; /* Taille de police réduite pour le titre */
+    }
+
+    form {
+      label {
+        font-size: 16px; /* Taille de police réduite pour les labels */
+      }
+
+      input[type="text"],
+      textarea,
+      select {
+        font-size: 14px; /* Taille de police réduite pour les champs de texte, les zones de texte et les listes déroulantes */
+      }
+
+      button[type="submit"] {
+        font-size: 16px; /* Taille de police réduite pour le bouton */
+      }
+    }
+  }
+}
