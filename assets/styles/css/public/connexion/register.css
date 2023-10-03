@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /* Styles pour la section d'inscription */
 .register {
-  background-color: #fff; /* Couleur de fond */
+  background-color: #ffffff; /* Couleur de fond */
   padding: 20px; /* Espacement intérieur de la section */
   border-radius: 10px; /* Coins arrondis */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Ombre légère */
@@ -26,7 +26,7 @@
   width: 100%;
   padding: 10px;
   margin-bottom: 15px; /* Marge en bas entre les champs de saisie */
-  border: 1px solid #ccc; /* Bordure des champs de saisie */
+  border: 1px solid #007bff; /* Bordure des champs de saisie */
   border-radius: 5px; /* Coins arrondis des champs de saisie */
 }
 .register .c-create .error-message {
@@ -35,17 +35,18 @@
 }
 .register .c-create #register-button {
   background-color: #007bff; /* Couleur de fond du bouton */
-  color: #fff; /* Couleur du texte du bouton */
+  color: #ffffff; /* Couleur du texte du bouton */
   border: none; /* Supprimer la bordure du bouton */
   padding: 10px 20px; /* Espacement intérieur du bouton */
   font-weight: bold; /* Texte en gras pour le bouton */
   border-radius: 5px; /* Coins arrondis du bouton */
   cursor: pointer; /* Curseur au survol */
   width: 100%; /* Largeur du bouton sur toute la largeur de la section */
+  margin-top: 2rem;
 }
 .register .c-create #register-button:disabled {
-  background-color: #ccc; /* Couleur de fond du bouton désactivé */
-  color: #000; /* Couleur du texte du bouton désactivé */
+  background-color: #007bff; /* Couleur de fond du bouton désactivé */
+  color: #000000; /* Couleur du texte du bouton désactivé */
   cursor: not-allowed; /* Curseur désactivé */
 }
 

@@ -30,3 +30,39 @@
 
      
 </main>  
+
+
+
+
+<!--<main id="detail"> 
+    <h2 class="sr-only">Détail du produit</h2>
+        <?php $product = $data['product'];
+        $media = $product->getMedia();
+        ?>
+        <article>
+            <header>
+                <h3 class=""><?= $product->getName() ?></h3>  
+                <?php
+                    if ($product->getCategoryId() === 3) {
+                        echo "<p>Accessoire</p>";
+                    } elseif ($product->getCategoryId() === 1) {
+                        echo "<p>Homme</p>";
+                    } else if ($product->getCategoryId() === 2) {
+                        echo "<p>Femme</p>";
+                    } else if ($product->getCategoryId() === 4) {
+                        echo "<p>Enfant </p>";
+                    }
+                ?>
+            </header>
+            <figure>
+                <img src="<?= $media[0]->getUrl() ?>" alt="<?= $media[0]->getName()?>">
+            </figure>
+            <p><?= $product->getDescription()?></p>
+            <p><?= $product->getPrice() ?></p>
+         </article>
+         <a href="mailto:Afrostyle@gmail.com" target="_blank">Contacter-nous pour commander</a>
+                            
+         <a href='?route=boutique'>Retour</a>
+
+     
+</main>  -->

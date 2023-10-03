@@ -23,7 +23,7 @@
             <label for="product-price"> Prix </label>
             <input type="number" name="product-price" id="product-price" value="<?= $product->getPrice() ?>"/>
 
-            <label for="product-categoryId"> Choisir la catégorie </label>
+            <label for="product-categoryId"> Choisir la catégorie: (rechoisir la bonne categories) </label>
             <select name="product-categoryId" id="product-categoryId">
                 <?php foreach($data['categories'] as $category) : ?>
                 <option value="<?=$category->getId()?>"> <?= $category->getName(); ?> </option>

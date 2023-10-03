@@ -5,6 +5,7 @@ $primaryBlue: #007bff;
 $errorRed: #ff0000;
 
 section {
+  margin-top:8rem;
   background-color: $white; /* Utilisation de la variable de couleur de fond du formulaire */
   padding: 20px; /* Espacement intérieur du formulaire */
   border-radius: 10px; /* Coins arrondis pour le formulaire */

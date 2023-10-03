@@ -9,6 +9,7 @@ $errorRed: #ff0000;
 /* Styles pour la section de connexion */
 #connect {
   background-color: $white;
+  margin-top:8rem;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba($black, 0.1);
@@ -43,6 +44,7 @@ $errorRed: #ff0000;
       background-color: $primaryBlue;
       color: $white;
       border: none;
+      margin-top:2rem;
       padding: 10px 20px;
       font-weight: bold;
       border-radius: 5px;
@@ -71,8 +73,10 @@ $errorRed: #ff0000;
 
       .btnlog {
         font-size: 16px;
+
       }
     }
   }
 }
+
 

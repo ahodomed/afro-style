@@ -1,13 +1,16 @@
 #section-g {
+  margin-top:2rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between; // Espacement entre les sections
 }
-
+.section-a{
+  margin:0 auto;
+}
 .section-h,
 .section-f,
 .section-e,
-.section-a {
+ {
   flex-basis: calc(25% - 10px); // 4 colonnes sur ordinateur (25% de largeur)
   margin: 5rem 0;
 

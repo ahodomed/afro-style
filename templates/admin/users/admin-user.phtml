@@ -22,8 +22,10 @@
                 <td><?= $user->getEmail(); ?></td>
                 <td>
                     <a href='/afrostyle/index.php?route=edit-user&id=<?= $user->getId() ?>'>Modifier</a>
-                    <a href='/afrostyle/index.php?route=delete-user&id=<?= $user->getId() ?>' class="delete-user">Supprimer</a>
-                </td>
+                    <a href='/afrostyle/index.php?route=delete-user&id=<?= $user->getId() ?>' class="delete delete-user" data-id="<?= $user->getId() ?>">Supprimer</a>
+
+<!--                    <a href='/afrostyle/index.php?route=delete-user&id=<?= $user->getId() ?>' class="delete-user">Supprimer</a>
+-->                </td>
             </tr>
         <?php endforeach; ?>
     </tbody>

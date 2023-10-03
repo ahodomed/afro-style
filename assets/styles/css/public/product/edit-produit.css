@@ -1,6 +1,7 @@
 @charset "UTF-8";
 /* Styles pour le formulaire de modification de produit */
 section {
+  margin-top: 8rem;
   background-color: #ffffff; /* Utilisation de la variable de couleur de fond du formulaire */
   padding: 20px; /* Espacement intérieur du formulaire */
   border-radius: 10px; /* Coins arrondis pour le formulaire */

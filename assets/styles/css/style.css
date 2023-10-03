@@ -1,44 +1,7 @@
 @charset "UTF-8";
-/* Media Query pour les écrans de taille réduite (max-width: 767px) */
-@media screen and (max-width: 767px) {
-  /* Styles pour la section de détail du produit */
-  #detail {
-    padding: 1rem; /* Réduisez l'espacement pour les écrans mobiles */
-  }
-  /* Styles pour l'en-tête */
-  #detail h3 {
-    font-size: 24px; /* Réduisez la taille de la police du titre */
-  }
-  /* Styles pour la catégorie */
-  #detail p {
-    font-size: 16px; /* Réduisez la taille de la police pour la catégorie */
-  }
-  /* Styles pour l'image */
-  #detail figure img {
-    max-width: 100%; /* Ajustez la largeur de l'image pour qu'elle s'adapte à la largeur de l'écran */
-    height: auto; /* Ajustez la hauteur de l'image de manière proportionnelle */
-    border-radius: 10px; /* Ajoutez un arrondi sur les bords de l'image */
-  }
-  /* Styles pour les paragraphes */
-  #detail p {
-    font-size: 16px; /* Réduisez la taille de la police des paragraphes */
-    margin-bottom: 2rem; /* Augmentez l'espacement entre les paragraphes */
-  }
-  /* Styles pour le lien de contact */
-  #detail a {
-    display: block; /* Affiche le lien en tant que bloc pour occuper toute la largeur */
-    background-color: #161D31; /* Couleur de fond */
-    color: #fff; /* Couleur du texte en blanc */
-    text-decoration: none; /* Supprime la décoration du texte des liens */
-    font-weight: bold; /* Texte en gras pour les liens */
-    padding: 10px; /* Espacement intérieur du lien */
-    text-align: center; /* Centre le texte */
-    border-radius: 10px; /* Ajoutez un arrondi sur les bords du lien */
-    margin-top: 1rem; /* Ajoute une marge en haut du lien */
-  }
-}
 /* Styles pour le formulaire de modification de produit */
 section {
+  margin-top: 8rem;
   background-color: #ffffff; /* Utilisation de la variable de couleur de fond du formulaire */
   padding: 20px; /* Espacement intérieur du formulaire */
   border-radius: 10px; /* Coins arrondis pour le formulaire */
@@ -100,6 +63,7 @@ section form button[type=submit] {
 }
 /* Styles pour le formulaire d'ajout de produit */
 section {
+  margin-top: 8rem;
   background-color: #ffffff; /* Utilisation de la variable de couleur de fond du formulaire */
   padding: 20px; /* Espacement intérieur du formulaire */
   border-radius: 10px; /* Coins arrondis pour le formulaire */
@@ -318,29 +282,31 @@ main#article-list article img {
   }
 }
 #section-g {
+  margin-top: 2rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
 
+.section-a {
+  margin: 0 auto;
+}
+
 .section-h,
 .section-f,
-.section-e,
-.section-a {
+.section-e {
   flex-basis: calc(25% - 10px);
   margin: 5rem 0;
 }
 .section-h a,
 .section-f a,
-.section-e a,
-.section-a a {
+.section-e a {
   text-decoration: none;
   color: #161D31;
 }
 .section-h a img,
 .section-f a img,
-.section-e a img,
-.section-a a img {
+.section-e a img {
   max-width: 100%;
   height: auto;
 }
@@ -364,6 +330,7 @@ main#article-list article img {
 /* Styles pour la section de connexion */
 #connect {
   background-color: #ffffff;
+  margin-top: 8rem;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -393,6 +360,7 @@ main#article-list article img {
   background-color: #007bff;
   color: #ffffff;
   border: none;
+  margin-top: 2rem;
   padding: 10px 20px;
   font-weight: bold;
   border-radius: 5px;
@@ -419,7 +387,7 @@ main#article-list article img {
 }
 /* Styles pour la section d'inscription */
 .register {
-  background-color: #fff; /* Couleur de fond */
+  background-color: #ffffff; /* Couleur de fond */
   padding: 20px; /* Espacement intérieur de la section */
   border-radius: 10px; /* Coins arrondis */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Ombre légère */
@@ -444,7 +412,7 @@ main#article-list article img {
   width: 100%;
   padding: 10px;
   margin-bottom: 15px; /* Marge en bas entre les champs de saisie */
-  border: 1px solid #ccc; /* Bordure des champs de saisie */
+  border: 1px solid #007bff; /* Bordure des champs de saisie */
   border-radius: 5px; /* Coins arrondis des champs de saisie */
 }
 .register .c-create .error-message {
@@ -453,17 +421,18 @@ main#article-list article img {
 }
 .register .c-create #register-button {
   background-color: #007bff; /* Couleur de fond du bouton */
-  color: #fff; /* Couleur du texte du bouton */
+  color: #ffffff; /* Couleur du texte du bouton */
   border: none; /* Supprimer la bordure du bouton */
   padding: 10px 20px; /* Espacement intérieur du bouton */
   font-weight: bold; /* Texte en gras pour le bouton */
   border-radius: 5px; /* Coins arrondis du bouton */
   cursor: pointer; /* Curseur au survol */
   width: 100%; /* Largeur du bouton sur toute la largeur de la section */
+  margin-top: 2rem;
 }
 .register .c-create #register-button:disabled {
-  background-color: #ccc; /* Couleur de fond du bouton désactivé */
-  color: #000; /* Couleur du texte du bouton désactivé */
+  background-color: #007bff; /* Couleur de fond du bouton désactivé */
+  color: #000000; /* Couleur du texte du bouton désactivé */
   cursor: not-allowed; /* Curseur désactivé */
 }
 
@@ -602,18 +571,18 @@ div {
   margin: 0;
 }
 .header nav ul {
+  margin: 0 auto;
   list-style: none;
   padding: 0;
   display: flex;
-  flex-direction: row;
-  justify-content: center;
   /* Pour éviter la marge à droite sur le dernier élément li */
 }
 .header nav ul li {
-  margin-right: 1rem; /* 16px en rem (plus d'espace) */
+  margin-right: 2rem; /* 16px en rem (plus d'espace) */
 }
 .header nav ul li a {
   text-decoration: none;
+  font-size: 1rem;
   color: #ffffff;
 }
 .header nav ul li:last-child {
@@ -627,9 +596,11 @@ div {
 @media screen and (max-width: 767px) {
   .header {
     position: fixed; /* Rendre le header fixe */
-    top: 4rem; /* Fixer le header en haut de la page */
+    top: 0; /* Fixer le header en haut de la page */
+    width: 100%; /* Définir la largeur à 100% pour qu'il s'étende sur toute la largeur */
     background-color: #161D31;
-    padding: 0.5rem; /* 10px en rem */
+    color: #fff;
+    padding: 1.5rem; /* 20px en rem */
     /* Ajustez la largeur de la liste ul pour occuper toute la largeur de l'écran */
   }
   .header h1 {
@@ -667,6 +638,13 @@ nav ul li a {
   text-decoration: none;
   color: #ffffff;
 }
+nav ul li:hover {
+  margin-right: 1rem;
+}
+nav ul li:hover a:hover {
+  color: #007bff; /* Nouvelle couleur au survol */
+  text-decoration: underline;
+}
 nav ul li:last-child {
   margin-right: 0;
 }
@@ -679,7 +657,11 @@ nav #icons:before {
 }
 @media (max-width: 650px) {
   nav #icons {
+    cursor: pointer;
     display: block;
+    position: fixed;
+    right: 1rem; /* Positionner #icons à droite */
+    top: 1rem; /* Espacement du haut */
   }
   nav #icons:before {
     content: "☰";
@@ -690,15 +672,16 @@ nav #icons:before {
   nav ul {
     position: fixed;
     left: -100%;
-    top: 5%;
+    top: 0;
     flex-direction: column;
     background: #161D31;
     width: 100%;
     text-align: center;
     transition: 0.25s;
   }
-  nav ul li {
-    padding: 3px 0;
+  nav ul li a {
+    text-decoration: none;
+    color: #ffffff;
   }
   nav.active ul {
     left: 0;

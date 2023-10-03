@@ -1,27 +1,29 @@
 #section-g {
+  margin-top: 2rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
 
+.section-a {
+  margin: 0 auto;
+}
+
 .section-h,
 .section-f,
-.section-e,
-.section-a {
+.section-e {
   flex-basis: calc(25% - 10px);
   margin: 5rem 0;
 }
 .section-h a,
 .section-f a,
-.section-e a,
-.section-a a {
+.section-e a {
   text-decoration: none;
   color: #161D31;
 }
 .section-h a img,
 .section-f a img,
-.section-e a img,
-.section-a a img {
+.section-e a img {
   max-width: 100%;
   height: auto;
 }

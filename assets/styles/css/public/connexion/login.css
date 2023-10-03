@@ -2,6 +2,7 @@
 /* Styles pour la section de connexion */
 #connect {
   background-color: #ffffff;
+  margin-top: 8rem;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -31,6 +32,7 @@
   background-color: #007bff;
   color: #ffffff;
   border: none;
+  margin-top: 2rem;
   padding: 10px 20px;
   font-weight: bold;
   border-radius: 5px;
