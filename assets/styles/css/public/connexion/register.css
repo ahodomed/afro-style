@@ -1,0 +1,52 @@
+@charset "UTF-8";
+/* Styles pour la section d'inscription */
+.register {
+  background-color: #fff; /* Couleur de fond */
+  padding: 20px; /* Espacement intérieur de la section */
+  border-radius: 10px; /* Coins arrondis */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Ombre légère */
+  margin: 4rem auto; /* Marge de 4rem en haut et en bas, centré horizontalement */
+  max-width: 400px; /* Largeur maximale de la section */
+}
+.register h2 {
+  font-size: 24px; /* Taille de la police pour le titre */
+  margin-bottom: 20px; /* Marge en bas du titre */
+  color: #007bff; /* Couleur du titre */
+}
+.register .errors-message {
+  color: #ff0000; /* Couleur du message d'erreur */
+  font-weight: bold; /* Texte en gras pour les erreurs */
+}
+.register .c-create label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px; /* Marge en bas entre les étiquettes */
+}
+.register .c-create .registre {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px; /* Marge en bas entre les champs de saisie */
+  border: 1px solid #ccc; /* Bordure des champs de saisie */
+  border-radius: 5px; /* Coins arrondis des champs de saisie */
+}
+.register .c-create .error-message {
+  color: #ff0000; /* Couleur du message d'erreur */
+  font-size: 14px; /* Taille de la police du message d'erreur */
+}
+.register .c-create #register-button {
+  background-color: #007bff; /* Couleur de fond du bouton */
+  color: #fff; /* Couleur du texte du bouton */
+  border: none; /* Supprimer la bordure du bouton */
+  padding: 10px 20px; /* Espacement intérieur du bouton */
+  font-weight: bold; /* Texte en gras pour le bouton */
+  border-radius: 5px; /* Coins arrondis du bouton */
+  cursor: pointer; /* Curseur au survol */
+  width: 100%; /* Largeur du bouton sur toute la largeur de la section */
+}
+.register .c-create #register-button:disabled {
+  background-color: #ccc; /* Couleur de fond du bouton désactivé */
+  color: #000; /* Couleur du texte du bouton désactivé */
+  cursor: not-allowed; /* Curseur désactivé */
+}
+
+/*# sourceMappingURL=register.css.map */

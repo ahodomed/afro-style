@@ -9,7 +9,7 @@
             <li><a href="?route=contact">Contact</a></li>
             <?php if(isset($_SESSION["user"])) : ?>
             <li><a href="?route=deconnexion">Deconnexion</a></li>
-            <?php else :?>
+            <?php else : ?>
             <li><a href="?route=login">Connexion</a></li>
             <?php endif; ?>
             <li><a href="?route=admin-user">Gérer les comptes</a></li>

@@ -25,7 +25,9 @@
                     <td><?= $data["medias"][$key]["name"] ?></td>
                     <td><?= $data["categoriesNames"][$key]["name"]?></td>
                     <td> <a href=' /afrostyle/index.php?route=edit-product&id=<?= $product->getId() ?>'>Modifier</a></td>
-                    <td> <a href=' /afrostyle/index.php?route=delete-product&id=<?= $product->getId() ?>'>Supprimer</a></td>
+                    <!--<td> <a href=' /afrostyle/index.php?route=delete-product&id=<?= $product->getId() ?>' class="delete">Supprimer</a></td>-->
+                   <td><a href='/afrostyle/index.php?route=delete-product&id=<?= $product->getId() ?>' class="delete" data-id="<?= $product->getId() ?>">Supprimer</a></td>
+
                 </tr>
             <?php endforeach;?>
         </tbody>

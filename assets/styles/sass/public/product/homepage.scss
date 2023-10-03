@@ -23,17 +23,18 @@
 }
 
 // Media Query pour les tablettes
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 578px) {
+  
   .section-h,
   .section-f,
   .section-e,
   .section-a {
-    flex-basis: calc(50% - 10px); // 2 colonnes sur tablette (50% de largeur)
+    flex-basis: calc(25% - 10px); // 2 colonnes sur tablette (50% de largeur)
   }
 }
 
 // Media Query pour les écrans mobiles
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 357px) {
   .section-h,
   .section-f,
   .section-e,

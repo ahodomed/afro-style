@@ -14,6 +14,5 @@ class MediaManager extends AbstractManager {
         return $media;
     }
 
-    // Autres méthodes pour récupérer, mettre à jour et supprimer des médias...
 }
 

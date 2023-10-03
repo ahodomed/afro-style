@@ -2,7 +2,7 @@
 <html lang="fr">  
     <head>  
         <meta charset="utf-8">  
-        <link rel="stylesheet" href="./assets/styles/css/style.css" />
+        <link rel="stylesheet" href="./assets/styles/css/style.css"/>
 
                <title>Style africaine</title>  
 
@@ -10,19 +10,25 @@
     <body id="body">
         
         <?php
-        if(isset($_SESSION["role"]) && $_SESSION["role"] === 2){
-            
-            require "admin/partials/_admin_header.phtml";
-        }
-        else{
-            require "header/header.phtml";
-        }
+            if(isset($_SESSION["role"]) && $_SESSION["role"] === 2){
+                
+                require "admin/partials/_admin_header.phtml";
+            }
+            else{
+                require "header/header.phtml";
+            }
         ?>
         
                 <?php require "{$page}.phtml";
-                 require "footer/footer.phtml";
+                     require "footer/footer.phtml";
 
                 ?>
        
     </body>
+    
+    <script type="text/javascript" src="/afrostyle/assets/styles/js/toggle-menu.js"></script>
+    <script type="text/javascript" src="/afrostyle/assets/styles/js/validation-pass.js"></script>
+
+
+
 </html>

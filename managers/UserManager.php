@@ -47,7 +47,7 @@ public function createUser(User $user) : User
     $id = $this->db->lastInsertId();
     $user->setId($id);
     
-        var_dump ($user);
+        // var_dump ($user);
     // Pour accéder à la base de données, utilisez $this->db
 
     return $user;

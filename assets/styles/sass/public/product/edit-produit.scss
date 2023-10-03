@@ -1,4 +1,9 @@
 /* Styles pour le formulaire de modification de produit */
+$white: #ffffff;
+$black: #000000;
+$primaryBlue: #007bff;
+$errorRed: #ff0000;
+
 section {
   background-color: $white; /* Utilisation de la variable de couleur de fond du formulaire */
   padding: 20px; /* Espacement intérieur du formulaire */

@@ -1,8 +1,18 @@
+// Définition des variables de couleur
+$white: #ffffff;
+$black: #000000;
+$primaryBlue: #007bff;
+$errorRed: #ff0000;
+
 main#article-list {
+  
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
   justify-content: space-between;
+
+
+  
 }
 
 main#article-list article {

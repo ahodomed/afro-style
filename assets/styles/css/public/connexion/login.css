@@ -1,0 +1,59 @@
+@charset "UTF-8";
+/* Styles pour la section de connexion */
+#connect {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+#connect h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #007bff; /* Couleur du titre */
+}
+#connect .errors-message {
+  color: #ff0000; /* Couleur du message d'erreur */
+  font-weight: bold;
+}
+#connect .connect label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+#connect .connect .connex {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+#connect .connect .btnlog {
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Media Query pour les écrans mobiles */
+@media screen and (max-width: 768px) {
+  #connect {
+    padding: 10px;
+  }
+  #connect h2 {
+    font-size: 20px;
+  }
+  #connect .connect label {
+    font-size: 16px;
+  }
+  #connect .connect .connex {
+    font-size: 14px;
+  }
+  #connect .connect .btnlog {
+    font-size: 16px;
+  }
+}
+
+/*# sourceMappingURL=login.css.map */

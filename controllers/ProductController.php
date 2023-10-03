@@ -13,39 +13,42 @@ class ProductController extends AbstractController {
         $this->mm = new MediaManager();
     }
     
-    public function listProductsByCategory($categoryId)
-    {
-        // Récupérer la catégorie par son ID
-        $category = $this->cm->getCategoryById($categoryId);
+  public function listProductsByCategory($categoryId)
+{
+    // Récupérer la catégorie par son ID
+    $category = $this->cm->getCategoryById($categoryId);
 
-        if (!$category) {
-                $SESSION['message'] = "Aucune catégory n'est associé à ce produit en base de données.";
-                header("location:  /afrostyle/index.php?route=home");
-                return;
-            return;
-        }
-
-        // Récupérer les produits de la catégorie
-        $products = $this->cm->getProductsByCategory($categoryId);
-        foreach($products as $product) {
-            
-            $productWithMedia = $this->getProductWithMedia($product->getId());
-            if($productWithMedia === null)
-            {
-                $SESSION['message'] = "Aucun média n'est associé à ce produit en base de données.";
-                header("location:  /afrostyle/index.php?route=boutique");
-                return;
-            } else {
-                $productsWithMedias[] =$productWithMedia;
-            }
-        }
-        // Afficher la liste des produits dans une vue (template)
-        $this->render('produit/manage_product', [
-            'category' => $category,
-            'productsWithMedias' => $productsWithMedias,
-        ]);
+    if (!$category) {
+        $_SESSION['message'] = "Aucune catégorie n'est associée à ce produit en base de données.";
+        header("Location: /afrostyle/index.php?route=home");
+        return;
     }
-    
+
+    // Initialiser le tableau $productsWithMedias
+    $productsWithMedias = [];
+
+    // Récupérer les produits de la catégorie
+    $products = $this->cm->getProductsByCategory($categoryId);
+
+    foreach ($products as $product) {
+        $productWithMedia = $this->getProductWithMedia($product->getId());
+        if ($productWithMedia === null) {
+            $_SESSION['message'] = "Aucun média n'est associé à ce produit en base de données.";
+            header("Location: /afrostyle/index.php?route=detail-product&id=" . $product->getId());
+            return;
+        } else {
+            $productsWithMedias[] = $productWithMedia;
+        }
+    }
+
+    // Afficher la liste des produits dans une vue (template)
+    $this->render('produit/manage_product', [
+        'category' => $category,
+        'productsWithMedias' => $productsWithMedias,
+    ]);
+}
+
+            
     public function getProductWithMedia($productId)
     {
         $product = $this->pm->getProductById($productId);
@@ -73,7 +76,7 @@ class ProductController extends AbstractController {
             $productWithMedia = $this->getProductWithMedia($product->getId());
             if($productWithMedia === null)
             {
-                $SESSION['message'] = "Aucun média n'est associé à ce produit en base de données.";
+                $_SESSION['message'] = "Aucun média n'est associé à ce produit en base de données.";
                 header("location:  /afrostyle/index.php?route=boutique");
                 return;
             } else {
@@ -124,10 +127,7 @@ class ProductController extends AbstractController {
         $categories = $this->cm->getAllCategories();
         $this->render("admin/products/create-product", []);
     }
-    
-    
-    
-    
+
     
 
 public function checkCreateProduct(array $post) : void
@@ -199,10 +199,6 @@ public function checkCreateProduct(array $post) : void
         
     }
     
-    
-    
-    
-    
     public function deleteProduct() : void
     {
         if(isset($_GET['id']))
@@ -214,11 +210,7 @@ public function checkCreateProduct(array $post) : void
             header("location: /afrostyle/index.php?route=admin-product");
         }
     }
-    
-    
-    
-    
-    
+
     
 
 }

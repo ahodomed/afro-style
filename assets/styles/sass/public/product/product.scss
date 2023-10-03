@@ -1,10 +1,13 @@
-$firstcol: #161D31;
-$black: #000000;
+// Définition des variables de couleur
 $white: #ffffff;
-
+$black: #000000;
+$primaryBlue: #007bff;
+$errorRed: #ff0000;
 #detail {
   padding: 20px;
   text-align: center;
+
+  
 }
 
 #detail h2 {

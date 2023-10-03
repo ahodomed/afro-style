@@ -1,0 +1,51 @@
+@charset "UTF-8";
+nav {
+  background: blue;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  font-size: calc(0.5rem + 1.5vw);
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-between;
+  width: 68%;
+}
+
+#icons {
+  cursor: pointer;
+  display: none;
+}
+
+@media (max-width: 650px) {
+  #icons {
+    display: block;
+  }
+  #icons:before {
+    content: "☰";
+  }
+  .active #icons:before {
+    content: "✕";
+  }
+  nav ul {
+    position: fixed;
+    left: -100%;
+    top: 5%;
+    flex-direction: column;
+    background: blue;
+    width: 100%;
+    text-align: center;
+    transition: 0.25%;
+  }
+  nav li {
+    padding: 3px 0;
+    background: red;
+  }
+  nav.active ul {
+    left: 0;
+  }
+}
+
+/*# sourceMappingURL=brouillon-heard.css.map */

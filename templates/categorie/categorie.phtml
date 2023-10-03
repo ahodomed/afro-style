@@ -12,11 +12,9 @@
                 <?= $product->getDescription() ?>  
             </p>  
             <figure>
-                <img src="/afrostyle/<?= $product->getMedia(); ?>" alt="photo représentant cette catégorie">
+                <img src="<?= $product->getMedia(); ?>" alt="photo représentant cette catégorie">
             </figure>
-            <footer>  
-                <a href="/Res03ProjetFinalV2/produits/<?= $product->getSlug() ?>"><?= $product->getName() ?></a>  
-            </footer>  
+             
         </article>  
         <?php } ?>
 </main>  

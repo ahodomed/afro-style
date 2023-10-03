@@ -22,7 +22,7 @@
           
      public function contact() : void  
     {  
-        $this->render("templates/contact/contact", []);  
+        $this->render("templates/contact/contact",[]);  
     }
       
 

@@ -1,25 +1,40 @@
 <header class="header" id="head">  
-           
     <h1><a href="?route=home">Style africain</a></h1>
-    <nav>
-        <ul>
-            <li><a href="?route=home">Accueil</a></li>
-            <li><a href="?route=boutique">Boutique </a></li>
-            <li><a href="?route=apropos">A-propos</a></li>
-            <li><a href="?route=contact">Contact</a></li>
+    <nav id="header-admin-menu">
+        <ul class="menu-list">
+            <li class="menu-item"><a href="?route=home">Accueil</a></li>
+            <li class="menu-item"><a href="?route=boutique">Boutique</a></li>
+            <li class="menu-item"><a href="?route=apropos">À propos</a></li>
             <?php if(isset($_SESSION["user"])) : ?>
-            <li><a href="?route=deconnexion">Deconnexion</a></li>
+                <li class="menu-item"><a href="?route=deconnexion">Déconnexion</a></li>
             <?php else :?>
-            <li><a href="?route=login">Connexion</a></li>
+                <li class="menu-item"><a href="?route=login">Connexion</a></li>
             <?php endif; ?>
-            <li><a href="?route=register">Compte</a></li>
-            
-           
-
+            <li class="menu-item"><a href="?route=register">Compte</a></li>
+            <li class="menu-item"><a href="mailto:ahodomed@gmail.com" target="_blank">Contact</a></li>
         </ul>
+        <div id="icons"></div>
     </nav>
-    
 </header>
 
 
-     
+
+<!--<header class="header" id="head">  -->
+    
+<!--    <h1><a href="?route=home">Style africain</a></h1>-->
+<!--    <nav id="header-admin-menu">-->
+<!--        <ul>-->
+<!--            <li><a href="?route=home">Accueil</a></li>-->
+<!--            <li><a href="?route=boutique">Boutique</a></li>-->
+<!--            <li><a href="?route=apropos">À propos</a></li>-->
+<!--            <?php if(isset($_SESSION["user"])) : ?>-->
+<!--                <li><a href="?route=deconnexion">Déconnexion</a></li>-->
+<!--            <?php else :?>-->
+<!--                <li><a href="?route=login">Connexion</a></li>-->
+<!--            <?php endif; ?>-->
+<!--            <li><a href="?route=register">Compte</a></li>-->
+<!--            <li><a href="mailto:ahodomed@gmail.com" target="_blank">Contact</a></li>-->
+<!--        </ul>-->
+<!--        <div id="icons"></div>-->
+<!--    </nav>-->
+<!--</header>-->

@@ -1,64 +1,708 @@
 @charset "UTF-8";
-.main-detail-product {
-  padding: 20px;
+/* Media Query pour les écrans de taille réduite (max-width: 767px) */
+@media screen and (max-width: 767px) {
+  /* Styles pour la section de détail du produit */
+  #detail {
+    padding: 1rem; /* Réduisez l'espacement pour les écrans mobiles */
+  }
+  /* Styles pour l'en-tête */
+  #detail h3 {
+    font-size: 24px; /* Réduisez la taille de la police du titre */
+  }
+  /* Styles pour la catégorie */
+  #detail p {
+    font-size: 16px; /* Réduisez la taille de la police pour la catégorie */
+  }
+  /* Styles pour l'image */
+  #detail figure img {
+    max-width: 100%; /* Ajustez la largeur de l'image pour qu'elle s'adapte à la largeur de l'écran */
+    height: auto; /* Ajustez la hauteur de l'image de manière proportionnelle */
+    border-radius: 10px; /* Ajoutez un arrondi sur les bords de l'image */
+  }
+  /* Styles pour les paragraphes */
+  #detail p {
+    font-size: 16px; /* Réduisez la taille de la police des paragraphes */
+    margin-bottom: 2rem; /* Augmentez l'espacement entre les paragraphes */
+  }
+  /* Styles pour le lien de contact */
+  #detail a {
+    display: block; /* Affiche le lien en tant que bloc pour occuper toute la largeur */
+    background-color: #161D31; /* Couleur de fond */
+    color: #fff; /* Couleur du texte en blanc */
+    text-decoration: none; /* Supprime la décoration du texte des liens */
+    font-weight: bold; /* Texte en gras pour les liens */
+    padding: 10px; /* Espacement intérieur du lien */
+    text-align: center; /* Centre le texte */
+    border-radius: 10px; /* Ajoutez un arrondi sur les bords du lien */
+    margin-top: 1rem; /* Ajoute une marge en haut du lien */
+  }
 }
-.main-detail-product h2 {
+/* Styles pour le formulaire de modification de produit */
+section {
+  background-color: #ffffff; /* Utilisation de la variable de couleur de fond du formulaire */
+  padding: 20px; /* Espacement intérieur du formulaire */
+  border-radius: 10px; /* Coins arrondis pour le formulaire */
+  box-shadow: 0 0 10px #000000; /* Ombre légère pour le formulaire */
+}
+section h3 {
+  font-size: 24px; /* Taille de police pour le titre */
+  margin-bottom: 20px; /* Marge en bas du titre */
+}
+section p.message {
+  color: #ff0000; /* Utilisation de la variable de couleur pour le message d'erreur */
+  font-weight: bold; /* Texte en gras pour le message d'erreur */
+}
+section form label {
+  display: block; /* Afficher les labels en bloc (un en dessous de l'autre) */
+  font-weight: bold; /* Texte en gras pour les labels */
+  margin-bottom: 5px; /* Marge en bas des labels */
+}
+section form input[type=text],
+section form input[type=number],
+section form textarea,
+section form select {
+  width: 100%; /* Largeur de 100% pour les champs de texte, les zones de texte et les listes déroulantes */
+  padding: 10px; /* Espacement intérieur des champs de texte, zones de texte et listes déroulantes */
+  margin-bottom: 15px; /* Marge en bas entre les champs */
+  border: 1px solid #ccc; /* Bordure légère pour les champs */
+  border-radius: 5px; /* Coins arrondis pour les champs */
+}
+section form button[type=submit] {
+  background-color: #007bff; /* Utilisation de la variable de couleur pour le fond du bouton */
+  color: #ffffff; /* Couleur du texte du bouton */
+  border: none; /* Supprimer la bordure du bouton */
+  padding: 10px 20px; /* Espacement intérieur du bouton */
+  font-weight: bold; /* Texte en gras pour le bouton */
+  border-radius: 5px; /* Coins arrondis pour le bouton */
+  cursor: pointer; /* Curseur pointeur au survol du bouton */
+}
+
+/* Media Query pour les écrans mobiles */
+@media screen and (max-width: 768px) {
+  section {
+    padding: 10px; /* Réduire l'espacement intérieur pour les écrans mobiles */
+  }
+  section h3 {
+    font-size: 20px; /* Taille de police réduite pour les titres */
+  }
+  section form label {
+    font-size: 16px; /* Taille de police réduite pour les labels */
+  }
+  section form input[type=text],
+  section form input[type=number],
+  section form textarea,
+  section form select {
+    font-size: 14px; /* Taille de police réduite pour les champs de texte, les zones de texte et les listes déroulantes */
+  }
+  section form button[type=submit] {
+    font-size: 16px; /* Taille de police réduite pour le bouton */
+  }
+}
+/* Styles pour le formulaire d'ajout de produit */
+section {
+  background-color: #ffffff; /* Utilisation de la variable de couleur de fond du formulaire */
+  padding: 20px; /* Espacement intérieur du formulaire */
+  border-radius: 10px; /* Coins arrondis pour le formulaire */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Ombre légère pour le formulaire */
+}
+section h2 {
+  font-size: 24px; /* Taille de police pour le titre */
+  margin-bottom: 20px; /* Marge en bas du titre */
+}
+section form label {
+  display: block; /* Afficher les labels en bloc (un en dessous de l'autre) */
+  font-weight: bold; /* Texte en gras pour les labels */
+  margin-bottom: 5px; /* Marge en bas des labels */
+}
+section form input[type=text],
+section form textarea,
+section form select {
+  width: 100%; /* Largeur de 100% pour les champs de texte, les zones de texte et les listes déroulantes */
+  padding: 10px; /* Espacement intérieur des champs de texte, zones de texte et listes déroulantes */
+  margin-bottom: 15px; /* Marge en bas entre les champs */
+  border: 1px solid #ccc; /* Bordure légère pour les champs */
+  border-radius: 5px; /* Coins arrondis pour les champs */
+}
+section form button[type=submit] {
+  background-color: #007bff; /* Utilisation de la variable de couleur pour le fond du bouton */
+  color: #ffffff; /* Utilisation de la variable de couleur pour le texte du bouton */
+  border: none; /* Supprimer la bordure du bouton */
+  padding: 10px 20px; /* Espacement intérieur du bouton */
+  font-weight: bold; /* Texte en gras pour le bouton */
+  border-radius: 5px; /* Coins arrondis pour le bouton */
+  cursor: pointer; /* Curseur pointeur au survol du bouton */
+}
+
+/* Media Query pour les écrans mobiles */
+@media screen and (max-width: 768px) {
+  section {
+    padding: 10px; /* Réduire l'espacement intérieur pour les écrans mobiles */
+  }
+  section h2 {
+    font-size: 20px; /* Taille de police réduite pour le titre */
+  }
+  section form label {
+    font-size: 16px; /* Taille de police réduite pour les labels */
+  }
+  section form input[type=text],
+  section form textarea,
+  section form select {
+    font-size: 14px; /* Taille de police réduite pour les champs de texte, les zones de texte et les listes déroulantes */
+  }
+  section form button[type=submit] {
+    font-size: 16px; /* Taille de police réduite pour le bouton */
+  }
+}
+/* Styles pour la gestion des produits */
+h3 {
   font-size: 24px;
-  margin-bottom: 10px;
-}
-.main-detail-product ul {
-  list-style: none;
-  padding: 0;
-}
-.main-detail-product li {
   margin-bottom: 20px;
-  border: 1px solid #ddd;
-  padding: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  color: #007bff;
 }
-.main-detail-product li img {
+
+.admin-message {
+  color: #ff0000;
+  font-weight: bold;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px #000000;
+  border-radius: 10px;
+}
+table th,
+table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ccc;
+}
+table th {
+  font-weight: bold;
+}
+table tbody tr:hover {
+  background-color: #e0e0e0;
+}
+
+a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+div {
+  margin-top: 20px;
+}
+
+/* Media Query pour les écrans mobiles */
+@media screen and (max-width: 768px) {
+  h3 {
+    font-size: 20px;
+  }
+  table th,
+  table td {
+    padding: 8px;
+  }
+}
+main#article-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+main#article-list article {
+  flex-basis: calc(33.33% - 20px); /* 3 images par ligne sur ordinateur */
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+main#article-list article h3 {
+  font-size: 18px;
+  margin: 10px 0;
+  color: #161D31;
+}
+
+main#article-list article img {
   max-width: 100%;
   height: auto;
-  margin-bottom: 10px;
 }
-.main-detail-product li h2 {
-  font-size: 20px;
-  margin-bottom: 5px;
+
+@media screen and (max-width: 991px) {
+  main#article-list article {
+    flex-basis: calc(50% - 20px); /* 2 images par ligne sur tablette */
+  }
 }
-.main-detail-product li p {
-  font-size: 16px;
+@media screen and (max-width: 767px) {
+  main#article-list article {
+    flex-basis: calc(100% - 20px); /* 1 image par ligne sur mobile */
+  }
+}
+#detail {
+  padding: 20px;
+  text-align: center;
+}
+
+#detail h2 {
+  font-size: 24px;
   margin: 0;
 }
 
+#detail article {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  margin-top: 20px;
+  display: flex; /* Utilisation de flexbox */
+  align-items: center; /* Alignez le contenu verticalement au centre */
+}
+
+#detail article h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #161D31;
+  flex: 1; /* Ajustez la largeur de l'en-tête pour occuper l'espace disponible */
+}
+
+#detail article p {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 15px;
+  color: #000000;
+}
+
+#detail article figure {
+  margin: 0;
+  flex: 1; /* Ajustez la largeur de la figure pour occuper l'espace disponible */
+  text-align: right; /* Alignez l'image et le contenu à droite */
+}
+
+#detail article figure img {
+  max-width: 100%;
+  height: auto;
+}
+
+#detail a {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 10px 20px;
+  background-color: #161D31;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 3px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+#detail a:hover {
+  background-color: #06080e;
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  #detail article {
+    flex-direction: column; /* Passez à une mise en page en colonne sur tablette */
+    text-align: left;
+  }
+}
+@media screen and (max-width: 767px) {
+  #detail article {
+    flex-direction: column; /* Passez à une mise en page en colonne sur mobile */
+    text-align: left;
+  }
+}
+#section-g {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.section-h,
+.section-f,
+.section-e,
+.section-a {
+  flex-basis: calc(25% - 10px);
+  margin: 5rem 0;
+}
+.section-h a,
+.section-f a,
+.section-e a,
+.section-a a {
+  text-decoration: none;
+  color: #161D31;
+}
+.section-h a img,
+.section-f a img,
+.section-e a img,
+.section-a a img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media screen and (max-width: 578px) {
+  .section-h,
+  .section-f,
+  .section-e,
+  .section-a {
+    flex-basis: calc(25% - 10px);
+  }
+}
+@media screen and (max-width: 357px) {
+  .section-h,
+  .section-f,
+  .section-e,
+  .section-a {
+    flex-basis: 100%;
+  }
+}
+/* Styles pour la section de connexion */
+#connect {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+#connect h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #007bff; /* Couleur du titre */
+}
+#connect .errors-message {
+  color: #ff0000; /* Couleur du message d'erreur */
+  font-weight: bold;
+}
+#connect .connect label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+#connect .connect .connex {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+#connect .connect .btnlog {
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Media Query pour les écrans mobiles */
+@media screen and (max-width: 768px) {
+  #connect {
+    padding: 10px;
+  }
+  #connect h2 {
+    font-size: 20px;
+  }
+  #connect .connect label {
+    font-size: 16px;
+  }
+  #connect .connect .connex {
+    font-size: 14px;
+  }
+  #connect .connect .btnlog {
+    font-size: 16px;
+  }
+}
+/* Styles pour la section d'inscription */
+.register {
+  background-color: #fff; /* Couleur de fond */
+  padding: 20px; /* Espacement intérieur de la section */
+  border-radius: 10px; /* Coins arrondis */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Ombre légère */
+  margin: 4rem auto; /* Marge de 4rem en haut et en bas, centré horizontalement */
+  max-width: 400px; /* Largeur maximale de la section */
+}
+.register h2 {
+  font-size: 24px; /* Taille de la police pour le titre */
+  margin-bottom: 20px; /* Marge en bas du titre */
+  color: #007bff; /* Couleur du titre */
+}
+.register .errors-message {
+  color: #ff0000; /* Couleur du message d'erreur */
+  font-weight: bold; /* Texte en gras pour les erreurs */
+}
+.register .c-create label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px; /* Marge en bas entre les étiquettes */
+}
+.register .c-create .registre {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px; /* Marge en bas entre les champs de saisie */
+  border: 1px solid #ccc; /* Bordure des champs de saisie */
+  border-radius: 5px; /* Coins arrondis des champs de saisie */
+}
+.register .c-create .error-message {
+  color: #ff0000; /* Couleur du message d'erreur */
+  font-size: 14px; /* Taille de la police du message d'erreur */
+}
+.register .c-create #register-button {
+  background-color: #007bff; /* Couleur de fond du bouton */
+  color: #fff; /* Couleur du texte du bouton */
+  border: none; /* Supprimer la bordure du bouton */
+  padding: 10px 20px; /* Espacement intérieur du bouton */
+  font-weight: bold; /* Texte en gras pour le bouton */
+  border-radius: 5px; /* Coins arrondis du bouton */
+  cursor: pointer; /* Curseur au survol */
+  width: 100%; /* Largeur du bouton sur toute la largeur de la section */
+}
+.register .c-create #register-button:disabled {
+  background-color: #ccc; /* Couleur de fond du bouton désactivé */
+  color: #000; /* Couleur du texte du bouton désactivé */
+  cursor: not-allowed; /* Curseur désactivé */
+}
+
+/* Styles pour la gestion des utilisateurs */
+h3 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #007bff;
+}
+
+.admin-message {
+  color: #ff0000;
+  font-weight: bold;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px #000000;
+  border-radius: 10px;
+}
+table th,
+table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ccc;
+}
+table th {
+  font-weight: bold;
+}
+table tbody tr:hover {
+  background-color: #ff0000;
+}
+
+a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+div {
+  margin-top: 20px;
+}
+
+/* Media Query pour les écrans mobiles */
+@media screen and (max-width: 768px) {
+  h3 {
+    font-size: 20px;
+  }
+  table th,
+  table td {
+    padding: 8px;
+  }
+}
+/* Styles pour la page de modification d'utilisateur */
+.admin-form {
+  background-color: #ffffff; /* Couleur de fond de la page */
+  padding: 20px; /* Espacement intérieur de la page */
+  border-radius: 10px; /* Coins arrondis pour la page */
+  box-shadow: 0 0 10px #000000; /* Ombre légère pour la page */
+}
+.admin-form h3 {
+  font-size: 24px; /* Taille de police pour le titre */
+  margin-bottom: 20px; /* Marge en bas du titre */
+  color: #007bff; /* Couleur du titre */
+}
+.admin-form p.form-errors {
+  color: #ff0000; /* Couleur du message d'erreur */
+  font-weight: bold; /* Texte en gras pour le message d'erreur */
+}
+.admin-form form label {
+  display: block; /* Afficher les labels en bloc (un en dessous de l'autre) */
+  font-weight: bold; /* Texte en gras pour les labels */
+  margin-bottom: 5px; /* Marge en bas des labels */
+}
+.admin-form form input[type=text],
+.admin-form form input[type=email],
+.admin-form form input[type=password],
+.admin-form form select {
+  width: 100%; /* Largeur de 100% pour les champs de texte, les zones de texte et les listes déroulantes */
+  padding: 10px; /* Espacement intérieur des champs de texte, zones de texte et listes déroulantes */
+  margin-bottom: 15px; /* Marge en bas entre les champs */
+  border: 1px solid #ccc; /* Bordure légère pour les champs */
+  border-radius: 5px; /* Coins arrondis pour les champs */
+}
+.admin-form form button[type=submit] {
+  background-color: #007bff; /* Couleur de fond du bouton */
+  color: #ffffff; /* Couleur du texte du bouton */
+  border: none; /* Supprimer la bordure du bouton */
+  padding: 10px 20px; /* Espacement intérieur du bouton */
+  font-weight: bold; /* Texte en gras pour le bouton */
+  border-radius: 5px; /* Coins arrondis pour le bouton */
+  cursor: pointer; /* Curseur pointeur au survol du bouton */
+}
+
+/* Media Query pour les écrans mobiles */
+@media screen and (max-width: 768px) {
+  .admin-form {
+    padding: 10px; /* Réduire l'espacement intérieur pour les écrans mobiles */
+  }
+  .admin-form h3 {
+    font-size: 20px; /* Taille de police réduite pour les titres */
+  }
+  .admin-form form label {
+    font-size: 16px; /* Taille de police réduite pour les labels */
+  }
+  .admin-form form input[type=text],
+  .admin-form form input[type=email],
+  .admin-form form input[type=password],
+  .admin-form form select {
+    font-size: 14px; /* Taille de police réduite pour les champs de texte, les zones de texte et les listes déroulantes */
+  }
+  .admin-form form button[type=submit] {
+    font-size: 16px; /* Taille de police réduite pour le bouton */
+  }
+}
+/*@import 'public/users/admin-user';
+@import 'public/users/edit-user';*/
 /* Styles pour l'en-tête */
 .header {
-  background-color: #161D31; /* Utilisation de la variable de couleur de fond */
-  color: #fff; /* Couleur du texte en blanc */
-  padding: 20px; /* Espacement intérieur de l'en-tête */
-  /* Styles pour le titre */
-  /* Styles pour la navigation */
+  position: fixed; /* Rendre le header fixe */
+  top: 0; /* Fixer le header en haut de la page */
+  width: 100%; /* Définir la largeur à 100% pour qu'il s'étende sur toute la largeur */
+  background-color: #161D31;
+  color: #fff;
+  padding: 1.5rem; /* 20px en rem */
+  /* Masquer l'image par défaut sur les écrans non mobiles */
 }
 .header h1 {
-  font-size: 36px; /* Taille de la police du titre */
-  margin: 0; /* Supprime les marges par défaut */
+  font-size: 2.25rem; /* 36px en rem */
+  margin: 0;
 }
 .header nav ul {
-  list-style: none; /* Supprime les puces de la liste */
-  padding: 0; /* Supprime le remplissage de la liste */
-  display: flex; /* Utilise un affichage en ligne pour les éléments de liste */
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  /* Pour éviter la marge à droite sur le dernier élément li */
 }
 .header nav ul li {
-  margin-right: 20px; /* Marge à droite entre les éléments de la liste */
-}
-.header nav ul li:last-child {
-  margin-right: 0; /* Supprime la marge à droite du dernier élément de la liste */
+  margin-right: 1rem; /* 16px en rem (plus d'espace) */
 }
 .header nav ul li a {
-  text-decoration: none; /* Supprime la décoration du texte des liens */
-  color: #fff; /* Couleur du texte en blanc */
-  font-weight: bold; /* Texte en gras pour les liens */
+  text-decoration: none;
+  color: #ffffff;
+}
+.header nav ul li:last-child {
+  margin-right: 0;
+}
+.header img {
+  display: none;
+}
+
+/* Media Query pour les appareils mobiles (max-width: 767px) */
+@media screen and (max-width: 767px) {
+  .header {
+    position: fixed; /* Rendre le header fixe */
+    top: 4rem; /* Fixer le header en haut de la page */
+    background-color: #161D31;
+    padding: 0.5rem; /* 10px en rem */
+    /* Ajustez la largeur de la liste ul pour occuper toute la largeur de l'écran */
+  }
+  .header h1 {
+    font-size: 1.5rem; /* 24px en rem */
+  }
+  .header nav ul li {
+    margin-bottom: 1rem; /* 16px en rem */
+    padding: 1rem; /* 16px en rem */
+  }
+  .header nav ul {
+    width: 100%;
+  }
+  /* Afficher l'image uniquement sur les écrans mobiles */
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+}
+nav {
+  background: #161D31;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+nav ul {
+  display: flex;
+  justify-content: space-between;
+}
+nav ul li {
+  margin-right: 1rem;
+}
+nav ul li a {
+  text-decoration: none;
+  color: #ffffff;
+}
+nav ul li:last-child {
+  margin-right: 0;
+}
+nav #icons {
+  cursor: pointer;
+  display: none;
+}
+nav #icons:before {
+  content: "☰";
+}
+@media (max-width: 650px) {
+  nav #icons {
+    display: block;
+  }
+  nav #icons:before {
+    content: "☰";
+  }
+  nav.active #icons:before {
+    content: "✕";
+  }
+  nav ul {
+    position: fixed;
+    left: -100%;
+    top: 5%;
+    flex-direction: column;
+    background: #161D31;
+    width: 100%;
+    text-align: center;
+    transition: 0.25s;
+  }
+  nav ul li {
+    padding: 3px 0;
+  }
+  nav.active ul {
+    left: 0;
+  }
 }
 
 /* Styles pour le footer */
@@ -67,37 +711,43 @@
   color: #fff; /* Couleur du texte en blanc */
   padding: 20px; /* Espacement intérieur du footer */
   text-align: center; /* Alignement du texte au centre */
+  /* Media Query pour les appareils mobiles (max-width: 767px) */
 }
-
-/* Conteneur flex pour la liste dans le footer */
-#foot {
-  display: flex;
-  flex-wrap: wrap; /* Permet à la liste de passer à la ligne si l'espace est insuffisant */
-  justify-content: center; /* Centre les éléments horizontalement */
-}
-
 #foot ul {
   list-style: none; /* Supprime les puces de la liste */
   padding: 0; /* Supprime le remplissage de la liste */
+  display: flex;
+  flex-wrap: wrap; /* Permet aux éléments de passer à la ligne si l'espace est insuffisant */
+  justify-content: center; /* Centre les éléments horizontalement */
 }
-
 #foot ul li {
-  margin-bottom: 10px; /* Marge en bas entre les éléments de la liste */
   margin-right: 20px; /* Marge à droite entre les éléments de la liste */
 }
-
 #foot ul li:last-child {
   margin-right: 0; /* Supprime la marge à droite du dernier élément de la liste */
 }
-
 #foot ul li a {
   text-decoration: none; /* Supprime la décoration du texte des liens */
   color: #fff; /* Couleur du texte en blanc */
   font-weight: bold; /* Texte en gras pour les liens */
 }
-
 #foot ul li a:hover {
   text-decoration: underline; /* Souligne les liens au survol */
+}
+@media screen and (max-width: 767px) {
+  #foot {
+    padding: 10px; /* Réduisez l'espacement pour les écrans mobiles */
+  }
+  #foot ul {
+    flex-direction: column; /* Les éléments <li> passeront en mode bloc */
+  }
+  #foot ul li {
+    margin-bottom: 5px; /* Réduisez la marge entre les éléments de la liste pour les écrans mobiles */
+    margin-right: 0; /* Supprime la marge à droite pour les écrans mobiles */
+  }
+  #foot ul li a {
+    font-size: 16px; /* Réduisez la taille de la police pour les écrans mobiles */
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
