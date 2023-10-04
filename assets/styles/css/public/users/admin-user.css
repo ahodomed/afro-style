@@ -1,17 +1,67 @@
-/* Error: Undefined variable.
- *   ,
- * 6 |   color: $primaryBlue; // Couleur du titre
- *   |          ^^^^^^^^^^^^
- *   '
- *   assets/styles/sass/public/users/admin-user.scss 6:10  root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Undefined variable.\a   \2577 \a 6 \2502    color: $primaryBlue; // Couleur du titre\a   \2502           ^^^^^^^^^^^^\a   \2575 \a   assets/styles/sass/public/users/admin-user.scss 6:10  root stylesheet";
+@charset "UTF-8";
+/* Styles pour la gestion des utilisateurs */
+.admin-user {
+  margin-top: 8rem;
+  background-color: #ffffff;
+  padding: 20px;
+  box-shadow: 0 0 10px #000000;
+  border-radius: 10px;
 }
+
+h3 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #007bff;
+}
+
+.admin-message {
+  color: #ff0000;
+  font-weight: bold;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px #000000;
+  border-radius: 10px;
+}
+table th,
+table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ccc;
+}
+table th {
+  font-weight: bold;
+}
+table tbody tr:hover {
+  background-color: #ff0000;
+}
+
+a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+div {
+  margin-top: 20px;
+}
+
+/* Media Query pour les écrans mobiles */
+@media screen and (max-width: 768px) {
+  h3 {
+    font-size: 20px;
+  }
+  table th,
+  table td {
+    padding: 8px;
+  }
+}
+
+/*# sourceMappingURL=admin-user.css.map */

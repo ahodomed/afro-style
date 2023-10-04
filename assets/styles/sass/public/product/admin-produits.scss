@@ -5,6 +5,14 @@ $primaryBlue: #007bff;
 $errorRed: #ff0000;
 
 /* Styles pour la gestion des produits */
+.admin-produit {
+  margin-top:8rem;
+  background-color: $white; // Fond de la page
+  padding: 20px;
+  box-shadow: 0 0 10px $black; // Ombre légère
+  border-radius: 10px;
+}
+
 h3 {
   font-size: 24px;
   margin-bottom: 20px;
@@ -20,7 +28,7 @@ table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
-  background-color: $white; // Fond de la page
+  background-color: $white; // Fond de la table
   box-shadow: 0 0 10px $black; // Ombre légère
   border-radius: 10px;
 
@@ -36,13 +44,13 @@ table {
   }
 
   tbody tr:hover {
-    background-color: #e0e0e0;
+    background-color: $errorRed;
   }
 }
 
 a {
   text-decoration: none;
-  color: $primaryBlue; // Couleur du titre
+  color: $primaryBlue; // Couleur du lien
 }
 
 a:hover {

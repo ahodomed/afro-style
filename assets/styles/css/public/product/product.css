@@ -5,11 +5,11 @@
 }
 
 #detail h2 {
+  margin-top: 20rem;
   font-size: 24px;
   margin: 0;
 }
-
-#detail article {
+#detail h2 #detail article {
   border: 1px solid #ccc;
   border-radius: 5px;
   padding: 20px;
@@ -17,33 +17,28 @@
   display: flex; /* Utilisation de flexbox */
   align-items: center; /* Alignez le contenu verticalement au centre */
 }
-
-#detail article h3 {
+#detail h2 #detail article h3 {
   font-size: 20px;
   margin-bottom: 10px;
   color: #161D31;
   flex: 1; /* Ajustez la largeur de l'en-tête pour occuper l'espace disponible */
 }
-
-#detail article p {
+#detail h2 #detail article p {
   font-size: 16px;
   line-height: 1.5;
   margin-bottom: 15px;
   color: #000000;
 }
-
-#detail article figure {
+#detail h2 #detail article figure {
   margin: 0;
   flex: 1; /* Ajustez la largeur de la figure pour occuper l'espace disponible */
   text-align: right; /* Alignez l'image et le contenu à droite */
 }
-
-#detail article figure img {
+#detail h2 #detail article figure img {
   max-width: 100%;
   height: auto;
 }
-
-#detail a {
+#detail h2 #detail a {
   display: inline-block;
   margin-top: 2rem;
   padding: 10px 20px;
@@ -54,19 +49,17 @@
   border-radius: 3px;
   transition: background-color 0.3s ease-in-out;
 }
-
-#detail a:hover {
+#detail h2 #detail a:hover {
   background-color: #06080e;
 }
-
 @media screen and (min-width: 768px) and (max-width: 991px) {
-  #detail article {
+  #detail h2 #detail article {
     flex-direction: column; /* Passez à une mise en page en colonne sur tablette */
     text-align: left;
   }
 }
 @media screen and (max-width: 767px) {
-  #detail article {
+  #detail h2 #detail article {
     flex-direction: column; /* Passez à une mise en page en colonne sur mobile */
     text-align: left;
   }

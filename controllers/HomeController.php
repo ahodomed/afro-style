@@ -34,4 +34,9 @@
 
     }
     
+    public function mention()
+    {
+        $this->render('templates/admin/mentions/mentions-legales',[]);
+    }
+    
 }

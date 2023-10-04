@@ -1,4 +1,57 @@
 @charset "UTF-8";
+#detail {
+  padding: 20px;
+  text-align: center;
+  background-color: #f7f7f7; /* Couleur de fond */
+}
+#detail #detail h2 {
+  margin-top: 2rem; /* Marge supérieure */
+  font-size: 24px;
+  color: #333; /* Couleur du titre */
+}
+#detail #detail article {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  margin-top: 20px;
+  background-color: #fff; /* Fond blanc */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Ombre légère */
+}
+#detail #detail article h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #161D31; /* Couleur du titre */
+}
+#detail #detail article p {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 15px;
+  color: #333; /* Couleur du texte */
+}
+#detail #detail article figure {
+  margin: 0;
+  text-align: center;
+}
+#detail #detail article figure img {
+  max-width: 100%;
+  height: auto;
+}
+#detail #detail a {
+  display: inline-block;
+  margin-top: 1rem; /* Marge supérieure */
+  padding: 10px 20px;
+  background-color: #007bff; /* Couleur du lien */
+  color: #fff; /* Couleur du texte du lien */
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 3px;
+  transition: background-color 0.3s ease-in-out;
+}
+#detail #detail a:hover {
+  border: 1px solid black;
+  background-color: #007bff; /* Couleur au survol */
+}
+
 /* Styles pour le formulaire de modification de produit */
 section {
   margin-top: 8rem;
@@ -118,6 +171,14 @@ section form button[type=submit] {
   }
 }
 /* Styles pour la gestion des produits */
+.admin-produit {
+  margin-top: 8rem;
+  background-color: #ffffff;
+  padding: 20px;
+  box-shadow: 0 0 10px #000000;
+  border-radius: 10px;
+}
+
 h3 {
   font-size: 24px;
   margin-bottom: 20px;
@@ -147,7 +208,7 @@ table th {
   font-weight: bold;
 }
 table tbody tr:hover {
-  background-color: #e0e0e0;
+  background-color: #ff0000;
 }
 
 a {
@@ -173,53 +234,142 @@ div {
     padding: 8px;
   }
 }
-main#article-list {
+.main-detail-product {
+  padding: 20px;
+  margin-top: 8rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.main-detail-product h2 {
+  font-size: 24px;
+  color: #007bff; /* Couleur du titre */
+}
+.main-detail-product ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* Espacement égal entre les colonnes */
+}
+.main-detail-product a {
+  text-decoration: none;
+  color: #000000;
+  transition: color 0.3s ease-in-out;
+  width: calc(33.33% - 20px); /* Répartir les éléments en 3 colonnes avec un espace de 20px entre eux */
+  margin-bottom: 2rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: #ffffff; /* Fond blanc pour chaque produit */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Ombre légère */
+}
+.main-detail-product a:hover {
+  color: #ff0000; /* Couleur au survol */
+}
+.main-detail-product img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 5px; /* Réduction de l'espace entre les images à 5px */
+}
+.main-detail-product h2 {
+  font-size: 20px;
+  margin: 0;
+}
+.main-detail-product p {
+  font-size: 16px;
+  margin: 0;
+}
+.main-detail-product .message {
+  color: #ff0000; /* Couleur du message d'erreur */
+  font-weight: bold;
+}
+@media screen and (max-width: 991px) {
+  .main-detail-product a {
+    width: calc(50% - 20px); /* Répartir les éléments en 2 colonnes sur les écrans moyens */
+  }
+}
+@media screen and (max-width: 767px) {
+  .main-detail-product a {
+    width: 100%; /* Afficher les éléments en une seule colonne sur les écrans étroits */
+  }
+}
+
+#article-list {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
   justify-content: space-between;
+  padding: 20px;
+  background-color: #f8f8f8;
 }
 
-main#article-list article {
-  flex-basis: calc(33.33% - 20px); /* 3 images par ligne sur ordinateur */
-  border: 1px solid #ccc;
-  padding: 10px;
+#article-list h2.list {
+  font-size: 24px;
+  color: #333;
+  margin: 0;
+  margin-top: 10rem;
+  width: 100%;
   text-align: center;
-  box-sizing: border-box;
 }
 
-main#article-list article h3 {
+#article-list article {
+  flex-basis: calc(33.33% - 20px);
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.2s ease-in-out;
+}
+
+#article-list article:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#article-list header {
+  width: 100%;
+  text-align: left;
+}
+
+#article-list h3 {
   font-size: 18px;
-  margin: 10px 0;
-  color: #161D31;
+  margin: 0;
+  color: #333;
+  margin-bottom: 10px;
 }
 
-main#article-list article img {
+#article-list img {
   max-width: 100%;
   height: auto;
 }
 
-@media screen and (max-width: 991px) {
-  main#article-list article {
-    flex-basis: calc(50% - 20px); /* 2 images par ligne sur tablette */
-  }
+#article-list a {
+  text-decoration: none;
+  color: #007bff;
+  font-weight: bold;
+  margin-top: auto;
+  transition: color 0.2s ease-in-out;
 }
-@media screen and (max-width: 767px) {
-  main#article-list article {
-    flex-basis: calc(100% - 20px); /* 1 image par ligne sur mobile */
-  }
+
+#article-list a:hover {
+  color: #0056b3;
 }
+
 #detail {
   padding: 20px;
   text-align: center;
 }
 
 #detail h2 {
+  margin-top: 20rem;
   font-size: 24px;
   margin: 0;
 }
-
-#detail article {
+#detail h2 #detail article {
   border: 1px solid #ccc;
   border-radius: 5px;
   padding: 20px;
@@ -227,33 +377,28 @@ main#article-list article img {
   display: flex; /* Utilisation de flexbox */
   align-items: center; /* Alignez le contenu verticalement au centre */
 }
-
-#detail article h3 {
+#detail h2 #detail article h3 {
   font-size: 20px;
   margin-bottom: 10px;
   color: #161D31;
   flex: 1; /* Ajustez la largeur de l'en-tête pour occuper l'espace disponible */
 }
-
-#detail article p {
+#detail h2 #detail article p {
   font-size: 16px;
   line-height: 1.5;
   margin-bottom: 15px;
   color: #000000;
 }
-
-#detail article figure {
+#detail h2 #detail article figure {
   margin: 0;
   flex: 1; /* Ajustez la largeur de la figure pour occuper l'espace disponible */
   text-align: right; /* Alignez l'image et le contenu à droite */
 }
-
-#detail article figure img {
+#detail h2 #detail article figure img {
   max-width: 100%;
   height: auto;
 }
-
-#detail a {
+#detail h2 #detail a {
   display: inline-block;
   margin-top: 2rem;
   padding: 10px 20px;
@@ -264,23 +409,22 @@ main#article-list article img {
   border-radius: 3px;
   transition: background-color 0.3s ease-in-out;
 }
-
-#detail a:hover {
+#detail h2 #detail a:hover {
   background-color: #06080e;
 }
-
 @media screen and (min-width: 768px) and (max-width: 991px) {
-  #detail article {
+  #detail h2 #detail article {
     flex-direction: column; /* Passez à une mise en page en colonne sur tablette */
     text-align: left;
   }
 }
 @media screen and (max-width: 767px) {
-  #detail article {
+  #detail h2 #detail article {
     flex-direction: column; /* Passez à une mise en page en colonne sur mobile */
     text-align: left;
   }
 }
+
 #section-g {
   margin-top: 2rem;
   display: flex;
@@ -437,6 +581,14 @@ main#article-list article img {
 }
 
 /* Styles pour la gestion des utilisateurs */
+.admin-user {
+  margin-top: 8rem;
+  background-color: #ffffff;
+  padding: 20px;
+  box-shadow: 0 0 10px #000000;
+  border-radius: 10px;
+}
+
 h3 {
   font-size: 24px;
   margin-bottom: 20px;
@@ -554,8 +706,106 @@ div {
     font-size: 16px; /* Taille de police réduite pour le bouton */
   }
 }
-/*@import 'public/users/admin-user';
-@import 'public/users/edit-user';*/
+/* Styles pour la section "À propos de nous" */
+.a-propos {
+  margin-top: 8rem;
+  margin-bottom: 4rem;
+  background-color: #ffffff;
+  padding: 20px;
+  border: 2px solid #007bff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+}
+.a-propos h1 {
+  font-size: 36px;
+  color: #007bff;
+  margin-bottom: 20px;
+}
+.a-propos p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #000000;
+  margin-bottom: 20px;
+}
+.a-propos a {
+  text-decoration: none;
+  color: #007bff;
+}
+.a-propos a:hover {
+  text-decoration: underline;
+}
+
+/* Media Query pour les écrans mobiles */
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 24px;
+  }
+  p {
+    font-size: 14px;
+  }
+}
+/* Styles pour la page de modification d'utilisateur */
+.admin-form {
+  background-color: #ffffff; /* Couleur de fond de la page */
+  padding: 20px; /* Espacement intérieur de la page */
+  border-radius: 10px; /* Coins arrondis pour la page */
+  box-shadow: 0 0 10px #000000; /* Ombre légère pour la page */
+}
+.admin-form h3 {
+  font-size: 24px; /* Taille de police pour le titre */
+  margin-bottom: 20px; /* Marge en bas du titre */
+  color: #007bff; /* Couleur du titre */
+}
+.admin-form p.form-errors {
+  color: #ff0000; /* Couleur du message d'erreur */
+  font-weight: bold; /* Texte en gras pour le message d'erreur */
+}
+.admin-form form label {
+  display: block; /* Afficher les labels en bloc (un en dessous de l'autre) */
+  font-weight: bold; /* Texte en gras pour les labels */
+  margin-bottom: 5px; /* Marge en bas des labels */
+}
+.admin-form form input[type=text],
+.admin-form form input[type=email],
+.admin-form form input[type=password],
+.admin-form form select {
+  width: 100%; /* Largeur de 100% pour les champs de texte, les zones de texte et les listes déroulantes */
+  padding: 10px; /* Espacement intérieur des champs de texte, zones de texte et listes déroulantes */
+  margin-bottom: 15px; /* Marge en bas entre les champs */
+  border: 1px solid #ccc; /* Bordure légère pour les champs */
+  border-radius: 5px; /* Coins arrondis pour les champs */
+}
+.admin-form form button[type=submit] {
+  background-color: #007bff; /* Couleur de fond du bouton */
+  color: #ffffff; /* Couleur du texte du bouton */
+  border: none; /* Supprimer la bordure du bouton */
+  padding: 10px 20px; /* Espacement intérieur du bouton */
+  font-weight: bold; /* Texte en gras pour le bouton */
+  border-radius: 5px; /* Coins arrondis pour le bouton */
+  cursor: pointer; /* Curseur pointeur au survol du bouton */
+}
+
+/* Media Query pour les écrans mobiles */
+@media screen and (max-width: 768px) {
+  .admin-form {
+    padding: 10px; /* Réduire l'espacement intérieur pour les écrans mobiles */
+  }
+  .admin-form h3 {
+    font-size: 20px; /* Taille de police réduite pour les titres */
+  }
+  .admin-form form label {
+    font-size: 16px; /* Taille de police réduite pour les labels */
+  }
+  .admin-form form input[type=text],
+  .admin-form form input[type=email],
+  .admin-form form input[type=password],
+  .admin-form form select {
+    font-size: 14px; /* Taille de police réduite pour les champs de texte, les zones de texte et les listes déroulantes */
+  }
+  .admin-form form button[type=submit] {
+    font-size: 16px; /* Taille de police réduite pour le bouton */
+  }
+}
 /* Styles pour l'en-tête */
 .header {
   position: fixed; /* Rendre le header fixe */

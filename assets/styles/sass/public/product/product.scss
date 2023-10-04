@@ -11,9 +11,10 @@ $errorRed: #ff0000;
 }
 
 #detail h2 {
+  margin-top:20rem;
   font-size: 24px;
   margin: 0;
-}
+
 
 #detail article {
   border: 1px solid #ccc;
@@ -76,4 +77,5 @@ $errorRed: #ff0000;
     flex-direction: column; /* Passez à une mise en page en colonne sur mobile */
     text-align: left;
   }
+}
 }

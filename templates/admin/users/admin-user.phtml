@@ -1,5 +1,6 @@
+<main class="admin-user">
+    
 <h3>Gestion des utilisateurs</h3>
-
 <?php if(isset($_SESSION["message"])) {
     echo "<p class='admin-message'>" . $_SESSION["message"] . "</p>";
     unset($_SESSION["message"]);
@@ -24,8 +25,7 @@
                     <a href='/afrostyle/index.php?route=edit-user&id=<?= $user->getId() ?>'>Modifier</a>
                     <a href='/afrostyle/index.php?route=delete-user&id=<?= $user->getId() ?>' class="delete delete-user" data-id="<?= $user->getId() ?>">Supprimer</a>
 
-<!--                    <a href='/afrostyle/index.php?route=delete-user&id=<?= $user->getId() ?>' class="delete-user">Supprimer</a>
--->                </td>
+                </td>
             </tr>
         <?php endforeach; ?>
     </tbody>
@@ -33,3 +33,4 @@
 <div>
     <a href="index.php?route=register">Ajouter un utilisateur</a>
 </div>
+</main>

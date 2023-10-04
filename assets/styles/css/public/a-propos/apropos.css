@@ -1,0 +1,41 @@
+@charset "UTF-8";
+/* Styles pour la section "À propos de nous" */
+.a-propos {
+  margin-top: 8rem;
+  margin-bottom: 4rem;
+  background-color: #ffffff;
+  padding: 20px;
+  border: 2px solid #007bff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+}
+.a-propos h1 {
+  font-size: 36px;
+  color: #007bff;
+  margin-bottom: 20px;
+}
+.a-propos p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #000000;
+  margin-bottom: 20px;
+}
+.a-propos a {
+  text-decoration: none;
+  color: #007bff;
+}
+.a-propos a:hover {
+  text-decoration: underline;
+}
+
+/* Media Query pour les écrans mobiles */
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 24px;
+  }
+  p {
+    font-size: 14px;
+  }
+}
+
+/*# sourceMappingURL=apropos.css.map */

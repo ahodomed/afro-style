@@ -67,43 +67,48 @@ class Router {
             
             else if (isset($_SESSION["role"]) && $_SESSION["role"] === 2)
             {
-                if ($_GET['route'] === "admin-user")
-                {
+             if ($_GET['route'] === "admin-user")
+            {
                     $this->ac->manageUser();
-                }
-                else if ($_GET['route'] === "edit-user" && $_GET["id"])
-                {
+            }
+            else if ($_GET['route'] === "edit-user" && $_GET["id"])
+            {
                     $this->ac->editUser($_GET["id"]);
-                }
-                else if($_GET['route'] === "delete-user" && $_GET["id"])
-                {
+            }
+            else if($_GET['route'] === "delete-user" && $_GET["id"])
+            {
                     $this->ac->deleteUser($_GET["id"]);
-                }
-                else if ($_GET['route'] === 'admin-product')
-                {
+            }
+            else if ($_GET['route'] === 'admin-product')
+            {
                     $this->ac->manageProduct();
-                }
-                else if ($_GET['route'] === "create-product")
-                {
+            }
+            else if ($_GET['route'] === "create-product")
+            {
                     $this->pc->createProduct();
-                }
-                else if ($_GET['route'] === "edit-product" && $_GET['id'])
-                {
+            }
+            else if ($_GET['route'] === "edit-product" && $_GET['id'])
+            {
                     $this->pc->editProduct($_GET['id']);
-                }
-                else if ($_GET['route'] === "delete-product" && $_GET['id'])
-                {
+            }
+            else if ($_GET['route'] === "delete-product" && $_GET['id'])
+            {
                     $this->pc->deleteProduct($_GET['id']);
-                } 
+            } 
                 
             }
-            elseif ($_GET['route'] === "contact") {
+            elseif ($_GET['route'] === "contact")
+            {
                 $this->hc->contact();
             }
-            
+            else if($_GET['route']=== "mentions-legales")
+            {
+                $this->hc->mention();
+            }
             
          
-            elseif ($_GET['route'] === "category") {
+            elseif ($_GET['route'] === "category") 
+            {
                 $this->cc->categoriesList();
             }
             

@@ -11,17 +11,23 @@
     
     <ul>
         <?php foreach ($products as $key => $product) : ?>
-        <a href="/afrostyle/index.php?route=detail-product&id=<?= $product->getId(); ?>" >
-                <li>
-                    <?php foreach($product->getMedia() as $media): ?>
-                    <img src="<?= $media->getUrl()?>" alt="<?= $media->getName()?>"></img>
-                    <?php endforeach; ?>
-                    <h2><?= $product->getName() ?></h2>
+            <a href="/afrostyle/index.php?route=detail-product&id=<?= $product->getId(); ?>" >
+                
+                <section>
+                    <li>
+                        
+                        <?php foreach($product->getMedia() as $media): ?>
+                            <img src="<?= $media->getUrl()?>" alt="<?= $media->getName()?>"></img>
+                        <?php endforeach; ?>
+                        
+                        <h2><?= $product->getName() ?></h2>
+                    </li>
                     <p>Description : <?= $product->getDescription() ?></p>
                     <p>Prix : <?= $product->getPrice() ?></p>
-                    <!-- Autres détails du produit ici -->
-                </li>
+                </section>
             </a>
+
+                        
         <?php endforeach; ?>
     </ul>
 </main>
