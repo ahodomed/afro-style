@@ -1,63 +1,28 @@
 #article-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: space-between;
-  padding: 20px;
-  background-color: #f8f8f8;
-}
-
-#article-list h2.list {
-  font-size: 24px;
-  color: #333;
-  margin: 0;
-  margin-top: 10rem;
-  width: 100%;
   text-align: center;
 }
-
 #article-list article {
-  flex-basis: calc(33.33% - 20px);
-  background-color: #ffffff;
-  border: 1px solid #e0e0e0;
+  display: inline-block;
+  border: 1px solid #ccc;
   border-radius: 5px;
-  padding: 20px;
-  text-align: center;
+  margin-top: 3rem;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s ease-in-out;
 }
-
 #article-list article:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  transform: scale(1.05); /* Zoom on hover */
 }
-
-#article-list header {
-  width: 100%;
-  text-align: left;
-}
-
-#article-list h3 {
+#article-list article header h3 {
   font-size: 18px;
-  margin: 0;
-  color: #333;
-  margin-bottom: 10px;
+  margin: 10px 0;
 }
-
-#article-list img {
-  max-width: 100%;
-  height: auto;
-}
-
-#article-list a {
-  text-decoration: none;
-  color: #007bff;
-  font-weight: bold;
-  margin-top: auto;
-  transition: color 0.2s ease-in-out;
-}
-
-#article-list a:hover {
-  color: #0056b3;
+#article-list article img {
+  margin: 1rem; /* Reduces image margin */
+  width: 200px; /* Sets image width */
+  height: 200px; /* Sets image height */
+  object-fit: cover; /* Crop the image to fit the specified dimensions */
 }
 
 /*# sourceMappingURL=products.css.map */

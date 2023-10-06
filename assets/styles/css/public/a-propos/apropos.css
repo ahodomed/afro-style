@@ -2,12 +2,14 @@
 /* Styles pour la section "À propos de nous" */
 .a-propos {
   margin-top: 8rem;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
+  margin-right: 1rem;
+  margin-left: 1rem;
   background-color: #ffffff;
-  padding: 20px;
-  border: 2px solid #007bff;
+  padding: 40px;
+  border: 1px solid #007bff;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 .a-propos h1 {
   font-size: 36px;

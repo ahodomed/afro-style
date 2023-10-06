@@ -7,6 +7,7 @@
   width: 100%; /* Définir la largeur à 100% pour qu'il s'étende sur toute la largeur */
   background-color: $firstcol;
   color: #fff;
+  z-index: 2;
   padding: 1.5rem; /* 20px en rem */
 
   h1 {

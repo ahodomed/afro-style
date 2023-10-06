@@ -5,7 +5,7 @@
         ?>
         <article>
             <header>
-                <h3 class=""><?= $product->getName() ?></h3>  
+                <h3 class="titre-article"><?= $product->getName() ?></h3>  
                 <?php
                     if ($product->getCategoryId() === 3) {
                         echo "<p>Accessoire</p>";
@@ -18,11 +18,13 @@
                     }
                 ?>
             </header>
-            <figure>
+            <figure class="left">
                 <img src="<?= $media[0]->getUrl() ?>" alt="<?= $media[0]->getName()?>">
             </figure>
-            <p><?= $product->getDescription()?></p>
-            <p><?= $product->getPrice() ?>€</p>
+            <div class="right">
+                <p><?= $product->getDescription()?></p>
+                <p><?= $product->getPrice() ?>€</p>
+            </div>
          </article>
          <a href="mailto:Afrostyle@gmail.com" target="_blank">Contacter-nous pour commander</a>
                             

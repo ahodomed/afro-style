@@ -99,9 +99,6 @@ class ProductController extends AbstractController {
 
 
 
-
-
-
     public function createProduct() : void
     {
         if(isset($_POST['createProduct']) && $_POST['createProduct'] === "submit")

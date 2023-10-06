@@ -1,24 +1,21 @@
-
-    <h2 class="list">Liste Des Produits</h2>
+<h2 class="list">Liste Des Produits</h2>
 
 <main id="article-list"> 
-        <article>
-
-            <?php
-            foreach($data['productsWithMedias'] as $product)
-            { ?>
-            <a href="/afrostyle/index.php?route=detail-product&id=<?= $product->getId(); ?>" >
+    <?php
+    foreach($data['productsWithMedias'] as $product)
+    { ?>
+        <a href="/afrostyle/index.php?route=detail-product&id=<?= $product->getId(); ?>" >
+            <article>
                 <header>
                     <h3 class=""><?= $product->getName(); ?></h3>  
                 </header>
             
-            <?php foreach($product->getMedia() as $media) :?>
-                <img src="<?= $media->getUrl() ?>" alt="<?= $media->getName() ?>">
-            <?php endforeach; ?>
+                <?php foreach($product->getMedia() as $media) :?>
+                    <img src="<?= $media->getUrl() ?>" alt="<?= $media->getName() ?>">
+                <?php endforeach; ?>
             
-                    <!--<a href='?route=home'>Retour</a>-->
-
-        </article>
+                <!--<a href='?route=home'>Retour</a>-->
+            </article>
         </a>
-     <?php } ?>
-</main>  
+    <?php } ?>
+</main>

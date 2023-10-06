@@ -69,3 +69,4 @@
       registerButton.setAttribute('disabled', 'disabled');
     }
   }
+

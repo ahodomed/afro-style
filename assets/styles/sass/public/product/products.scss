@@ -5,64 +5,42 @@ $darkGray: #333;
 $primaryBlue: #007bff;
 $hoverBlue: #0056b3;
 
+$white: #ffffff;
+$lightGray: #f8f8f8;
+$mediumGray: #e0e0e0;
+$darkGray: #333;
+$primaryBlue: #007bff;
+$hoverBlue: #0056b3;
+
 #article-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: space-between;
-  padding: 20px;
-  background-color: $lightGray;
-}
-
-#article-list h2.list {
-  font-size: 24px;
-  color: $darkGray;
-  margin: 0;
-  margin-top:10rem;
-  width: 100%;
   text-align: center;
-}
 
-#article-list article {
-  flex-basis: calc(33.33% - 20px);
-  background-color: $white;
-  border: 1px solid $mediumGray;
-  border-radius: 5px;
-  padding: 20px;
-  text-align: center;
-  transition: transform 0.2s ease-in-out;
-}
+  article {
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top:3rem;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
 
-#article-list article:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
+    &:hover {
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+      transform: scale(1.05); /* Zoom on hover */
+    }
 
-#article-list header {
-  width: 100%;
-  text-align: left;
-}
+    header {
+      h3 {
+        font-size: 18px;
+        margin: 10px 0;
+      }
+    }
 
-#article-list h3 {
-  font-size: 18px;
-  margin: 0;
-  color: $darkGray;
-  margin-bottom: 10px;
-}
-
-#article-list img {
-  max-width: 100%;
-  height: auto;
-}
-
-#article-list a {
-  text-decoration: none;
-  color: $primaryBlue;
-  font-weight: bold;
-  margin-top: auto;
-  transition: color 0.2s ease-in-out;
-}
-
-#article-list a:hover {
-  color: $hoverBlue;
+    img {
+      margin: 1rem; /* Reduces image margin */
+      width: 200px; /* Sets image width */
+      height: 200px; /* Sets image height */
+      object-fit: cover; /* Crop the image to fit the specified dimensions */
+    }
+  }
 }

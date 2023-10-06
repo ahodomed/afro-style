@@ -5,7 +5,7 @@
   padding: 20px; /* Espacement intérieur de la section */
   border-radius: 10px; /* Coins arrondis */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Ombre légère */
-  margin: 4rem auto; /* Marge de 4rem en haut et en bas, centré horizontalement */
+  margin: 8rem auto; /* Marge de 4rem en haut et en bas, centré horizontalement */
   max-width: 400px; /* Largeur maximale de la section */
 }
 .register h2 {

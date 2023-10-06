@@ -119,11 +119,18 @@ class AuthController extends AbstractController {
                     }
                 } else {
                     $error[] = "Mot de passe incorrect";
+                    $this->render("connexion/login", ['error'=>$error]);
+
                 }
+            }else{
+                 $error[] = " adresse mail incorrect";
+                $this->render("connexion/login", ['error'=>$error]);
+
+
             }
         }
     } else {
-        $this->render("connexion/login", []);
+        $this->render("connexion/login", ['error'=>$error]);
     }
     }
 

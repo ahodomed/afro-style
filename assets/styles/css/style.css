@@ -48,7 +48,6 @@
   transition: background-color 0.3s ease-in-out;
 }
 #detail #detail a:hover {
-  border: 1px solid black;
   background-color: #007bff; /* Couleur au survol */
 }
 
@@ -298,107 +297,69 @@ div {
 }
 
 #article-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: space-between;
-  padding: 20px;
-  background-color: #f8f8f8;
-}
-
-#article-list h2.list {
-  font-size: 24px;
-  color: #333;
-  margin: 0;
-  margin-top: 10rem;
-  width: 100%;
   text-align: center;
 }
-
 #article-list article {
-  flex-basis: calc(33.33% - 20px);
-  background-color: #ffffff;
-  border: 1px solid #e0e0e0;
+  display: inline-block;
+  border: 1px solid #ccc;
   border-radius: 5px;
-  padding: 20px;
-  text-align: center;
+  margin-top: 3rem;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s ease-in-out;
 }
-
 #article-list article:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  transform: scale(1.05); /* Zoom on hover */
 }
-
-#article-list header {
-  width: 100%;
-  text-align: left;
-}
-
-#article-list h3 {
+#article-list article header h3 {
   font-size: 18px;
-  margin: 0;
-  color: #333;
-  margin-bottom: 10px;
+  margin: 10px 0;
 }
-
-#article-list img {
-  max-width: 100%;
-  height: auto;
-}
-
-#article-list a {
-  text-decoration: none;
-  color: #007bff;
-  font-weight: bold;
-  margin-top: auto;
-  transition: color 0.2s ease-in-out;
-}
-
-#article-list a:hover {
-  color: #0056b3;
+#article-list article img {
+  margin: 1rem; /* Reduces image margin */
+  width: 200px; /* Sets image width */
+  height: 200px; /* Sets image height */
+  object-fit: cover; /* Crop the image to fit the specified dimensions */
 }
 
 #detail {
   padding: 20px;
   text-align: center;
 }
-
-#detail h2 {
-  margin-top: 20rem;
-  font-size: 24px;
-  margin: 0;
-}
-#detail h2 #detail article {
+#detail article {
   border: 1px solid #ccc;
   border-radius: 5px;
-  padding: 20px;
-  margin-top: 20px;
+  margin-top: 8rem;
   display: flex; /* Utilisation de flexbox */
   align-items: center; /* Alignez le contenu verticalement au centre */
 }
-#detail h2 #detail article h3 {
-  font-size: 20px;
-  margin-bottom: 10px;
-  color: #161D31;
-  flex: 1; /* Ajustez la largeur de l'en-tête pour occuper l'espace disponible */
+#detail article .titre-article {
+  font-size: 24px;
+  margin: 0;
+  color: #000000;
 }
-#detail h2 #detail article p {
+#detail article .left {
+  flex: 1; /* Ajustez la largeur de la figure pour occuper l'espace disponible */
+  text-align: left; /* Alignez l'image à gauche */
+  margin-right: 20px; /* Espacement entre l'image et le texte */
+}
+#detail article .left img {
+  margin-top: 4rem;
+  max-width: 50%;
+  height: auto;
+}
+#detail article .right {
+  flex: 1; /* Ajustez la largeur du texte pour occuper l'espace disponible */
+  text-align: left; /* Alignez le texte à gauche */
+}
+#detail article .right p {
   font-size: 16px;
   line-height: 1.5;
   margin-bottom: 15px;
   color: #000000;
 }
-#detail h2 #detail article figure {
-  margin: 0;
-  flex: 1; /* Ajustez la largeur de la figure pour occuper l'espace disponible */
-  text-align: right; /* Alignez l'image et le contenu à droite */
-}
-#detail h2 #detail article figure img {
-  max-width: 100%;
-  height: auto;
-}
-#detail h2 #detail a {
+#detail a {
   display: inline-block;
   margin-top: 2rem;
   padding: 10px 20px;
@@ -409,20 +370,8 @@ div {
   border-radius: 3px;
   transition: background-color 0.3s ease-in-out;
 }
-#detail h2 #detail a:hover {
+#detail a:hover {
   background-color: #06080e;
-}
-@media screen and (min-width: 768px) and (max-width: 991px) {
-  #detail h2 #detail article {
-    flex-direction: column; /* Passez à une mise en page en colonne sur tablette */
-    text-align: left;
-  }
-}
-@media screen and (max-width: 767px) {
-  #detail h2 #detail article {
-    flex-direction: column; /* Passez à une mise en page en colonne sur mobile */
-    text-align: left;
-  }
 }
 
 #section-g {
@@ -535,7 +484,7 @@ div {
   padding: 20px; /* Espacement intérieur de la section */
   border-radius: 10px; /* Coins arrondis */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Ombre légère */
-  margin: 4rem auto; /* Marge de 4rem en haut et en bas, centré horizontalement */
+  margin: 8rem auto; /* Marge de 4rem en haut et en bas, centré horizontalement */
   max-width: 400px; /* Largeur maximale de la section */
 }
 .register h2 {
@@ -709,12 +658,14 @@ div {
 /* Styles pour la section "À propos de nous" */
 .a-propos {
   margin-top: 8rem;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
+  margin-right: 1rem;
+  margin-left: 1rem;
   background-color: #ffffff;
-  padding: 20px;
-  border: 2px solid #007bff;
+  padding: 40px;
+  border: 1px solid #007bff;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 .a-propos h1 {
   font-size: 36px;
@@ -813,6 +764,7 @@ div {
   width: 100%; /* Définir la largeur à 100% pour qu'il s'étende sur toute la largeur */
   background-color: #161D31;
   color: #fff;
+  z-index: 2;
   padding: 1.5rem; /* 20px en rem */
   /* Masquer l'image par défaut sur les écrans non mobiles */
 }
