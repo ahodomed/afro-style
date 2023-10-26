@@ -1,0 +1,196 @@
+$white: #ffffff;
+$black: #000000;
+$primaryBlue: #007bff;
+$errorRed: #ff0000;
+
+.main-detail-product {
+  padding: 20px;
+
+  section {
+    margin-top: 3em;
+    background-color: $white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px $black;
+
+    h2 {
+      padding: 1em;
+      font-size: 24px;
+      color: $primaryBlue;
+    }
+
+    p {
+      text-align: justify;
+      color: $black;
+      padding: 0.5em;
+    }
+  }
+
+
+
+  ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  a {
+    text-decoration: none;
+    width: calc(33.33% - 20px);
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    &:hover {
+      p {
+        color: $primaryBlue;
+      }
+      text-decoration: none;
+    }
+  }
+
+  img {
+    max-width: 100%;
+    height: 500px;
+    margin-bottom: 1em;
+  }
+
+  .message {
+    color: $errorRed;
+    font-weight: bold;
+  }
+
+  @media screen and (max-width: 1200px) {
+  a {
+    width: calc(40% - 10px); /* Largeur de 50% avec un espacement de 10px entre les images */
+    margin-right: 20px; /* Espacement entre les images */
+    margin-bottom: 20px; /* Espacement sous les images */
+    
+  }
+  
+    h2 {
+    margin-top: 4em;    }
+    }
+
+
+  @media screen and (max-width: 760px) {
+    margin-top: 2 em;
+    a {
+      width: 100%;
+    }
+  }
+}
+
+
+
+
+// // Définition des variables de couleur
+// $white: #ffffff;
+// $black: #000000;
+// $primaryBlue: #007bff;
+// $errorRed: #ff0000;
+
+// .main-detail-product {
+//     padding: 20px;
+
+//     section{
+//       margin-top:3em;
+//       background-color: $white; /* Utilisation de la variable de couleur de fond du formulaire */
+//       padding: 20px; /* Espacement intérieur du formulaire */
+//       border-radius: 10px; /* Coins arrondis pour le formulaire */
+//       box-shadow: 0 0 10px $black; /* Ombre légère pour le formulaire */
+          
+            
+         
+//               h2{
+//                     padding: 1em;
+        
+//               }
+              
+//               p{
+//                     text-align:justify;
+//                     color:$black;
+//                     padding: 0.5em;
+        
+//               }
+            
+
+//           }
+//   h2 {
+//     font-size: 24px;
+//     color: $primaryBlue; /* Couleur du titre */
+//   }
+
+//   ul {
+//     list-style: none;
+//     padding: 0;
+//     display: flex;
+//     flex-wrap: wrap;
+//     justify-content: space-between; /* Espacement égal entre les colonnes */
+//   }
+
+//   a {
+//     text-decoration: none;
+//     width: calc(33.33% - 20px); /* Répartir les éléments en 3 colonnes avec un espace de 20px entre eux */
+//     margin:auto;
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     text-align: center;
+
+//     &:hover {
+      
+//       p{
+//               color: $primaryBlue; 
+
+//       }
+//       text-decoration:none;/* Couleur au survol */
+//     }
+//   }
+
+  
+// img {
+//       max-width: 100%;
+//       height: 500px;
+//       margin-bottom: 5px; /* Réduction de l'espace entre les images à 5px */
+//     }
+
+  
+
+//   h2 {
+//     text-align:center;
+//     color:$black;
+//   }
+
+
+//   .message {
+//     color: $errorRed; /* Couleur du message d'erreur */
+//     font-weight: bold;
+//   }
+
+  
+// }
+
+// @media screen and (max-width: 1200px) {
+//     a {
+//       width: 100%;
+//     }
+    
+ 
+
+//   }
+
+//   @media screen and (max-width: 760px) {
+//   .main-detail-product{
+//     margin-top: 6em;
+
+//       a {
+//             width: 100%; /* Afficher les éléments en une seule colonne sur les écrans étroits */
+//           }
+            
+//         }
+//   }

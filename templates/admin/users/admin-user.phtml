@@ -22,8 +22,8 @@
                 <td><?= $user->getUsername(); ?></td>
                 <td><?= $user->getEmail(); ?></td>
                 <td>
-                    <a href='/afrostyle/index.php?route=edit-user&id=<?= $user->getId() ?>'>Modifier</a>
-                    <a href='/afrostyle/index.php?route=delete-user&id=<?= $user->getId() ?>' class="delete delete-user" data-id="<?= $user->getId() ?>">Supprimer</a>
+                    <a href='/afrostyle/index.php?route=edit-user&id=<?= $user->getId() ?>'aria-label="Lien de modification d'un utilisateur">Modifier</a>
+                    <a href='/afrostyle/index.php?route=delete-user&id=<?= $user->getId() ?>' class="delete delete-user" aria-label="lien de suppression d'un utilisateur" data-id="<?= $user->getId() ?>">Supprimer</a>
 
                 </td>
             </tr>
@@ -31,6 +31,6 @@
     </tbody>
 </table>
 <div>
-    <a href="index.php?route=register">Ajouter un utilisateur</a>
+    <a href="index.php?route=register" aria-label="lien d'ajout d'un utilisateur">Ajouter un utilisateur</a>
 </div>
 </main>

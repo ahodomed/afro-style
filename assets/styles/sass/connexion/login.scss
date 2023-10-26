@@ -1,0 +1,110 @@
+#connect {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h2 {
+    font-size: 2rem;
+    color: $firstcol;
+    text-align: center;
+  }
+
+  .errors-message {
+    background-color: $errorRed;
+    color: $white;
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 1rem;
+  }
+
+  .connect {
+    width: 50%; // Le formulaire occupe 50% de la largeur par défaut
+    max-width: 80%;
+    padding:2em;
+    margin:2em;
+    border-radius:1rem;
+    border: 1px solid $black; // Ajout de la bordure
+    box-shadow: 0 0 10px $black; // Ajout de l'ombre
+
+    #fieldco {
+      display: flex;
+      flex-direction: column;
+
+      label {
+        color: $firstcol;
+        margin-top: 1rem;
+      }
+
+      .connex {
+        padding: 10px;
+        margin-top: 0.5rem;
+        border: 1px solid $black;
+        border-radius: 5px;
+      }
+    }
+
+    .btnlog {
+      display: block;
+      width: 100%;
+      background-color: $primaryBlue;
+      color: $white;
+      padding: 10px;
+      margin-top: 1rem;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+
+      &:hover {
+        background-color: darken($primaryBlue, 10%);
+      }
+    }
+
+    a {
+      text-align: center;
+      display: block;
+      margin-top: 1rem;
+      color: $firstcol;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  @media screen and (max-width: 1200px) {
+    h2 {
+      font-size: 1.5rem;
+      margin-top: 9rem ;
+    }
+
+    .connect {
+      width: 100%; // Le formulaire occupe 100% de la largeur sur les tablettes
+      max-width: 300px;
+
+      #fieldco {
+        label {
+          margin-top: 0.5rem;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    h2 {
+      font-size: 1.2rem;
+      margin-top: 9rem;
+    }
+
+    .connect {
+      max-width: 250px;
+
+      #fieldco {
+        label {
+          margin-top: 0.5rem;
+        }
+      }
+    }
+  }
+}

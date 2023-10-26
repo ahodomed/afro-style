@@ -1,4 +1,4 @@
-<section> 
+<main class="edit-product"> 
     <h3>Modifier un produit</h3>
     <?php $product = $data['product']; 
         $medias = $data['medias'];
@@ -31,6 +31,7 @@
             </select>
         </fieldset>
 
+<!--modifier un media-->
         <h3>Modifier Media</h3>
         <?php if (!empty($medias)) : ?>
         <fieldset>
@@ -49,7 +50,7 @@
             <input type="text" name="media_name" id="media_name" placeholder="Texte alternatif"/>
             <input type="hidden" name="productMediaId" value="">
         <?php endif ; ?>
-            <button type="submit"> Modifier le produit </button>
+            <button type="submit" aria-label="Bouton de modification d'un produit"> Modifier le produit </button>
         </fieldset>
          <input type="hidden" name="editProduct" value="submit"/>
     </form>

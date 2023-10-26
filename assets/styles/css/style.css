@@ -1,42 +1,107 @@
 @charset "UTF-8";
+@font-face {
+  font-family: "Roboto-Regular";
+  src: url("afrostyle/assets/fonts/Roboto-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Nunito-black";
+  src: url("assets/fonts/Nunito-black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Roboto-Regular";
+  src: url("afrostyle/assets/fonts/Roboto-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Nunito-black";
+  src: url("assets/fonts/Nunito-black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
+p {
+  font-family: "Roboto-Regular", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  font-family: "Roboto-Regular", sans-serif;
+}
+
+li {
+  font-family: "Roboto-Regular", sans-serif;
+}
+
+h1, h2, h3 {
+  font-family: "Nunito", sans-serif;
+}
+
+h1 {
+  font-size: 3em;
+}
+
+h2 {
+  font-size: 2em;
+}
+
+h3 {
+  font-size: 1.5em;
+}
+
+h4 {
+  font-size: 1.4em;
+}
+
+h5 {
+  font-size: 1.2em;
+}
+
+body {
+  background: #cec1c1;
+}
+
 #detail {
   padding: 20px;
   text-align: center;
-  background-color: #f7f7f7; /* Couleur de fond */
 }
-#detail #detail h2 {
-  margin-top: 2rem; /* Marge supérieure */
-  font-size: 24px;
+#detail h2 {
   color: #333; /* Couleur du titre */
 }
-#detail #detail article {
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  padding: 20px;
-  margin-top: 20px;
-  background-color: #fff; /* Fond blanc */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Ombre légère */
+#detail article {
+  margin: 2em auto;
+  max-width: 800px;
+  background-color: #ffffff; /* Utilisation de la variable de couleur de fond du formulaire */
+  padding: 20px; /* Espacement intérieur du formulaire */
+  border-radius: 10px; /* Coins arrondis pour le formulaire */
+  box-shadow: 0 0 10px #000000; /* Ombre légère pour le formulaire */
+  margin: 0, auto; /* Ajout de la marge de 1em autour de l'article */
 }
-#detail #detail article h3 {
-  font-size: 20px;
+#detail article h3 {
   margin-bottom: 10px;
   color: #161D31; /* Couleur du titre */
 }
-#detail #detail article p {
+#detail article p {
   font-size: 16px;
   line-height: 1.5;
   margin-bottom: 15px;
   color: #333; /* Couleur du texte */
+  text-align: justify;
 }
-#detail #detail article figure {
+#detail article figure {
   margin: 0;
   text-align: center;
 }
-#detail #detail article figure img {
+#detail article figure img {
   max-width: 100%;
   height: auto;
+  display: block; /* Centrer horizontalement */
+  margin: 0 auto; /* Centrer horizontalement */
 }
-#detail #detail a {
+#detail a {
   display: inline-block;
   margin-top: 1rem; /* Marge supérieure */
   padding: 10px 20px;
@@ -47,42 +112,55 @@
   border-radius: 3px;
   transition: background-color 0.3s ease-in-out;
 }
-#detail #detail a:hover {
+#detail a:hover {
   background-color: #007bff; /* Couleur au survol */
+}
+@media screen and (max-width: 1200px) {
+  #detail #detail a {
+    width: 50%;
+  }
+}
+@media screen and (max-width: 760px) {
+  #detail #detail h2 {
+    margin-top: 4em;
+  }
+  #detail #detail a {
+    width: 50%;
+  }
 }
 
 /* Styles pour le formulaire de modification de produit */
-section {
+.edit-product {
   margin-top: 8rem;
   background-color: #ffffff; /* Utilisation de la variable de couleur de fond du formulaire */
   padding: 20px; /* Espacement intérieur du formulaire */
   border-radius: 10px; /* Coins arrondis pour le formulaire */
   box-shadow: 0 0 10px #000000; /* Ombre légère pour le formulaire */
 }
-section h3 {
+.edit-product h3 {
   font-size: 24px; /* Taille de police pour le titre */
   margin-bottom: 20px; /* Marge en bas du titre */
 }
-section p.message {
+.edit-product p.message {
   color: #ff0000; /* Utilisation de la variable de couleur pour le message d'erreur */
   font-weight: bold; /* Texte en gras pour le message d'erreur */
 }
-section form label {
+.edit-product form label {
   display: block; /* Afficher les labels en bloc (un en dessous de l'autre) */
   font-weight: bold; /* Texte en gras pour les labels */
   margin-bottom: 5px; /* Marge en bas des labels */
 }
-section form input[type=text],
-section form input[type=number],
-section form textarea,
-section form select {
+.edit-product form input[type=text],
+.edit-product form input[type=number],
+.edit-product form textarea,
+.edit-product form select {
   width: 100%; /* Largeur de 100% pour les champs de texte, les zones de texte et les listes déroulantes */
   padding: 10px; /* Espacement intérieur des champs de texte, zones de texte et listes déroulantes */
   margin-bottom: 15px; /* Marge en bas entre les champs */
   border: 1px solid #ccc; /* Bordure légère pour les champs */
   border-radius: 5px; /* Coins arrondis pour les champs */
 }
-section form button[type=submit] {
+.edit-product form button[type=submit] {
   background-color: #007bff; /* Utilisation de la variable de couleur pour le fond du bouton */
   color: #ffffff; /* Couleur du texte du bouton */
   border: none; /* Supprimer la bordure du bouton */
@@ -114,32 +192,32 @@ section form button[type=submit] {
   }
 }
 /* Styles pour le formulaire d'ajout de produit */
-section {
+.main-create-product {
   margin-top: 8rem;
   background-color: #ffffff; /* Utilisation de la variable de couleur de fond du formulaire */
   padding: 20px; /* Espacement intérieur du formulaire */
   border-radius: 10px; /* Coins arrondis pour le formulaire */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Ombre légère pour le formulaire */
 }
-section h2 {
+.main-create-product h2 {
   font-size: 24px; /* Taille de police pour le titre */
   margin-bottom: 20px; /* Marge en bas du titre */
 }
-section form label {
+.main-create-product form label {
   display: block; /* Afficher les labels en bloc (un en dessous de l'autre) */
   font-weight: bold; /* Texte en gras pour les labels */
   margin-bottom: 5px; /* Marge en bas des labels */
 }
-section form input[type=text],
-section form textarea,
-section form select {
+.main-create-product form input[type=text],
+.main-create-product form textarea,
+.main-create-product form select {
   width: 100%; /* Largeur de 100% pour les champs de texte, les zones de texte et les listes déroulantes */
   padding: 10px; /* Espacement intérieur des champs de texte, zones de texte et listes déroulantes */
   margin-bottom: 15px; /* Marge en bas entre les champs */
   border: 1px solid #ccc; /* Bordure légère pour les champs */
   border-radius: 5px; /* Coins arrondis pour les champs */
 }
-section form button[type=submit] {
+.main-create-product form button[type=submit] {
   background-color: #007bff; /* Utilisation de la variable de couleur pour le fond du bouton */
   color: #ffffff; /* Utilisation de la variable de couleur pour le texte du bouton */
   border: none; /* Supprimer la bordure du bouton */
@@ -169,27 +247,24 @@ section form button[type=submit] {
     font-size: 16px; /* Taille de police réduite pour le bouton */
   }
 }
-/* Styles pour la gestion des produits */
 .admin-produit {
-  margin-top: 8rem;
+  margin-top: 2em;
   background-color: #ffffff;
   padding: 20px;
   box-shadow: 0 0 10px #000000;
   border-radius: 10px;
+  text-align: center;
 }
-
-h3 {
+.admin-produit h3 {
   font-size: 24px;
   margin-bottom: 20px;
   color: #007bff;
 }
-
-.admin-message {
+.admin-produit .admin-message {
   color: #ff0000;
   font-weight: bold;
 }
-
-table {
+.admin-produit table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
@@ -197,116 +272,259 @@ table {
   box-shadow: 0 0 10px #000000;
   border-radius: 10px;
 }
-table th,
-table td {
+.admin-produit table th, .admin-produit table td {
   padding: 10px;
-  text-align: left;
+  text-align: justify;
   border-bottom: 1px solid #ccc;
 }
-table th {
+.admin-produit table th {
   font-weight: bold;
 }
-table tbody tr:hover {
+.admin-produit table tbody tr:hover {
   background-color: #ff0000;
 }
-
-a {
+.admin-produit table a {
   text-decoration: none;
   color: #007bff;
+  text-align: right;
 }
-
-a:hover {
+.admin-produit table a:hover {
   text-decoration: underline;
 }
-
-div {
+.admin-produit div {
   margin-top: 20px;
 }
-
-/* Media Query pour les écrans mobiles */
-@media screen and (max-width: 768px) {
-  h3 {
+@media screen and (max-width: 1200px) {
+  .admin-produit h3 {
     font-size: 20px;
   }
-  table th,
-  table td {
+  .admin-produit table th, .admin-produit table td {
     padding: 8px;
   }
 }
+@media screen and (max-width: 760px) {
+  .admin-produit h3 {
+    font-size: 20px;
+  }
+  .admin-produit table th, .admin-produit table td {
+    padding: 8px;
+  }
+}
+
 .main-detail-product {
   padding: 20px;
-  margin-top: 8rem;
-  border: 1px solid #ccc;
-  border-radius: 5px;
 }
-.main-detail-product h2 {
+.main-detail-product section {
+  margin-top: 3em;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #000000;
+}
+.main-detail-product section h2 {
+  padding: 1em;
   font-size: 24px;
-  color: #007bff; /* Couleur du titre */
+  color: #007bff;
+}
+.main-detail-product section p {
+  text-align: justify;
+  color: #000000;
+  padding: 0.5em;
 }
 .main-detail-product ul {
   list-style: none;
   padding: 0;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between; /* Espacement égal entre les colonnes */
+  justify-content: space-between;
 }
 .main-detail-product a {
   text-decoration: none;
-  color: #000000;
-  transition: color 0.3s ease-in-out;
-  width: calc(33.33% - 20px); /* Répartir les éléments en 3 colonnes avec un espace de 20px entre eux */
-  margin-bottom: 2rem;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  width: calc(33.33% - 20px);
+  margin: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  background-color: #ffffff; /* Fond blanc pour chaque produit */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Ombre légère */
 }
 .main-detail-product a:hover {
-  color: #ff0000; /* Couleur au survol */
+  text-decoration: none;
+}
+.main-detail-product a:hover p {
+  color: #007bff;
 }
 .main-detail-product img {
   max-width: 100%;
-  height: auto;
-  margin-bottom: 5px; /* Réduction de l'espace entre les images à 5px */
-}
-.main-detail-product h2 {
-  font-size: 20px;
-  margin: 0;
-}
-.main-detail-product p {
-  font-size: 16px;
-  margin: 0;
+  height: 500px;
+  margin-bottom: 1em;
 }
 .main-detail-product .message {
-  color: #ff0000; /* Couleur du message d'erreur */
+  color: #ff0000;
   font-weight: bold;
 }
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1200px) {
   .main-detail-product a {
-    width: calc(50% - 20px); /* Répartir les éléments en 2 colonnes sur les écrans moyens */
+    width: calc(40% - 10px); /* Largeur de 50% avec un espacement de 10px entre les images */
+    margin-right: 20px; /* Espacement entre les images */
+    margin-bottom: 20px; /* Espacement sous les images */
+  }
+  .main-detail-product h2 {
+    margin-top: 4em;
   }
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 760px) {
+  .main-detail-product {
+    margin-top: 2 em;
+  }
   .main-detail-product a {
-    width: 100%; /* Afficher les éléments en une seule colonne sur les écrans étroits */
+    width: 100%;
   }
 }
 
-#article-list {
+.main-contact {
+  padding: 20px;
+  text-align: center;
+  margin: 2em auto;
+  max-width: 70%;
+}
+.main-contact h2 {
+  font-size: 2rem;
+  color: #000000;
+  margin-top: 1em;
+}
+.main-contact form {
+  display: flex;
+  margin: 1rem auto;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #000000;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #000000;
+}
+.main-contact form label {
+  color: #000000;
+  margin-top: 1rem;
+}
+.main-contact form input[type=text],
+.main-contact form input[type=email],
+.main-contact form textarea {
+  width: calc(100% - 50px);
+  margin-top: 0.5rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+.main-contact form textarea {
+  height: 150px;
+}
+.main-contact form input[type=submit] {
+  background-color: #007bff;
+  color: #ffffff;
+  padding: 15px;
+  margin: 1rem;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.main-contact form input[type=submit]:hover {
+  background-color: #0062cc;
+}
+@media screen and (max-width: 1200px) {
+  .main-contact h2 {
+    font-size: 1.5rem;
+    margin-top: 8rem;
+  }
+  .main-contact form {
+    width: 90%;
+  }
+  .main-contact form label {
+    margin-top: 0.5rem;
+  }
+}
+@media screen and (max-width: 760px) {
+  .main-contact h2 {
+    font-size: 1.5rem;
+    margin-top: 8 rem;
+  }
+  .main-contact form {
+    width: 90%;
+  }
+  .main-contact form label {
+    margin-top: 0.5rem;
+  }
+}
+
+.admin-message {
+  max-width: 80vw;
+  margin-top: 8rem;
+  margin-left: 6rem;
+  padding: 20px;
+  background-color: #ffffff;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  color: #000000;
+  text-align: center; /* Ajout pour centrer le contenu */
+}
+.admin-message h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #000000;
+}
+.admin-message table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+.admin-message table th {
+  background-color: #161D31;
+  color: #ffffff;
+  padding: 10px;
+  text-align: left;
+}
+.admin-message table td {
+  padding: 10px;
+  border: 1px solid #000000;
+  color: #000000; /* Texte en noir */
+}
+.admin-message table tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+.admin-message table tbody tr:hover {
+  background-color: #ddd;
+}
+.admin-message table button {
+  background-color: #ff0000;
+  color: #ffffff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.admin-message table button:hover {
+  background-color: #cc0000;
+}
+
+h2 {
+  padding: 1em;
   text-align: center;
 }
+
+#article-list {
+  margin-top: 3em;
+  padding: 1em;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2em;
+}
 #article-list article {
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  margin-top: 3rem;
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease-in-out;
+  margin: auto;
+  background-color: #ffffff; /* Utilisation de la variable de couleur de fond du formulaire */
+  padding: 1em; /* Espacement intérieur du formulaire */
+  border-radius: 10px; /* Coins arrondis pour le formulaire */
+  box-shadow: 0 0 10px #000000; /* Ombre légère pour le formulaire */
 }
 #article-list article:hover {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
@@ -323,46 +541,35 @@ div {
   object-fit: cover; /* Crop the image to fit the specified dimensions */
 }
 
-#detail {
+/* Media Query pour les écrans mobiles */
+@media screen and (max-width: 760px) {
+  h2 {
+    margin-top: 4em;
+  }
+}
+.a-propos {
+  background: #cec1c1;
   padding: 20px;
+  max-width: 800px;
+  margin: 0 auto; /* Centre horizontalement la section */
+}
+.a-propos h1 {
+  color: #161D31;
   text-align: center;
+  margin-top: 2rem;
 }
-#detail article {
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  margin-top: 8rem;
-  display: flex; /* Utilisation de flexbox */
-  align-items: center; /* Alignez le contenu verticalement au centre */
-}
-#detail article .titre-article {
-  font-size: 24px;
-  margin: 0;
-  color: #000000;
-}
-#detail article .left {
-  flex: 1; /* Ajustez la largeur de la figure pour occuper l'espace disponible */
-  text-align: left; /* Alignez l'image à gauche */
-  margin-right: 20px; /* Espacement entre l'image et le texte */
-}
-#detail article .left img {
-  margin-top: 4rem;
-  max-width: 50%;
-  height: auto;
-}
-#detail article .right {
-  flex: 1; /* Ajustez la largeur du texte pour occuper l'espace disponible */
-  text-align: left; /* Alignez le texte à gauche */
-}
-#detail article .right p {
+.a-propos p {
   font-size: 16px;
   line-height: 1.5;
-  margin-bottom: 15px;
+  text-align: justify;
   color: #000000;
-}
-#detail a {
-  display: inline-block;
   margin-top: 2rem;
-  padding: 10px 20px;
+}
+.a-propos a {
+  display: inline-block;
+  width: 4em;
+  margin-top: 1rem;
+  padding: 10px;
   background-color: #161D31;
   color: #ffffff;
   text-decoration: none;
@@ -370,186 +577,243 @@ div {
   border-radius: 3px;
   transition: background-color 0.3s ease-in-out;
 }
-#detail a:hover {
-  background-color: #06080e;
+.a-propos a:hover {
+  background-color: #161D31;
 }
-
-#section-g {
-  margin-top: 2rem;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-.section-a {
-  margin: 0 auto;
-}
-
-.section-h,
-.section-f,
-.section-e {
-  flex-basis: calc(25% - 10px);
-  margin: 5rem 0;
-}
-.section-h a,
-.section-f a,
-.section-e a {
-  text-decoration: none;
-  color: #161D31;
-}
-.section-h a img,
-.section-f a img,
-.section-e a img {
-  max-width: 100%;
-  height: auto;
-}
-
-@media screen and (max-width: 578px) {
-  .section-h,
-  .section-f,
-  .section-e,
-  .section-a {
-    flex-basis: calc(25% - 10px);
+@media screen and (max-width: 1200px) {
+  .a-propos h1 {
+    margin-top: 6em;
+    font-size: 1.2rem; /* Taille de police réduite pour les écrans mobiles */
+  }
+  .a-propos p {
+    font-size: 14px; /* Taille de police réduite pour les écrans mobiles */
   }
 }
-@media screen and (max-width: 357px) {
-  .section-h,
-  .section-f,
-  .section-e,
-  .section-a {
-    flex-basis: 100%;
+@media screen and (max-width: 768px) {
+  .a-propos h1 {
+    margin-top: 6em;
+    font-size: 1.2rem; /* Taille de police réduite pour les écrans mobiles */
+  }
+  .a-propos p {
+    font-size: 14px; /* Taille de police réduite pour les écrans mobiles */
   }
 }
-/* Styles pour la section de connexion */
+
 #connect {
-  background-color: #ffffff;
-  margin-top: 8rem;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 #connect h2 {
-  font-size: 24px;
-  margin-bottom: 20px;
-  color: #007bff; /* Couleur du titre */
+  font-size: 2rem;
+  color: #161D31;
+  text-align: center;
 }
 #connect .errors-message {
-  color: #ff0000; /* Couleur du message d'erreur */
-  font-weight: bold;
-}
-#connect .connect label {
-  display: block;
-  font-weight: bold;
-  margin-bottom: 5px;
-}
-#connect .connect .connex {
-  width: 100%;
+  background-color: #ff0000;
+  color: #ffffff;
+  text-align: center;
   padding: 10px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
+  margin-bottom: 1rem;
+}
+#connect .connect {
+  width: 50%;
+  max-width: 80%;
+  padding: 2em;
+  margin: 2em;
+  border-radius: 1rem;
+  border: 1px solid #000000;
+  box-shadow: 0 0 10px #000000;
+}
+#connect .connect #fieldco {
+  display: flex;
+  flex-direction: column;
+}
+#connect .connect #fieldco label {
+  color: #161D31;
+  margin-top: 1rem;
+}
+#connect .connect #fieldco .connex {
+  padding: 10px;
+  margin-top: 0.5rem;
+  border: 1px solid #000000;
   border-radius: 5px;
 }
 #connect .connect .btnlog {
+  display: block;
+  width: 100%;
   background-color: #007bff;
   color: #ffffff;
+  padding: 10px;
+  margin-top: 1rem;
   border: none;
-  margin-top: 2rem;
-  padding: 10px 20px;
-  font-weight: bold;
   border-radius: 5px;
+  font-weight: bold;
   cursor: pointer;
 }
-
-/* Media Query pour les écrans mobiles */
-@media screen and (max-width: 768px) {
-  #connect {
-    padding: 10px;
-  }
+#connect .connect .btnlog:hover {
+  background-color: #0062cc;
+}
+#connect .connect a {
+  text-align: center;
+  display: block;
+  margin-top: 1rem;
+  color: #161D31;
+  text-decoration: none;
+}
+#connect .connect a:hover {
+  text-decoration: underline;
+}
+@media screen and (max-width: 1200px) {
   #connect h2 {
-    font-size: 20px;
+    font-size: 1.5rem;
+    margin-top: 9rem;
   }
-  #connect .connect label {
-    font-size: 16px;
+  #connect .connect {
+    width: 100%;
+    max-width: 300px;
   }
-  #connect .connect .connex {
-    font-size: 14px;
-  }
-  #connect .connect .btnlog {
-    font-size: 16px;
+  #connect .connect #fieldco label {
+    margin-top: 0.5rem;
   }
 }
-/* Styles pour la section d'inscription */
+@media screen and (max-width: 768px) {
+  #connect h2 {
+    font-size: 1.2rem;
+    margin-top: 9rem;
+  }
+  #connect .connect {
+    max-width: 250px;
+  }
+  #connect .connect #fieldco label {
+    margin-top: 0.5rem;
+  }
+}
+
 .register {
-  background-color: #ffffff; /* Couleur de fond */
-  padding: 20px; /* Espacement intérieur de la section */
-  border-radius: 10px; /* Coins arrondis */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Ombre légère */
-  margin: 8rem auto; /* Marge de 4rem en haut et en bas, centré horizontalement */
-  max-width: 400px; /* Largeur maximale de la section */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
 }
 .register h2 {
-  font-size: 24px; /* Taille de la police pour le titre */
-  margin-bottom: 20px; /* Marge en bas du titre */
-  color: #007bff; /* Couleur du titre */
+  font-size: 2rem;
+  color: #161D31;
+  text-align: center;
+  margin: 2rem 0;
 }
 .register .errors-message {
-  color: #ff0000; /* Couleur du message d'erreur */
-  font-weight: bold; /* Texte en gras pour les erreurs */
-}
-.register .c-create label {
-  display: block;
-  font-weight: bold;
-  margin-bottom: 5px; /* Marge en bas entre les étiquettes */
-}
-.register .c-create .registre {
-  width: 100%;
+  background-color: #ff0000;
+  color: #ffffff;
+  text-align: center;
   padding: 10px;
-  margin-bottom: 15px; /* Marge en bas entre les champs de saisie */
-  border: 1px solid #007bff; /* Bordure des champs de saisie */
-  border-radius: 5px; /* Coins arrondis des champs de saisie */
+  margin-bottom: 1rem;
 }
-.register .c-create .error-message {
-  color: #ff0000; /* Couleur du message d'erreur */
-  font-size: 14px; /* Taille de la police du message d'erreur */
+.register .c-create {
+  width: 50%;
+  padding: 2em;
+  border-radius: 1em;
+  border: 1px solid #000000;
+  box-shadow: 0 0 10px #000000;
 }
-.register .c-create #register-button {
-  background-color: #007bff; /* Couleur de fond du bouton */
-  color: #ffffff; /* Couleur du texte du bouton */
-  border: none; /* Supprimer la bordure du bouton */
-  padding: 10px 20px; /* Espacement intérieur du bouton */
-  font-weight: bold; /* Texte en gras pour le bouton */
-  border-radius: 5px; /* Coins arrondis du bouton */
-  cursor: pointer; /* Curseur au survol */
-  width: 100%; /* Largeur du bouton sur toute la largeur de la section */
-  margin-top: 2rem;
+.register .c-create #fieldreg {
+  display: flex;
+  flex-direction: column;
 }
-.register .c-create #register-button:disabled {
-  background-color: #007bff; /* Couleur de fond du bouton désactivé */
-  color: #000000; /* Couleur du texte du bouton désactivé */
-  cursor: not-allowed; /* Curseur désactivé */
+.register .c-create #fieldreg label {
+  color: #161D31;
+  margin-top: 1rem;
+}
+.register .c-create #fieldreg .registre {
+  padding: 10px;
+  margin-top: 0.5rem;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  position: relative;
+}
+.register .c-create #fieldreg .error-message {
+  color: #ff0000;
+  margin-top: 0.5rem;
+  font-size: 14px;
+}
+.register .c-create .btnregister {
+  display: block;
+  width: 100%;
+  background-color: #007bff;
+  color: #ffffff;
+  padding: 10px;
+  margin-top: 1rem;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.register .c-create .btnregister:hover {
+  background-color: #0062cc;
+}
+.register .c-create .btnregister[disabled] {
+  cursor: not-allowed;
+  background-color: #007bff;
+  opacity: 0.6;
+}
+.register .c-create a {
+  text-align: center;
+  display: block;
+  margin-top: 1rem;
+  color: #161D31;
+  text-decoration: none;
+}
+.register .c-create a:hover {
+  text-decoration: underline;
+}
+.register .c-create .register {
+  display: none;
+}
+@media screen and (max-width: 1200px) {
+  .register h2 {
+    font-size: 1.5rem;
+    margin-top: 4rem;
+  }
+  .register .c-create {
+    width: 80%;
+    margin: 1em;
+  }
+  .register .c-create #fieldreg label {
+    margin-top: 0.5rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  .register h2 {
+    font-size: 1.2rem;
+    margin-top: 8rem;
+  }
+  .register .c-create {
+    width: 80%;
+  }
+  .register .c-create #fieldreg label {
+    margin-top: 0.5rem;
+  }
 }
 
 /* Styles pour la gestion des utilisateurs */
 .admin-user {
-  margin-top: 8rem;
+  margin-top: 4em;
   background-color: #ffffff;
   padding: 20px;
   box-shadow: 0 0 10px #000000;
   border-radius: 10px;
+  text-align: center;
 }
-
-h3 {
+.admin-user h3 {
   font-size: 24px;
   margin-bottom: 20px;
   color: #007bff;
 }
-
-.admin-message {
+.admin-user .admin-message {
   color: #ff0000;
   font-weight: bold;
 }
-
-table {
+.admin-user table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
@@ -557,42 +821,37 @@ table {
   box-shadow: 0 0 10px #000000;
   border-radius: 10px;
 }
-table th,
-table td {
+.admin-user table th, .admin-user table td {
   padding: 10px;
   text-align: left;
   border-bottom: 1px solid #ccc;
 }
-table th {
+.admin-user table th {
   font-weight: bold;
 }
-table tbody tr:hover {
+.admin-user table tbody tr:hover {
   background-color: #ff0000;
 }
-
-a {
+.admin-user table a {
   text-decoration: none;
   color: #007bff;
+  text-align: right;
 }
-
-a:hover {
+.admin-user table a:hover {
   text-decoration: underline;
 }
-
-div {
+.admin-user div {
   margin-top: 20px;
 }
-
-/* Media Query pour les écrans mobiles */
 @media screen and (max-width: 768px) {
-  h3 {
+  .admin-user h3 {
     font-size: 20px;
   }
-  table th,
-  table td {
+  .admin-user table th, .admin-user table td {
     padding: 8px;
   }
 }
+
 /* Styles pour la page de modification d'utilisateur */
 .admin-form {
   background-color: #ffffff; /* Couleur de fond de la page */
@@ -655,111 +914,160 @@ div {
     font-size: 16px; /* Taille de police réduite pour le bouton */
   }
 }
-/* Styles pour la section "À propos de nous" */
-.a-propos {
-  margin-top: 8rem;
-  margin-bottom: 2rem;
-  margin-right: 1rem;
-  margin-left: 1rem;
-  background-color: #ffffff;
-  padding: 40px;
-  border: 1px solid #007bff;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+/* Styles pour la page de modification d'utilisateur */
+.admin-form {
+  background-color: #ffffff; /* Couleur de fond de la page */
+  padding: 20px; /* Espacement intérieur de la page */
+  border-radius: 10px; /* Coins arrondis pour la page */
+  box-shadow: 0 0 10px #000000; /* Ombre légère pour la page */
 }
-.a-propos h1 {
-  font-size: 36px;
-  color: #007bff;
-  margin-bottom: 20px;
+.admin-form h3 {
+  font-size: 24px; /* Taille de police pour le titre */
+  margin-bottom: 20px; /* Marge en bas du titre */
+  color: #007bff; /* Couleur du titre */
 }
-.a-propos p {
-  font-size: 16px;
-  line-height: 1.5;
-  color: #000000;
-  margin-bottom: 20px;
+.admin-form p.form-errors {
+  color: #ff0000; /* Couleur du message d'erreur */
+  font-weight: bold; /* Texte en gras pour le message d'erreur */
 }
-.a-propos a {
+.admin-form form label {
+  display: block; /* Afficher les labels en bloc (un en dessous de l'autre) */
+  font-weight: bold; /* Texte en gras pour les labels */
+  margin-bottom: 5px; /* Marge en bas des labels */
+}
+.admin-form form input[type=text],
+.admin-form form input[type=email],
+.admin-form form input[type=password],
+.admin-form form select {
+  width: 100%; /* Largeur de 100% pour les champs de texte, les zones de texte et les listes déroulantes */
+  padding: 10px; /* Espacement intérieur des champs de texte, zones de texte et listes déroulantes */
+  margin-bottom: 15px; /* Marge en bas entre les champs */
+  border: 1px solid #ccc; /* Bordure légère pour les champs */
+  border-radius: 5px; /* Coins arrondis pour les champs */
+}
+.admin-form form button[type=submit] {
+  background-color: #007bff; /* Couleur de fond du bouton */
+  color: #ffffff; /* Couleur du texte du bouton */
+  border: none; /* Supprimer la bordure du bouton */
+  padding: 10px 20px; /* Espacement intérieur du bouton */
+  font-weight: bold; /* Texte en gras pour le bouton */
+  border-radius: 5px; /* Coins arrondis pour le bouton */
+  cursor: pointer; /* Curseur pointeur au survol du bouton */
+}
+
+/* Media Query pour les écrans mobiles */
+@media screen and (max-width: 768px) {
+  .admin-form {
+    padding: 10px; /* Réduire l'espacement intérieur pour les écrans mobiles */
+  }
+  .admin-form h3 {
+    font-size: 20px; /* Taille de police réduite pour les titres */
+  }
+  .admin-form form label {
+    font-size: 16px; /* Taille de police réduite pour les labels */
+  }
+  .admin-form form input[type=text],
+  .admin-form form input[type=email],
+  .admin-form form input[type=password],
+  .admin-form form select {
+    font-size: 14px; /* Taille de police réduite pour les champs de texte, les zones de texte et les listes déroulantes */
+  }
+  .admin-form form button[type=submit] {
+    font-size: 16px; /* Taille de police réduite pour le bouton */
+  }
+}
+#main-homepage {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* Espacement entre les sections */
+  background: #cec1c1;
+  /* Styles pour les autres sections (section-f, section-e, section-a) */
+  /* Media Query pour les tablettes */
+  /* Media Query pour les écrans mobiles */
+}
+#main-homepage h2 {
+  margin-top: 3em;
+  text-align: center; /* Centrer le texte */
+  width: 100%; /* Occuper toute la largeur de la section */
+  font-size: 1.5rem; /* Taille de la police pour le h1 */
+  /* Autres styles pour le h1 si nécessaire */
+}
+#main-homepage section {
+  margin: 2em auto;
+  max-width: 800px;
+  background-color: #ffffff; /* Utilisation de la variable de couleur de fond du formulaire */
+  padding: 20px; /* Espacement intérieur du formulaire */
+  border-radius: 10px; /* Coins arrondis pour le formulaire */
+  box-shadow: 0 0 10px #000000; /* Ombre légère pour le formulaire */
+  flex-basis: calc(25% - 10px); /* 4 colonnes sur ordinateur (25% de largeur) */
+}
+#main-homepage section a {
   text-decoration: none;
-  color: #007bff;
+  color: #161D31; /* Couleur du texte des liens */
 }
-.a-propos a:hover {
-  text-decoration: underline;
+#main-homepage section a img {
+  max-width: 100%;
+  margin: auto;
+  height: auto;
+}
+#main-homepage section h3 {
+  margin-top: 1rem;
+  font-size: 1.2rem; /* Taille de la police pour les titres h2 */
+  /* Autres styles de titre si nécessaire */
+}
+#main-homepage .section-f,
+#main-homepage .section-e,
+#main-homepage .section-a,
+#main-homepage .section-h {
+  text-align: center; /* Centrer le contenu horizontalement */
+}
+#main-homepage .section-f a,
+#main-homepage .section-e a,
+#main-homepage .section-a a,
+#main-homepage .section-h a {
+  text-decoration: none;
+  color: #161D31; /* Couleur du texte des liens */
+}
+#main-homepage .section-f a img,
+#main-homepage .section-e a img,
+#main-homepage .section-a a img,
+#main-homepage .section-h a img {
+  max-width: 100%;
+  height: auto;
+}
+#main-homepage .section-f h2,
+#main-homepage .section-e h2,
+#main-homepage .section-a h2,
+#main-homepage .section-h h2 {
+  margin-top: 1rem;
+  font-size: 1.2rem; /* Taille de la police pour les titres h2 */
+  /* Autres styles de titre si nécessaire */
+}
+@media screen and (max-width: 1200px) {
+  #main-homepage .section-h,
+  #main-homepage .section-f,
+  #main-homepage .section-e,
+  #main-homepage .section-a {
+    margin: 1em;
+    flex-basis: calc(25% - 10px); /* 2 colonnes sur tablette (50% de largeur) */
+  }
+}
+@media screen and (max-width: 760px) {
+  #main-homepage h2 {
+    margin-top: 6em;
+  }
+  #main-homepage .section-h,
+  #main-homepage .section-f,
+  #main-homepage .section-e,
+  #main-homepage .section-a {
+    margin: 1em;
+    flex-basis: 100%; /* 1 colonne sur mobile (100% de largeur) */
+  }
 }
 
-/* Media Query pour les écrans mobiles */
-@media screen and (max-width: 768px) {
-  h1 {
-    font-size: 24px;
-  }
-  p {
-    font-size: 14px;
-  }
-}
-/* Styles pour la page de modification d'utilisateur */
-.admin-form {
-  background-color: #ffffff; /* Couleur de fond de la page */
-  padding: 20px; /* Espacement intérieur de la page */
-  border-radius: 10px; /* Coins arrondis pour la page */
-  box-shadow: 0 0 10px #000000; /* Ombre légère pour la page */
-}
-.admin-form h3 {
-  font-size: 24px; /* Taille de police pour le titre */
-  margin-bottom: 20px; /* Marge en bas du titre */
-  color: #007bff; /* Couleur du titre */
-}
-.admin-form p.form-errors {
-  color: #ff0000; /* Couleur du message d'erreur */
-  font-weight: bold; /* Texte en gras pour le message d'erreur */
-}
-.admin-form form label {
-  display: block; /* Afficher les labels en bloc (un en dessous de l'autre) */
-  font-weight: bold; /* Texte en gras pour les labels */
-  margin-bottom: 5px; /* Marge en bas des labels */
-}
-.admin-form form input[type=text],
-.admin-form form input[type=email],
-.admin-form form input[type=password],
-.admin-form form select {
-  width: 100%; /* Largeur de 100% pour les champs de texte, les zones de texte et les listes déroulantes */
-  padding: 10px; /* Espacement intérieur des champs de texte, zones de texte et listes déroulantes */
-  margin-bottom: 15px; /* Marge en bas entre les champs */
-  border: 1px solid #ccc; /* Bordure légère pour les champs */
-  border-radius: 5px; /* Coins arrondis pour les champs */
-}
-.admin-form form button[type=submit] {
-  background-color: #007bff; /* Couleur de fond du bouton */
-  color: #ffffff; /* Couleur du texte du bouton */
-  border: none; /* Supprimer la bordure du bouton */
-  padding: 10px 20px; /* Espacement intérieur du bouton */
-  font-weight: bold; /* Texte en gras pour le bouton */
-  border-radius: 5px; /* Coins arrondis pour le bouton */
-  cursor: pointer; /* Curseur pointeur au survol du bouton */
-}
-
-/* Media Query pour les écrans mobiles */
-@media screen and (max-width: 768px) {
-  .admin-form {
-    padding: 10px; /* Réduire l'espacement intérieur pour les écrans mobiles */
-  }
-  .admin-form h3 {
-    font-size: 20px; /* Taille de police réduite pour les titres */
-  }
-  .admin-form form label {
-    font-size: 16px; /* Taille de police réduite pour les labels */
-  }
-  .admin-form form input[type=text],
-  .admin-form form input[type=email],
-  .admin-form form input[type=password],
-  .admin-form form select {
-    font-size: 14px; /* Taille de police réduite pour les champs de texte, les zones de texte et les listes déroulantes */
-  }
-  .admin-form form button[type=submit] {
-    font-size: 16px; /* Taille de police réduite pour le bouton */
-  }
-}
 /* Styles pour l'en-tête */
 .header {
-  position: fixed; /* Rendre le header fixe */
+  position: sticky; /* Rendre le header fixe */
   top: 0; /* Fixer le header en haut de la page */
   width: 100%; /* Définir la largeur à 100% pour qu'il s'étende sur toute la largeur */
   background-color: #161D31;
@@ -771,6 +1079,7 @@ div {
 .header h1 {
   font-size: 2.25rem; /* 36px en rem */
   margin: 0;
+  color: #161D31;
 }
 .header nav ul {
   margin: 0 auto;
@@ -795,7 +1104,7 @@ div {
 }
 
 /* Media Query pour les appareils mobiles (max-width: 767px) */
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 1200px) {
   .header {
     position: fixed; /* Rendre le header fixe */
     top: 0; /* Fixer le header en haut de la page */
@@ -853,20 +1162,23 @@ nav ul li:last-child {
 nav #icons {
   cursor: pointer;
   display: none;
+  margin-right: 2em;
 }
 nav #icons:before {
   content: "☰";
 }
-@media (max-width: 650px) {
+@media (max-width: 760px) {
   nav #icons {
+    margin-right: 2em;
     cursor: pointer;
     display: block;
     position: fixed;
     right: 1rem; /* Positionner #icons à droite */
-    top: 1rem; /* Espacement du haut */
+    top: 2rem; /* Espacement du haut */
   }
   nav #icons:before {
     content: "☰";
+    margin-right: 2em;
   }
   nav.active #icons:before {
     content: "✕";
@@ -896,6 +1208,8 @@ nav #icons:before {
   color: #fff; /* Couleur du texte en blanc */
   padding: 20px; /* Espacement intérieur du footer */
   text-align: center; /* Alignement du texte au centre */
+  width: 100%;
+  margin-bottom: 0;
   /* Media Query pour les appareils mobiles (max-width: 767px) */
 }
 #foot ul {
@@ -919,8 +1233,9 @@ nav #icons:before {
 #foot ul li a:hover {
   text-decoration: underline; /* Souligne les liens au survol */
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 760px) {
   #foot {
+    margin-bottom: 0;
     padding: 10px; /* Réduisez l'espacement pour les écrans mobiles */
   }
   #foot ul {

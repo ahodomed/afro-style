@@ -30,6 +30,10 @@
 
   }
 
+
+
+
+// Validarion formulaire de création de compte
   const passwordInput = document.getElementById('password');
   const confirmPasswordInput = document.getElementById('confirm-password');
   const passwordError = document.getElementById('password-error');

@@ -1,4 +1,4 @@
-<section>
+<main class="main-create-product">
     <h2>Ajouter un Produit</h2>
     <form action="?route=create-product" method="post">
         <label for="name">Nom du produit :</label>
@@ -27,8 +27,8 @@
         <label for="media-url">Url :</label>
         <input type="text" name="media-url">
         <input type="hidden" name="createProduct" value="submit">
-        <fieldset>
-            <button type="submit">Créer l'article</button>
+        <fieldset aria-label="boutton de création d'un article">
+            <button type="submit" aria-label="boutton de création d'article">Créer l'article</button>
         </fieldset>
     </form>
-</section>
+</main>

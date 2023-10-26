@@ -1,0 +1,63 @@
+$firstcol: #161D31;
+$black: #000000;
+$white: #ffffff;
+$primaryBlue: #007bff;
+$errorRed: #ff0000;
+
+.admin-message {
+  max-width: 80vw;
+  margin-top:8rem;
+  margin-left:6rem;
+  padding: 20px;
+  background-color: $white;
+  border: 1px solid $black;
+  border-radius: 5px;
+  color: $black;
+  text-align: center; /* Ajout pour centrer le contenu */
+
+  h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: $black;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+
+    th {
+      background-color: $firstcol;
+      color: $white;
+      padding: 10px;
+      text-align: left;
+    }
+
+    td {
+      padding: 10px;
+      border: 1px solid $black;
+      color: $black; /* Texte en noir */
+    }
+
+    tbody tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    tbody tr:hover {
+      background-color: #ddd;
+    }
+
+    button {
+      background-color: $errorRed;
+      color: $white;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: darken($errorRed, 10%);
+    }
+  }
+}

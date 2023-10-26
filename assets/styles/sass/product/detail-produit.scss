@@ -1,0 +1,180 @@
+// Définition des variables de couleur
+$white: #ffffff;
+$black: #000000;
+$primaryBlue: #007bff;
+$errorRed: #ff0000;
+
+#detail {
+  padding: 20px;
+  text-align: center;
+
+  h2 {
+    color: #333; /* Couleur du titre */
+  }
+
+  article {
+    margin: 2em auto;
+    max-width: 800px;
+    background-color: $white; /* Utilisation de la variable de couleur de fond du formulaire */
+    padding: 20px; /* Espacement intérieur du formulaire */
+    border-radius: 10px; /* Coins arrondis pour le formulaire */
+    box-shadow: 0 0 10px $black; /* Ombre légère pour le formulaire */
+    margin: 0, auto; /* Ajout de la marge de 1em autour de l'article */
+
+    h3 {
+      margin-bottom: 10px;
+      color: #161D31; /* Couleur du titre */
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.5;
+      margin-bottom: 15px;
+      color: #333; /* Couleur du texte */
+      text-align: justify;
+    }
+
+    figure {
+      margin: 0;
+      text-align: center;
+
+      img {
+        max-width: 100%;
+        height: auto;
+        display: block; /* Centrer horizontalement */
+        margin: 0 auto; /* Centrer horizontalement */
+      }
+    }
+  }
+
+  a {
+    display: inline-block;
+    margin-top: 1rem; /* Marge supérieure */
+    padding: 10px 20px;
+    background-color: $primaryBlue; /* Couleur du lien */
+    color: #fff; /* Couleur du texte du lien */
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 3px;
+    transition: background-color 0.3s ease-in-out;
+
+    &:hover {
+      background-color: $primaryBlue; /* Couleur au survol */
+    }
+  }
+
+  @media screen and (max-width: 1200px) {
+    #detail {
+       
+      a {
+        width: 50%;
+      }
+    }
+  }
+
+
+
+  @media screen and (max-width: 760px) {
+    #detail {
+      h2 {
+        margin-top: 4em;
+      }
+      a {
+        width: 50%;
+      }
+    }
+  }
+}
+
+
+
+
+
+// // Définition des variables de couleur
+// $white: #ffffff;
+// $black: #000000;
+// $primaryBlue: #007bff;
+// $errorRed: #ff0000;
+
+// #detail {
+//   padding: 20px;
+//   text-align: center;
+
+//   h2 {
+//     margin-top: 2rem; /* Marge supérieure */
+//     color: #333; /* Couleur du titre */
+//   }
+
+//   article {
+//     margin: 2em auto;
+//     max-width:800px;
+//     background-color: $white; /* Utilisation de la variable de couleur de fond du formulaire */
+//     padding: 20px; /* Espacement intérieur du formulaire */
+//     border-radius: 10px; /* Coins arrondis pour le formulaire */
+//     box-shadow: 0 0 10px $black; /* Ombre légère pour le formulaire */
+
+//     h3 {
+//       margin-bottom: 10px;
+//       color: #161D31; /* Couleur du titre */
+//     }
+
+//     p {
+//       font-size: 16px;
+//       line-height: 1.5;
+//       margin-bottom: 15px;
+//       color: #333; /* Couleur du texte */
+//       text-align:justify;
+//     }
+
+//     figure {
+//       margin: 0;
+//       text-align: center;
+
+//       img {
+//         max-width: 100%;
+//         height: auto;
+//       }
+//     }
+//   }
+
+//   a {
+//     display: inline-block;
+//     margin-top: 1rem; /* Marge supérieure */
+//     padding: 10px 20px;
+//     background-color: $primaryBlue; /* Couleur du lien */
+//     color: #fff; /* Couleur du texte du lien */
+//     text-decoration: none;
+//     font-weight: bold;
+//     border-radius: 3px;
+//     transition: background-color 0.3s ease-in-out;
+
+//     &:hover {
+//       background-color: $primaryBlue; /* Couleur au survol */
+//     }
+//   }
+// }
+
+
+
+// @media screen and (max-width: 1200px) 
+//   {
+//     #detail{
+//               a{
+//                 width:50%;
+//               }
+                 
+//             }
+
+
+//   }
+
+//   @media screen and (max-width: 760px) 
+//   {
+//   #detail{
+//               margin-top: 6em;
+//             a{
+//               width:50%;
+//             }
+               
+//         }
+//   }

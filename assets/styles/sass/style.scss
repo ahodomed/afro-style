@@ -1,27 +1,30 @@
 //PUBLIC
+@import 'typographie.scss';@import  'typographie.scss';
+
 @import '_vars.scss'; 
-@import 'public/product/detail-produit';
-@import 'public/product/edit-produit';
-@import 'public/product/create-produit';
-@import 'public/product/admin-produits';
-@import 'public/product/manage_product';
+@import 'product/detail-produit.scss';
+@import 'product/edit-produit.scss';
+@import 'product/create-produit.scss';
+@import 'product/admin-produits.scss';
+@import 'product/manage_product.scss';
+@import 'contact/main-contact.scss';
+@import 'contact/manage-message.scss';
 
-@import 'public/product/products';
-@import 'public/product/product';
 
-@import 'public/product/homepage';
-@import 'public/connexion/login';
-@import 'public/connexion/register';
+
+@import 'product/products.scss';
+@import 'a-propos/a-propos.scss';
+@import 'connexion/login.scss';
+@import 'connexion/register.scss';
 
 //admin user
-@import 'public/users/admin-user';
-@import 'public/users/edit-user';
+@import 'users/admin-user.scss';
+@import 'users/edit-user.scss';
 
 
-@import 'public/a-propos/apropos';
-@import 'public/users/edit-user';
+@import 'users/edit-user.scss';
 
 
-
-@import 'public/partials/_header';
-@import 'public/partials/_footer';
+@import 'partials/homepage.scss';
+@import 'partials/_header.scss';
+@import 'partials/_footer.scss';

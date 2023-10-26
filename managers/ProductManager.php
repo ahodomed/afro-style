@@ -118,5 +118,9 @@ class ProductManager extends AbstractManager {
 
         return $list;
     }
+    
+    
+    
+
 }
 

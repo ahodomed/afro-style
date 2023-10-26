@@ -1,0 +1,36 @@
+<main class="admin-message">
+    <h2>Messages reçus</h2>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nom</th>
+                <th>Email</th>
+                <th>Message</th>
+                <th>ID du Produit</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Boucle pour afficher les messages -->
+                <?php foreach ($data["messages"] as $key => $message): ?>
+                <tr>
+                   <td><?= $message["id"]; ?></td>
+                    <td><?=$message["name"]; ?></td>
+                    <td><?= $message["email"]; ?></td>
+                    <td><?= $message["message"]; ?></td>
+                    <td><?= $message["product_id"]; ?></td>
+                    <td>
+                        <!-- Ajoutez des boutons d'action ici, par exemple, un bouton de suppression -->
+                        <form method="post" action="?route=delete-message&id=<?= $message["id"]?>">
+
+                <input type="hidden" name="message_id" value="<?= $message["id"]; ?>">   
+                <button type="submit">Supprimer</button>
+                 </form>
+                </td>
+                </tr>
+            <?php endforeach; ?>
+        </tbody>
+    </table>
+</main>

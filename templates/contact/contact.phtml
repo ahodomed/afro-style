@@ -1,19 +1,30 @@
 
-    <h2>Contactez-nous</h2>
-    <form action="" method="post" class="contact">
-        <label for="nom">Nom :</label>
-        <input type="text" id="nom" name="nom" required>
+<main class="main-contact">
+    <h2>Formulaire de Message</h2>
         
-        <label for="email">Adresse Email :</label>
-        <input type="email" id="email" name="email" required>
-        
-        <label for="sujet">Sujet :</label>
-        <input type="text" id="sujet" name="sujet" required>
-        
+        <?php
+        /*
+        if (isset($data['errors'])) {
+          echo "<p class='errors-message'>" . $data["errors"][0] . "</p>";
+        }
+        */
+        ?>
+
+                 
+    <form action="?route=contact&id=<?= $_GET['id'] ?>" method="POST">
+        <label for="name">Nom :</label>
+        <input type="text" name="name" id="name" required>
+
+        <label for="email">Email :</label>
+        <input type="email" name="email" id="email" required>
+
         <label for="message">Message :</label>
-        <textarea id="message" name="message" rows="4" required></textarea>
+        <textarea name="message" id="message" rows="4" required></textarea>
+
+        <input type="hidden" name="contact-form" value="submit"/>
         
         <input type="submit" value="Envoyer">
-        <a href='?route=home'>Retour </a>
-
     </form>
+            <!--<script src="/afrostyle/assets/styles/js/validation-pass.js"></script>-->
+
+</main>

@@ -1,0 +1,51 @@
+.admin-message {
+  max-width: 80vw;
+  margin-top: 8rem;
+  margin-left: 6rem;
+  padding: 20px;
+  background-color: #ffffff;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  color: #000000;
+  text-align: center; /* Ajout pour centrer le contenu */
+}
+.admin-message h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #000000;
+}
+.admin-message table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+.admin-message table th {
+  background-color: #161D31;
+  color: #ffffff;
+  padding: 10px;
+  text-align: left;
+}
+.admin-message table td {
+  padding: 10px;
+  border: 1px solid #000000;
+  color: #000000; /* Texte en noir */
+}
+.admin-message table tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+.admin-message table tbody tr:hover {
+  background-color: #ddd;
+}
+.admin-message table button {
+  background-color: #ff0000;
+  color: #ffffff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.admin-message table button:hover {
+  background-color: #cc0000;
+}
+
+/*# sourceMappingURL=manage-message.css.map */

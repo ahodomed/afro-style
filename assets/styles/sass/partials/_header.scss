@@ -1,0 +1,176 @@
+
+
+/* Styles pour l'en-tête */
+.header {
+  position: sticky; /* Rendre le header fixe */
+  top: 0; /* Fixer le header en haut de la page */
+  width: 100%; /* Définir la largeur à 100% pour qu'il s'étende sur toute la largeur */
+  background-color: $firstcol;
+  color: #fff;
+  z-index: 2;
+  padding: 1.5rem; /* 20px en rem */
+
+  h1 {
+    font-size: 2.25rem; /* 36px en rem */
+    margin: 0;
+    color:$firstcol;
+  }
+
+  nav {
+    ul {
+      margin:0 auto;
+      list-style: none;
+      padding: 0;
+      display: flex;
+
+
+      li {
+        margin-right: 2rem; /* 16px en rem (plus d'espace) */
+        a {
+          text-decoration: none;
+          font-size: 1rem;
+          color: $white;
+        }
+      }
+
+      /* Pour éviter la marge à droite sur le dernier élément li */
+      li:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  /* Masquer l'image par défaut sur les écrans non mobiles */
+  img {
+    display: none;
+  }
+}
+
+/* Media Query pour les appareils mobiles (max-width: 767px) */
+@media screen and (max-width: 1200px) {
+  .header {
+    position: fixed; /* Rendre le header fixe */
+  top: 0; /* Fixer le header en haut de la page */
+  width: 100%; /* Définir la largeur à 100% pour qu'il s'étende sur toute la largeur */
+  background-color: $firstcol;
+  color: #fff;
+  padding: 1.5rem; /* 20px en rem */
+    h1 {
+      font-size: 1.5rem; /* 24px en rem */
+    }
+
+    nav ul li {
+      margin-bottom: 1rem; /* 16px en rem */
+      padding: 1rem; /* 16px en rem */
+    }
+
+    /* Ajustez la largeur de la liste ul pour occuper toute la largeur de l'écran */
+    nav ul {
+      width: 100%;
+    }
+  }
+
+  /* Afficher l'image uniquement sur les écrans mobiles */
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+
+
+
+nav {
+  background: $firstcol;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+
+  ul {
+    display: flex;
+    justify-content: space-between;
+
+    li {
+      margin-right: 1rem;
+      a {
+        text-decoration: none;
+        color: $white;
+      }
+    }
+    
+     li:hover {
+          margin-right: 1rem;
+      a:hover {
+          color: $primaryBlue; /* Nouvelle couleur au survol */
+          text-decoration:underline;
+        }
+    }
+
+    li:last-child {
+      margin-right: 0;
+    }
+  }
+
+  #icons {
+    cursor: pointer;
+    display: none;
+    margin-right:2em;
+
+    &:before {
+      content: "\2630 ";
+    }
+  }
+
+  @media (max-width: 760px) {
+    #icons {
+    margin-right:2em;
+    cursor: pointer;
+    display: block;
+    position: fixed;
+    right: 1rem; /* Positionner #icons à droite */
+    top: 2rem; /* Espacement du haut */
+
+    }
+
+    #icons:before {
+      content: "\2630 ";
+      margin-right:2em;
+
+    }
+
+    &.active #icons:before {
+      content: "\2715";
+    }
+
+    ul {
+      position: fixed;
+      left: -100%;
+      top: 0;
+      flex-direction: column;
+      background: $firstcol;
+      width: 100%;
+      text-align: center;
+      transition: 0.25s;
+
+      
+         li {
+ 
+      a {
+        text-decoration: none;
+        color: $white;
+      }
+    
+        
+      }
+    }
+
+    &.active ul {
+      left: 0;
+    }
+  }
+}
+
+
+

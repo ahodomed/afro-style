@@ -11,7 +11,8 @@ class Router {
     private MediaController $mc;
     private HomeController $hc;
     private ProductManager $pm;
-    
+    private MessageController $messageC;
+
     public function __construct()  
     {  
         $this->ac =new AdminController();
@@ -23,6 +24,8 @@ class Router {
         $this->mc = new MediaController();
         $this->hc = new HomeController();
         $this->pm = new ProductManager();
+        $this->messageC = new MessageController();
+
     }
 
     public function checkRoute()
@@ -94,13 +97,21 @@ class Router {
             else if ($_GET['route'] === "delete-product" && $_GET['id'])
             {
                     $this->pc->deleteProduct($_GET['id']);
-            } 
+            }
+            elseif ($_GET['route'] === "manage-message") 
+            {
+                $this->messageC->messageIndex();
+            }
+            elseif ($_GET['route'] === "delete-message" && isset($_GET['id']))
+            {
+                $this->messageC->deleteMessage($_GET["id"]);
+            }
                 
             }
-            elseif ($_GET['route'] === "contact")
+           /* elseif ($_GET['route'] === "contact")
             {
                 $this->hc->contact();
-            }
+            }*/
             else if($_GET['route']=== "mentions-legales")
             {
                 $this->hc->mention();
@@ -112,6 +123,11 @@ class Router {
                 $this->cc->categoriesList();
             }
             
+            elseif ($_GET['route'] === "contact" && isset($_GET['id']))
+            {
+                $this->messageC->addMessage($_GET['id']);
+            }
+                        
             // Ajoutez d'autres conditions ici
         } else {
               
@@ -123,3 +139,5 @@ class Router {
 
 
 ?>
+
+

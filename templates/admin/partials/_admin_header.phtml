@@ -5,8 +5,10 @@
         <ul>
             <li><a href="?route=home">Accueil</a></li>
             <li><a href="?route=boutique">Boutique </a></li>
-            <li><a href="?route=apropos">A-propos</a></li>
-            <li><a href="?route=contact">Contact</a></li>
+            <!--<li><a href="?route=apropos"aria-label="Lien vers la page a propos">A-propos</a></li>-->
+            <!--<li><a href="?route=contact" aria-label="Lien vers la page contact">Contact</a></li>-->
+            <!--<li class="menu-item"><a href="mailto:ahodomed@gmail.com" target="_blank" aria-label="Lien vers la page de contacte">Contact</a></li>-->
+
             <?php if(isset($_SESSION["user"])) : ?>
             <li><a href="?route=deconnexion">Deconnexion</a></li>
             <?php else : ?>
@@ -14,6 +16,8 @@
             <?php endif; ?>
             <li><a href="?route=admin-user">Gérer les comptes</a></li>
             <li><a href="?route=admin-product">Gérer les produits</a></li>
+            <li><a href="?route=manage-message">Gérer une commande</a></li>
+
             
            
 

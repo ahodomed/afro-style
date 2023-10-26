@@ -6,29 +6,20 @@
         <article>
             <header>
                 <h3 class="titre-article"><?= $product->getName() ?></h3>  
-                <?php
-                    if ($product->getCategoryId() === 3) {
-                        echo "<p>Accessoire</p>";
-                    } elseif ($product->getCategoryId() === 1) {
-                        echo "<p>Homme</p>";
-                    } else if ($product->getCategoryId() === 2) {
-                        echo "<p>Femme</p>";
-                    } else if ($product->getCategoryId() === 4) {
-                        echo "<p>Enfant </p>";
-                    }
-                ?>
+
             </header>
             <figure class="left">
-                <img src="<?= $media[0]->getUrl() ?>" alt="<?= $media[0]->getName()?>">
+                <img src="<?= $media[0]->getUrl() ?>" alt="<?= $media[0]->getName()?>" alt="image du produit">
             </figure>
-            <div class="right">
+          
                 <p><?= $product->getDescription()?></p>
                 <p><?= $product->getPrice() ?>€</p>
-            </div>
-         </article>
-         <a href="mailto:Afrostyle@gmail.com" target="_blank">Contacter-nous pour commander</a>
-                            
-         <a href='?route=boutique'>Retour</a>
+            
+              <a href="?route=contact&id=<?= $product->getId()?>" target="_blank" aria-label="lien d'envoi de mail pour commander un produit">Contacter-nous pour commander</a>
+                           
+             <a href='?route=boutique' aria-label="lien de retour sur la page boutique">Retour</a>
 
+         </article>
+       
      
 </main>  

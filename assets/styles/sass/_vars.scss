@@ -3,4 +3,43 @@ $black: #000000;
 $white: #ffffff;
 $primaryBlue: #007bff;
 $errorRed: #ff0000;
+$background-color: #cec1c1;
+$font-text:'Roboto-Regular', sans-serif;
+$font-title:'Nunito', sans-serif;
 
+p{
+    font-family: $font-text;
+}
+
+a{
+    text-decoration:none;
+    font-family: $font-text;
+}
+
+li{
+    font-family: $font-text;
+}
+
+h1,h2,h3{
+    font-family:$font-title ;
+}
+
+h1 {
+    font-size:3em;
+}
+h2 {
+    font-size:2em;
+}
+h3 {
+    font-size:1.5em;
+}
+h4 {
+    font-size:1.4em;
+}
+h5 {
+    font-size:1.2em;
+}
+
+body {
+    background: $background-color;
+}

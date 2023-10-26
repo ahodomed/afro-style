@@ -1,0 +1,65 @@
+@charset "UTF-8";
+/* Styles pour le formulaire de modification de produit */
+.edit-product {
+  margin-top: 8rem;
+  background-color: #ffffff; /* Utilisation de la variable de couleur de fond du formulaire */
+  padding: 20px; /* Espacement intérieur du formulaire */
+  border-radius: 10px; /* Coins arrondis pour le formulaire */
+  box-shadow: 0 0 10px #000000; /* Ombre légère pour le formulaire */
+}
+.edit-product h3 {
+  font-size: 24px; /* Taille de police pour le titre */
+  margin-bottom: 20px; /* Marge en bas du titre */
+}
+.edit-product p.message {
+  color: #ff0000; /* Utilisation de la variable de couleur pour le message d'erreur */
+  font-weight: bold; /* Texte en gras pour le message d'erreur */
+}
+.edit-product form label {
+  display: block; /* Afficher les labels en bloc (un en dessous de l'autre) */
+  font-weight: bold; /* Texte en gras pour les labels */
+  margin-bottom: 5px; /* Marge en bas des labels */
+}
+.edit-product form input[type=text],
+.edit-product form input[type=number],
+.edit-product form textarea,
+.edit-product form select {
+  width: 100%; /* Largeur de 100% pour les champs de texte, les zones de texte et les listes déroulantes */
+  padding: 10px; /* Espacement intérieur des champs de texte, zones de texte et listes déroulantes */
+  margin-bottom: 15px; /* Marge en bas entre les champs */
+  border: 1px solid #ccc; /* Bordure légère pour les champs */
+  border-radius: 5px; /* Coins arrondis pour les champs */
+}
+.edit-product form button[type=submit] {
+  background-color: #007bff; /* Utilisation de la variable de couleur pour le fond du bouton */
+  color: #ffffff; /* Couleur du texte du bouton */
+  border: none; /* Supprimer la bordure du bouton */
+  padding: 10px 20px; /* Espacement intérieur du bouton */
+  font-weight: bold; /* Texte en gras pour le bouton */
+  border-radius: 5px; /* Coins arrondis pour le bouton */
+  cursor: pointer; /* Curseur pointeur au survol du bouton */
+}
+
+/* Media Query pour les écrans mobiles */
+@media screen and (max-width: 768px) {
+  section {
+    padding: 10px; /* Réduire l'espacement intérieur pour les écrans mobiles */
+  }
+  section h3 {
+    font-size: 20px; /* Taille de police réduite pour les titres */
+  }
+  section form label {
+    font-size: 16px; /* Taille de police réduite pour les labels */
+  }
+  section form input[type=text],
+  section form input[type=number],
+  section form textarea,
+  section form select {
+    font-size: 14px; /* Taille de police réduite pour les champs de texte, les zones de texte et les listes déroulantes */
+  }
+  section form button[type=submit] {
+    font-size: 16px; /* Taille de police réduite pour le bouton */
+  }
+}
+
+/*# sourceMappingURL=edit-produit.css.map */

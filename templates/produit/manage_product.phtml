@@ -17,7 +17,7 @@
                     <li>
                         
                         <?php foreach($product->getMedia() as $media): ?>
-                            <img src="<?= $media->getUrl()?>" alt="<?= $media->getName()?>"></img>
+                            <img src="<?= $media->getUrl()?>" alt="<?= $media->getName()?>" alt="image du media en lien avec l'article"></img>
                         <?php endforeach; ?>
                         
                         <h2><?= $product->getName() ?></h2>

@@ -23,7 +23,9 @@ if (isset($data['errors'])) {
     <input type="password" name="confirm-password" id="confirm-password" class="registre">
     <span id="confirm-password-error" class="error-message"></span>
   </fieldset>
-  <button type="submit" class="btnregister" id="register-button" disabled>Créer un compte</button>
+  <button type="submit" class="btnregister" id="register-button" aria-label="bouton de création de compte" disabled> Créer un compte</button>
+  <a href="?route=login" aria-label="Lien vers la page de connexion">vos avez déjà un compte?</a>
+
   <input type="hidden" name="form-name" id="form-name" value="registerForm" class="register">
 </form>
 

@@ -5,7 +5,7 @@
             unset ($_SESSION["message"]);
             }?>
 <div class="ajout-produit">
-    <a href="index.php?route=create-product">Ajouter un produit</a>
+    <a href="index.php?route=create-product" aria-label="Lien d'ajout d'un produit">Ajouter un produit</a>
 </div>
 <table>
         <thead>
@@ -16,6 +16,8 @@
                <th>Prix</th>
                <th>Media</th>
                <th>Category</th>
+               <th>Actions</th>
+
             </tr>
         </thead>
         <tbody> 
@@ -28,8 +30,8 @@
                     <td><?= $product->getPrice(); ?></td> 
                     <td><?= $data["medias"][$key]["name"] ?></td>
                     <td><?= $data["categoriesNames"][$key]["name"]?></td>
-                    <td> <a href=' /afrostyle/index.php?route=edit-product&id=<?= $product->getId() ?>'>Modifier</a></td>
-                    <td><a href='/afrostyle/index.php?route=delete-product&id=<?= $product->getId() ?>' class="delete delete-product" data-id="<?= $product->getId() ?>">Supprimer</a></td>
+                    <td> <a href=' /afrostyle/index.php?route=edit-product&id=<?= $product->getId() ?>' aria-label="Lien de modification d'un produit">Modifier</a></td>
+                    <td><a href='/afrostyle/index.php?route=delete-product&id=<?= $product->getId() ?>' class="delete delete-product" aria-label="Lien de suppression d'un produit"data-id="<?= $product->getId() ?>">Supprimer</a></td>
 
 
 

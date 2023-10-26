@@ -1,0 +1,82 @@
+.admin-produit {
+  margin-top:2em;
+  background-color: $white;
+  padding: 20px;
+  box-shadow: 0 0 10px $black;
+  border-radius: 10px;
+  text-align: center; // Centrer horizontalement le contenu
+
+  h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: $primaryBlue;
+  }
+
+  .admin-message {
+    color: $errorRed;
+    font-weight: bold;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: $white;
+    box-shadow: 0 0 10px $black;
+    border-radius: 10px;
+
+    th, td {
+      padding: 10px;
+      text-align: justify; // Justifier le contenu
+      border-bottom: 1px solid #ccc;
+    }
+
+    th {
+      font-weight: bold;
+    }
+
+    tbody tr:hover {
+      background-color: $errorRed;
+    }
+
+    a {
+      text-decoration: none;
+      color: $primaryBlue;
+      text-align: right; // Aligner le texte des liens à droite
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  }
+
+  div {
+    margin-top: 20px;
+  }
+
+  // Media Query pour les écrans de taille moyenne (max-width: 1200px)
+  @media screen and (max-width: 1200px) {
+    h3 {
+      font-size: 20px;
+    }
+
+    table {
+      th, td {
+        padding: 8px;
+      }
+    }
+  }
+
+  // Media Query pour les écrans étroits (max-width: 760px)
+  @media screen and (max-width: 760px) {
+    h3 {
+      font-size: 20px;
+    }
+
+    table {
+      th, td {
+        padding: 8px;
+      }
+    }
+  }
+}

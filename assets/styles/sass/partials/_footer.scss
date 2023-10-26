@@ -1,0 +1,54 @@
+/* Styles pour le footer */
+#foot {
+  background-color: #161D31; /* Couleur de fond */
+  color: #fff; /* Couleur du texte en blanc */
+  padding: 20px; /* Espacement intérieur du footer */
+  text-align: center; /* Alignement du texte au centre */
+  width:100%;
+  margin-bottom:0;
+  
+  ul {
+    list-style: none; /* Supprime les puces de la liste */
+    padding: 0; /* Supprime le remplissage de la liste */
+    display: flex;
+    flex-wrap: wrap; /* Permet aux éléments de passer à la ligne si l'espace est insuffisant */
+    justify-content: center; /* Centre les éléments horizontalement */
+    
+    li {
+      margin-right: 20px; /* Marge à droite entre les éléments de la liste */
+      
+      &:last-child {
+        margin-right: 0; /* Supprime la marge à droite du dernier élément de la liste */
+      }
+      
+      a {
+        text-decoration: none; /* Supprime la décoration du texte des liens */
+        color: #fff; /* Couleur du texte en blanc */
+        font-weight: bold; /* Texte en gras pour les liens */
+        
+        &:hover {
+          text-decoration: underline; /* Souligne les liens au survol */
+        }
+      }
+    }
+  }
+  
+  /* Media Query pour les appareils mobiles (max-width: 767px) */
+  @media screen and (max-width: 760px) {
+    margin-bottom:0;
+    padding: 10px; /* Réduisez l'espacement pour les écrans mobiles */
+  
+    ul {
+      flex-direction: column; /* Les éléments <li> passeront en mode bloc */
+      
+      li {
+        margin-bottom: 5px; /* Réduisez la marge entre les éléments de la liste pour les écrans mobiles */
+        margin-right: 0; /* Supprime la marge à droite pour les écrans mobiles */
+        
+        a {
+          font-size: 16px; /* Réduisez la taille de la police pour les écrans mobiles */
+        }
+      }
+    }
+  }
+}

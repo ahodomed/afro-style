@@ -5,7 +5,7 @@ require './models/Category.php';
 require './models/Product.php';
 require './models/Role.php';
 require './models/Media.php';
-
+require './models/Message.php';
 
 require './managers/AbstractManager.php';
 require './managers/CategoryManager.php';
@@ -13,6 +13,7 @@ require './managers/UserManager.php';
 require './managers/ProductManager.php';
 require './managers/RoleManager.php';
 require './managers/MediaManager.php';
+require './managers/MessageManager.php';
 
 
 
@@ -25,8 +26,7 @@ require './controllers/MediaControlles.php';
 require './controllers/RoleController.php';
 require './controllers/HomeController.php';
 require './controllers/AdminController.php';
-
-
+require './controllers/MessageController.php';
 
 
 

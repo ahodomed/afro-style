@@ -1,0 +1,97 @@
+#main-homepage {
+  
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* Espacement entre les sections */
+  background: $background-color;
+
+  h2 {
+    margin-top: 3em;
+    text-align: center; /* Centrer le texte */
+    width: 100%; /* Occuper toute la largeur de la section */
+    font-size: 1.5rem; /* Taille de la police pour le h1 */
+    /* Autres styles pour le h1 si nécessaire */
+  }
+
+  section {
+      margin: 2em auto;
+    max-width:800px;
+    background-color: $white; /* Utilisation de la variable de couleur de fond du formulaire */
+    padding: 20px; /* Espacement intérieur du formulaire */
+    border-radius: 10px; /* Coins arrondis pour le formulaire */
+    box-shadow: 0 0 10px $black; /* Ombre légère pour le formulaire */
+    flex-basis: calc(25% - 10px); /* 4 colonnes sur ordinateur (25% de largeur) */
+
+
+    a {
+      text-decoration: none;
+      color: #161D31; /* Couleur du texte des liens */
+
+      img {
+        max-width: 100%;
+        margin:auto;
+        height: auto;
+      }
+      
+      
+    }
+
+
+    h3{
+      margin-top: 1rem;
+      font-size: 1.2rem; /* Taille de la police pour les titres h2 */
+      /* Autres styles de titre si nécessaire */
+    }
+  }
+
+  /* Styles pour les autres sections (section-f, section-e, section-a) */
+  .section-f,
+  .section-e,
+  .section-a,
+  .section-h{
+    text-align: center; /* Centrer le contenu horizontalement */
+
+    a {
+      text-decoration: none;
+      color: #161D31; /* Couleur du texte des liens */
+
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+    }
+
+    h2 {
+      margin-top: 1rem;
+      font-size: 1.2rem; /* Taille de la police pour les titres h2 */
+      /* Autres styles de titre si nécessaire */
+    }
+  }
+
+  /* Media Query pour les tablettes */
+  @media screen and (max-width: 1200px) {
+    .section-h,
+    .section-f,
+    .section-e,
+    .section-a {
+      margin:1em;
+      flex-basis: calc(25% - 10px); /* 2 colonnes sur tablette (50% de largeur) */
+    }
+  }
+
+  /* Media Query pour les écrans mobiles */
+  @media screen and (max-width: 760px) {
+    h2{
+        margin-top: 6em;
+      }
+      
+    .section-h,
+    .section-f,
+    .section-e,
+    .section-a {
+      margin:1em;
+      flex-basis: 100%; /* 1 colonne sur mobile (100% de largeur) */
+      
+    }
+  }
+}
